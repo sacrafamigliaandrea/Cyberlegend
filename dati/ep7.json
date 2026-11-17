@@ -1,0 +1,345 @@
+{
+ "episodio": 7,
+ "pagine": [
+  {
+   "pagina": 1,
+   "durata": 4.5,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Cyber Legends. Episodio 7: L'Open Day",
+     "nb": true,
+     "i": 0.0,
+     "f": 4.5
+    }
+   ]
+  },
+  {
+   "pagina": 2,
+   "durata": 30.59,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "La scuola era in fermento. Era il giorno dell'Open Day e i corridoi brulicavano di genitori e futuri studenti. La Professoressa Rossi radunò Kaito, Hikari e Leo.",
+     "nb": true,
+     "i": 0.0,
+     "f": 10.75
+    },
+    {
+     "v": "R",
+     "t": "\"Ragazzi, conto su di voi. Siete i nostri ambasciatori digitali. Mostrate a tutti come la tecnologia ci aiuta a imparare.\"",
+     "nb": true,
+     "i": 11.2,
+     "f": 19.4
+    },
+    {
+     "v": "N",
+     "t": "Poi aggiunse, con tono serio:",
+     "nb": true,
+     "i": 19.85,
+     "f": 22.73
+    },
+    {
+     "v": "R",
+     "t": "\"Per oggi, avete il permesso di tenere i cellulari con voi per coordinarvi. Ma la regola è tassativa: nessuna foto.\"",
+     "nb": true,
+     "i": 23.18,
+     "f": 30.59
+    }
+   ]
+  },
+  {
+   "pagina": 3,
+   "durata": 28.54,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "L'atrio era stato trasformato in un'area espositiva. Leo, con il suo solito entusiasmo, fermò una famiglia.",
+     "nb": true,
+     "i": 0.0,
+     "f": 6.34
+    },
+    {
+     "v": "L",
+     "t": "\"Buongiorno! Vi faccio vedere come prendiamo appunti!\"",
+     "nb": true,
+     "i": 6.79,
+     "f": 10.89
+    },
+    {
+     "v": "N",
+     "t": "Mostrò loro il suo iPad, aprendo l'app \"Notebook LM\". Con pochi tocchi, fece vedere come potevano inserire testo, immagini e persino registrazioni audio delle lezioni.",
+     "nb": true,
+     "i": 11.34,
+     "f": 22.79
+    },
+    {
+     "v": "L",
+     "t": "\"È come avere un quaderno infinito!\"",
+     "nb": true,
+     "i": 23.24,
+     "f": 26.94
+    },
+    {
+     "v": "N",
+     "t": "esclamò.",
+     "nb": true,
+     "i": 27.39,
+     "f": 28.54
+    }
+   ]
+  },
+  {
+   "pagina": 4,
+   "durata": 25.41,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Poco più in là, Hikari aveva catturato l'attenzione di un altro gruppo.",
+     "nb": true,
+     "i": 0.0,
+     "f": 3.93
+    },
+    {
+     "v": "H",
+     "t": "\"Non usiamo solo i libri,\"",
+     "nb": true,
+     "i": 4.38,
+     "f": 6.71
+    },
+    {
+     "v": "N",
+     "t": "spiegava con calma.",
+     "nb": true,
+     "i": 7.16,
+     "f": 9.57
+    },
+    {
+     "v": "H",
+     "t": "\"Per scienze, ad esempio, usiamo app che ci mostrano il corpo umano in 3D o ci permettono di fare esperimenti virtuali.\"",
+     "nb": true,
+     "i": 10.02,
+     "f": 17.62
+    },
+    {
+     "v": "N",
+     "t": "Sul suo tablet, ruotò la molecola di una proteina, ingrandendola per mostrarne i dettagli. I genitori erano affascinati.",
+     "nb": true,
+     "i": 18.07,
+     "f": 25.41
+    }
+   ]
+  },
+  {
+   "pagina": 5,
+   "durata": 21.88,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "In un angolo, lontano dalla folla, Dario osservava la scena con un'espressione annoiata.",
+     "nb": true,
+     "i": 0.0,
+     "f": 5.03
+    },
+    {
+     "v": "N",
+     "t": "Vedeva Kaito, Leo e Hikari al centro dell'attenzione, elogiati dai professori e ammirati dai visitatori. Sbuffò, tirando fuori dalla tasca il suo smartphone.",
+     "nb": false,
+     "i": 5.25,
+     "f": 16.5
+    },
+    {
+     "v": "N",
+     "t": "Per lui, tutta quella tecnologia era solo un modo per mettersi in mostra.",
+     "nb": false,
+     "i": 16.72,
+     "f": 21.88
+    }
+   ]
+  },
+  {
+   "pagina": 6,
+   "durata": 23.62,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "La tappa successiva era il laboratorio di informatica, il regno di Kaito.",
+     "nb": true,
+     "i": 0.0,
+     "f": 5.39
+    },
+    {
+     "v": "K",
+     "t": "\"Qui non impariamo solo a usare i programmi,\"",
+     "nb": true,
+     "i": 5.84,
+     "f": 8.85
+    },
+    {
+     "v": "N",
+     "t": "disse al suo gruppo,",
+     "nb": true,
+     "i": 9.3,
+     "f": 12.52
+    },
+    {
+     "v": "K",
+     "t": "\"ma anche a crearli. Facciamo lezioni di coding per sviluppare il pensiero logico.\"",
+     "nb": true,
+     "i": 12.97,
+     "f": 17.48
+    },
+    {
+     "v": "N",
+     "t": "Fece vedere loro alcune semplici righe di codice che animavano un personaggio sullo schermo.",
+     "nb": true,
+     "i": 17.93,
+     "f": 23.62
+    }
+   ]
+  },
+  {
+   "pagina": 7,
+   "durata": 24.25,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Ma il pezzo forte del laboratorio era la stampante 3D. In quel momento, stava lentamente materializzando una miniatura perfetta della torre di Pisa.",
+     "nb": true,
+     "i": 0.0,
+     "f": 8.7
+    },
+    {
+     "v": "K",
+     "t": "\"Progettiamo gli oggetti in classe con un software di modellazione,\"",
+     "nb": true,
+     "i": 9.15,
+     "f": 13.27
+    },
+    {
+     "v": "N",
+     "t": "spiegò Kaito,",
+     "nb": true,
+     "i": 13.72,
+     "f": 15.58
+    },
+    {
+     "v": "K",
+     "t": "\"e poi la stampante li trasforma in realtà, strato dopo strato.\"",
+     "nb": true,
+     "i": 16.03,
+     "f": 20.34
+    },
+    {
+     "v": "N",
+     "t": "Un \"oooh\" di meraviglia si levò dal gruppo.",
+     "nb": true,
+     "i": 20.79,
+     "f": 24.25
+    }
+   ]
+  },
+  {
+   "pagina": 8,
+   "durata": 21.98,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Un padre, entusiasta, chiese a Leo:",
+     "nb": true,
+     "i": 0.0,
+     "f": 2.56
+    },
+    {
+     "v": "P",
+     "t": "\"Posso fare una foto al modellino? È incredibile!\"",
+     "nb": true,
+     "i": 3.01,
+     "f": 7.11
+    },
+    {
+     "v": "N",
+     "t": "Leo sorrise, ma scosse la testa.",
+     "nb": true,
+     "i": 7.56,
+     "f": 10.16
+    },
+    {
+     "v": "L",
+     "t": "\"Mi dispiace, ma la professoressa ci ha chiesto di non fare foto per una questione di privacy.\"",
+     "nb": true,
+     "i": 10.61,
+     "f": 15.64
+    },
+    {
+     "v": "N",
+     "t": "Hikari, che aveva sentito, gli rivolse un cenno di approvazione. La regola era importante.",
+     "nb": true,
+     "i": 16.09,
+     "f": 21.98
+    }
+   ]
+  },
+  {
+   "pagina": 9,
+   "durata": 18.42,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Dario aveva assistito alla scena da lontano e un ghigno gli attraversò il volto.",
+     "nb": true,
+     "i": 0.0,
+     "f": 5.14
+    },
+    {
+     "v": "D",
+     "t": "\"Che regola stupida,\"",
+     "nb": true,
+     "i": 5.59,
+     "f": 6.79
+    },
+    {
+     "v": "N",
+     "t": "pensò. Per lui, un'occasione del genere andava immortalata. Un video della stampante 3D in azione gli avrebbe fruttato un sacco di visualizzazioni.",
+     "nb": true,
+     "i": 7.24,
+     "f": 16.07
+    },
+    {
+     "v": "N",
+     "t": "Decise che avrebbe trovato il modo.",
+     "nb": false,
+     "i": 16.29,
+     "f": 18.42
+    }
+   ]
+  },
+  {
+   "pagina": 10,
+   "durata": 21.51,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Si avvicinò alla stampante. Il modellino della torre di Pisa era lì, perfetto. Tirò fuori il cellulare, aprì l'app della fotocamera e inquadrò l'oggetto.",
+     "nb": true,
+     "i": 0.0,
+     "f": 9.07
+    },
+    {
+     "v": "N",
+     "t": "Il suo pollice si mosse lentamente verso il pulsante di scatto, un sorriso di trionfo sul volto. Proprio mentre stava per premere, una voce calma ma decisa lo bloccò:",
+     "nb": false,
+     "i": 9.29,
+     "f": 19.46
+    },
+    {
+     "v": "H",
+     "t": "\"Che cosa credi di fare, Dario?\"",
+     "nb": true,
+     "i": 19.91,
+     "f": 21.51
+    }
+   ]
+  }
+ ]
+}

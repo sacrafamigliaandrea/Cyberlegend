@@ -1,0 +1,338 @@
+{
+ "episodio": 5,
+ "pagine": [
+  {
+   "pagina": 1,
+   "durata": 3.82,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Cyber Legends. Episodio 5: La Fabbrica di Click",
+     "nb": true,
+     "i": 0.0,
+     "f": 3.82
+    }
+   ]
+  },
+  {
+   "pagina": 2,
+   "durata": 29.79,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Dopo la vicenda della VPN, a scuola era tornata la calma. Ma una nuova, febbrile ossessione si stava diffondendo: \"Buzz World\", un'app di notizie e video virali.",
+     "nb": true,
+     "i": 0.0,
+     "f": 10.97
+    },
+    {
+     "v": "N",
+     "t": "Kaito trovò il suo amico Leo e altri ragazzi in cortile, tutti incollati ai telefoni, che reagivano con stupore e rabbia a ciò che vedevano.",
+     "nb": false,
+     "i": 11.19,
+     "f": 18.8
+    },
+    {
+     "v": "L",
+     "t": "\"Ragazzi, è pazzesco!\"",
+     "nb": true,
+     "i": 19.25,
+     "f": 22.51
+    },
+    {
+     "v": "N",
+     "t": "esclamò Leo.",
+     "nb": true,
+     "i": 22.96,
+     "f": 24.84
+    },
+    {
+     "v": "L",
+     "t": "\"Hanno scoperto un dinosauro vivo in Antartide! C'è il video!\"",
+     "nb": true,
+     "i": 25.29,
+     "f": 29.79
+    }
+   ]
+  },
+  {
+   "pagina": 3,
+   "durata": 25.78,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Hikari si avvicinò, scettica. Diede un'occhiata al video: era sgranato, la creatura indistinta.",
+     "nb": true,
+     "i": 0.0,
+     "f": 6.55
+    },
+    {
+     "v": "H",
+     "t": "\"Leo, guarda il titolo,\"",
+     "nb": true,
+     "i": 7.0,
+     "f": 9.26
+    },
+    {
+     "v": "N",
+     "t": "disse con calma.",
+     "nb": true,
+     "i": 9.71,
+     "f": 10.81
+    },
+    {
+     "v": "H",
+     "t": "\"Usa parole come 'Incredibile', 'Shock', 'Nascosto'. È una tecnica per farti cliccare, non per informarti.\"",
+     "nb": true,
+     "i": 11.26,
+     "f": 17.86
+    },
+    {
+     "v": "N",
+     "t": "Kaito iniziò a dubitare, notando che tutte le notizie sull'app sembravano troppo esagerate per essere vere.",
+     "nb": true,
+     "i": 18.31,
+     "f": 25.78
+    }
+   ]
+  },
+  {
+   "pagina": 4,
+   "durata": 26.6,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Nell'aula di informatica, decisero di vederci chiaro. Non cercarono falle di sicurezza, ma il \"motore\" di Buzz World.",
+     "nb": true,
+     "i": 0.0,
+     "f": 6.87
+    },
+    {
+     "v": "K",
+     "t": "\"È incredibile la velocità con cui pubblica nuovi contenuti,\"",
+     "nb": true,
+     "i": 7.32,
+     "f": 10.84
+    },
+    {
+     "v": "N",
+     "t": "osservò Kaito, scorrendo il feed su un computer. Hikari, analizzando la struttura dei titoli, ebbe un'illuminazione.",
+     "nb": true,
+     "i": 11.29,
+     "f": 18.69
+    },
+    {
+     "v": "H",
+     "t": "\"Non è un caso. È uno schema. Usano una formula per creare titoli che provocano una reazione emotiva forte.\"",
+     "nb": true,
+     "i": 19.14,
+     "f": 26.6
+    }
+   ]
+  },
+  {
+   "pagina": 5,
+   "durata": 23.12,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Kaito si immerse nel codice sorgente della pagina.",
+     "nb": true,
+     "i": 0.0,
+     "f": 4.71
+    },
+    {
+     "v": "K",
+     "t": "\"Ho trovato!\"",
+     "nb": true,
+     "i": 5.16,
+     "f": 5.91
+    },
+    {
+     "v": "N",
+     "t": "esclamò poco dopo.",
+     "nb": true,
+     "i": 6.36,
+     "f": 7.58
+    },
+    {
+     "v": "K",
+     "t": "\"L'algoritmo non è programmato per verificare la verità. È programmato per massimizzare l'interazione. Misura quanti clic, commenti e condivisioni riceve un articolo.",
+     "nb": true,
+     "i": 8.03,
+     "f": 18.12
+    },
+    {
+     "v": "K",
+     "t": "Più la notizia è scioccante, più l'algoritmo la mostra a tutti.\"",
+     "nb": false,
+     "i": 18.34,
+     "f": 23.12
+    }
+   ]
+  },
+  {
+   "pagina": 6,
+   "durata": 23.14,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Hikari scoprì un dettaglio ancora più subdolo.",
+     "nb": true,
+     "i": 0.0,
+     "f": 2.45
+    },
+    {
+     "v": "H",
+     "t": "\"C'è di peggio,\"",
+     "nb": true,
+     "i": 2.9,
+     "f": 4.46
+    },
+    {
+     "v": "N",
+     "t": "disse, mostrando a Kaito un'altra sezione del codice.",
+     "nb": true,
+     "i": 4.91,
+     "f": 9.07
+    },
+    {
+     "v": "H",
+     "t": "\"L'algoritmo impara cosa ti fa arrabbiare, cosa ti incuriosisce o ti spaventa. E poi ti mostra solo contenuti simili, per tenerti incollato allo schermo.",
+     "nb": true,
+     "i": 9.52,
+     "f": 18.52
+    },
+    {
+     "v": "H",
+     "t": "Ti chiude in una 'bolla' di informazioni su misura per te, vere o false che siano.\"",
+     "nb": false,
+     "i": 18.74,
+     "f": 23.14
+    }
+   ]
+  },
+  {
+   "pagina": 7,
+   "durata": 26.53,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Il giorno dopo, videro gli effetti di quella \"bolla\". Leo stava litigando furiosamente con un'altra compagna, Sara.",
+     "nb": true,
+     "i": 0.0,
+     "f": 7.19
+    },
+    {
+     "v": "L",
+     "t": "\"I gatti sono più intelligenti dei cani! L'ha detto uno studio scientifico su Buzz World!\"",
+     "nb": true,
+     "i": 7.64,
+     "f": 13.1
+    },
+    {
+     "v": "N",
+     "t": "gridava Leo.",
+     "nb": true,
+     "i": 13.55,
+     "f": 15.01
+    },
+    {
+     "v": "A",
+     "t": "\"Non è vero! Il mio cane è un genio!\"",
+     "nb": true,
+     "i": 15.46,
+     "f": 18.38
+    },
+    {
+     "v": "N",
+     "t": "ribatteva Sara, quasi in lacrime. Stavano litigando per una notizia palesemente falsa, creata solo per generare conflitto.",
+     "nb": true,
+     "i": 18.83,
+     "f": 26.53
+    }
+   ]
+  },
+  {
+   "pagina": 8,
+   "durata": 18.91,
+   "frasi": [
+    {
+     "v": "K",
+     "t": "\"Dobbiamo fare qualcosa,\"",
+     "nb": true,
+     "i": 0.0,
+     "f": 2.47
+    },
+    {
+     "v": "N",
+     "t": "disse Kaito a Hikari, vedendo la scena.",
+     "nb": true,
+     "i": 2.92,
+     "f": 5.27
+    },
+    {
+     "v": "K",
+     "t": "\"Non possiamo hackerare l'app, ma possiamo mostrare a tutti come funziona il trucco.\"",
+     "nb": true,
+     "i": 5.72,
+     "f": 10.54
+    },
+    {
+     "v": "N",
+     "t": "Andarono dalla Professoressa Rossi, spiegandole come l'algoritmo di Buzz World stesse mettendo i ragazzi gli uni contro gli altri.",
+     "nb": true,
+     "i": 10.99,
+     "f": 18.91
+    }
+   ]
+  },
+  {
+   "pagina": 9,
+   "durata": 19.53,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Con il permesso della professoressa, Kaito preparò una dimostrazione per l'assemblea d'istituto.",
+     "nb": true,
+     "i": 0.0,
+     "f": 5.63
+    },
+    {
+     "v": "N",
+     "t": "Creò una finta notizia con un titolo irresistibile: \"ULTIM'ORA: IL PRESIDE INSTALLA UN DISTRIBUTORE DI PIZZA GRATUITA IN OGNI CLASSE!\"",
+     "nb": false,
+     "i": 5.85,
+     "f": 13.6
+    },
+    {
+     "v": "N",
+     "t": "La notizia, ovviamente falsa, fu caricata su una pagina web che imitava Buzz World.",
+     "nb": false,
+     "i": 13.82,
+     "f": 19.53
+    }
+   ]
+  },
+  {
+   "pagina": 10,
+   "durata": 17.73,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "L'impatto fu enorme. Gli studenti iniziarono a guardare i loro feed con occhi diversi, più critici. Videro Leo avvicinarsi a Sara per chiederle scusa.",
+     "nb": true,
+     "i": 0.0,
+     "f": 9.09
+    },
+    {
+     "v": "N",
+     "t": "Hikari e Kaito si scambiarono un'occhiata soddisfatta. Avevano insegnato ai loro amici l'arma più potente contro la disinformazione: il dubbio.",
+     "nb": false,
+     "i": 9.31,
+     "f": 17.73
+    }
+   ]
+  }
+ ]
+}

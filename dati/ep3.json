@@ -1,0 +1,275 @@
+{
+ "episodio": 3,
+ "pagine": [
+  {
+   "pagina": 1,
+   "durata": 5.18,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Cyber Legends. Episodio 3: Lezioni di Cittadinanza Digitale",
+     "nb": true,
+     "i": 0.0,
+     "f": 5.18
+    }
+   ]
+  },
+  {
+   "pagina": 2,
+   "durata": 18.56,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "A scuola, il giorno dopo, Hikari e Kaito erano ancora scossi. Il pensiero che l'attacco di \"Shadow\" fosse stato mirato li preoccupava.",
+     "nb": true,
+     "i": 0.0,
+     "f": 7.77
+    },
+    {
+     "v": "K",
+     "t": "\"Non è un hacker qualunque,\"",
+     "nb": true,
+     "i": 8.22,
+     "f": 10.9
+    },
+    {
+     "v": "N",
+     "t": "disse Kaito a bassa voce nel corridoio affollato.",
+     "nb": true,
+     "i": 11.35,
+     "f": 14.19
+    },
+    {
+     "v": "K",
+     "t": "\"Sapeva chi colpire. E questo mi spaventa.\"",
+     "nb": true,
+     "i": 14.64,
+     "f": 18.56
+    }
+   ]
+  },
+  {
+   "pagina": 3,
+   "durata": 16.71,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Entrarono nell'aula di informatica per la lezione di Cittadinanza Digitale. La loro insegnante, la Professoressa Rossi, iniziò a parlare con energia.",
+     "nb": true,
+     "i": 0.0,
+     "f": 8.96
+    },
+    {
+     "v": "R",
+     "t": "\"Oggi parliamo di etica digitale. Qual è la differenza tra un 'black hat', un criminale informatico, e un 'white hat', un esperto di sicurezza?\"",
+     "nb": true,
+     "i": 9.41,
+     "f": 16.71
+    }
+   ]
+  },
+  {
+   "pagina": 4,
+   "durata": 17.44,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "La professoressa continuò:",
+     "nb": true,
+     "i": 0.0,
+     "f": 2.26
+    },
+    {
+     "v": "R",
+     "t": "\"Un 'white hat' usa le stesse abilità di un hacker, ma per un fine nobile: trovare le falle di un sistema per proteggerlo, non per danneggiarlo.",
+     "nb": true,
+     "i": 2.71,
+     "f": 10.88
+    },
+    {
+     "v": "R",
+     "t": "La conoscenza è la nostra migliore difesa. Conoscere le minacce significa saperle prevenire.\"",
+     "nb": false,
+     "i": 11.1,
+     "f": 17.44
+    }
+   ]
+  },
+  {
+   "pagina": 5,
+   "durata": 20.84,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Durante la lezione, la Professoressa Rossi annunciò una sfida: un'esercitazione di sicurezza informatica sulla rete di prova della scuola.",
+     "nb": true,
+     "i": 0.0,
+     "f": 8.38
+    },
+    {
+     "v": "R",
+     "t": "\"Chiunque troverà una vulnerabilità e la segnalerà correttamente, riceverà il massimo dei voti.\"",
+     "nb": true,
+     "i": 8.83,
+     "f": 14.68
+    },
+    {
+     "v": "N",
+     "t": "Hikari e Kaito si scambiarono un'occhiata d'intesa. Era la loro occasione.",
+     "nb": true,
+     "i": 15.13,
+     "f": 20.84
+    }
+   ]
+  },
+  {
+   "pagina": 6,
+   "durata": 20.27,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Quel pomeriggio, invece di tornare a casa, si chiusero nella biblioteca della scuola.",
+     "nb": true,
+     "i": 0.0,
+     "f": 4.74
+    },
+    {
+     "v": "H",
+     "t": "\"Se Shadow ha colpito mio padre, forse conosce bene la nostra città... o la nostra scuola,\"",
+     "nb": true,
+     "i": 5.19,
+     "f": 11.03
+    },
+    {
+     "v": "N",
+     "t": "ragionò Hikari.",
+     "nb": true,
+     "i": 11.48,
+     "f": 14.06
+    },
+    {
+     "v": "H",
+     "t": "\"Usiamo questa esercitazione per cercare le stesse porte che userebbe lui.\"",
+     "nb": true,
+     "i": 14.51,
+     "f": 20.27
+    }
+   ]
+  },
+  {
+   "pagina": 7,
+   "durata": 20.55,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Dopo ore di lavoro, trovarono qualcosa. Una vulnerabilità nascosta nel sistema di gestione della biblioteca. Non era un errore comune, ma una \"backdoor\" creata ad arte.",
+     "nb": true,
+     "i": 0.0,
+     "f": 10.54
+    },
+    {
+     "v": "K",
+     "t": "\"È troppo sofisticata per essere un caso,\"",
+     "nb": true,
+     "i": 10.99,
+     "f": 13.44
+    },
+    {
+     "v": "N",
+     "t": "sussurrò Kaito.",
+     "nb": true,
+     "i": 13.89,
+     "f": 16.33
+    },
+    {
+     "v": "K",
+     "t": "\"È la sua firma. Shadow è stato qui.\"",
+     "nb": true,
+     "i": 16.78,
+     "f": 20.55
+    }
+   ]
+  },
+  {
+   "pagina": 8,
+   "durata": 18.35,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "La tentazione di usare quella backdoor per rintracciare Shadow era forte.",
+     "nb": true,
+     "i": 0.0,
+     "f": 4.84
+    },
+    {
+     "v": "K",
+     "t": "\"Potremmo scoprire chi è,\"",
+     "nb": true,
+     "i": 5.29,
+     "f": 7.79
+    },
+    {
+     "v": "N",
+     "t": "disse Kaito. Ma Hikari scosse la testa, ricordando le parole della Professoressa Rossi.",
+     "nb": true,
+     "i": 8.24,
+     "f": 14.19
+    },
+    {
+     "v": "H",
+     "t": "\"No. Faremo la cosa giusta. Saremo dei 'white hat'.\"",
+     "nb": true,
+     "i": 14.64,
+     "f": 18.35
+    }
+   ]
+  },
+  {
+   "pagina": 9,
+   "durata": 18.16,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Andarono subito dalla Professoressa Rossi e le mostrarono la loro scoperta. L'insegnante li ascoltò con attenzione, il suo volto serio.",
+     "nb": true,
+     "i": 0.0,
+     "f": 8.17
+    },
+    {
+     "v": "R",
+     "t": "\"Avete fatto un lavoro eccezionale. E, cosa più importante, avete fatto la scelta etica. Ora, usiamo questa conoscenza per proteggere la scuola.\"",
+     "nb": true,
+     "i": 8.62,
+     "f": 18.16
+    }
+   ]
+  },
+  {
+   "pagina": 10,
+   "durata": 26.36,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Il giorno dopo, durante l'ora di pranzo, scattò l'allarme sul telefono di Hikari. Qualcuno era entrato nella trappola. La traccia portava a un computer dell'aula di arte.",
+     "nb": true,
+     "i": 0.0,
+     "f": 10.47
+    },
+    {
+     "v": "N",
+     "t": "Corsero lì con la professoressa e trovarono uno studente dell'ultimo anno, che li guardò con occhi sbarrati. Shadow era stato smascherato.",
+     "nb": false,
+     "i": 10.69,
+     "f": 19.33
+    },
+    {
+     "v": "N",
+     "t": "Hikari e Kaito capirono che la più grande vittoria non era stata catturare un hacker, ma aver protetto la loro scuola.",
+     "nb": false,
+     "i": 19.55,
+     "f": 26.36
+    }
+   ]
+  }
+ ]
+}

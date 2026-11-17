@@ -1,0 +1,345 @@
+{
+ "episodio": 2,
+ "pagine": [
+  {
+   "pagina": 1,
+   "durata": 4.79,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Cyber Legends. Episodio 2: Il Riscatto Digitale",
+     "nb": true,
+     "i": 0.0,
+     "f": 4.79
+    }
+   ]
+  },
+  {
+   "pagina": 2,
+   "durata": 22.17,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "A casa di Hikari, suo padre, il signor Tanaka, lavorava senza sosta al computer.",
+     "nb": true,
+     "i": 0.0,
+     "f": 5.79
+    },
+    {
+     "v": "N",
+     "t": "Era il capo progettista di una piccola azienda di videogiochi e la scadenza per un nuovo grande progetto si avvicinava.",
+     "nb": false,
+     "i": 6.01,
+     "f": 12.29
+    },
+    {
+     "v": "H",
+     "t": "\"Papà, una pausa,\"",
+     "nb": true,
+     "i": 12.74,
+     "f": 14.46
+    },
+    {
+     "v": "N",
+     "t": "disse Hikari, entrando nel suo studio con un vassoio di mochi.",
+     "nb": true,
+     "i": 14.91,
+     "f": 19.27
+    },
+    {
+     "v": "H",
+     "t": "\"Sei lì da ore!\"",
+     "nb": true,
+     "i": 19.72,
+     "f": 22.17
+    }
+   ]
+  },
+  {
+   "pagina": 3,
+   "durata": 17.54,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Proprio mentre il signor Tanaka stava per prendere un dolce, gli schermi del suo computer iniziarono a lampeggiare in modo anomalo.",
+     "nb": true,
+     "i": 0.0,
+     "f": 7.02
+    },
+    {
+     "v": "N",
+     "t": "Righe di codice verde scorrevano a una velocità folle, poi, di colpo, tutto divenne nero. Un istante dopo, un teschio rosso apparve su tutti i monitor.",
+     "nb": false,
+     "i": 7.24,
+     "f": 17.54
+    }
+   ]
+  },
+  {
+   "pagina": 4,
+   "durata": 21.43,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Sotto il teschio, apparve un messaggio:",
+     "nb": true,
+     "i": 0.0,
+     "f": 2.3
+    },
+    {
+     "v": "S",
+     "t": "\"I TUOI FILE SONO STATI CRIPTATI. HAI 24 ORE PER PAGARE UN RISCATTO IN CRIPTOVALUTA O VERRANNO CANCELLATI PER SEMPRE.\"",
+     "nb": true,
+     "i": 2.75,
+     "f": 12.06
+    },
+    {
+     "v": "N",
+     "t": "Il signor Tanaka impallidì.",
+     "nb": true,
+     "i": 12.51,
+     "f": 14.17
+    },
+    {
+     "v": "T",
+     "t": "\"No... no, no! Anni di lavoro... tutto il progetto!\"",
+     "nb": true,
+     "i": 14.62,
+     "f": 18.16
+    },
+    {
+     "v": "N",
+     "t": "balbettò, con le mani tra i capelli.",
+     "nb": true,
+     "i": 18.61,
+     "f": 21.43
+    }
+   ]
+  },
+  {
+   "pagina": 5,
+   "durata": 19.11,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Hikari prese subito il suo smartphone.",
+     "nb": true,
+     "i": 0.0,
+     "f": 2.45
+    },
+    {
+     "v": "H",
+     "t": "\"Kaito, abbiamo un'emergenza. Un ransomware. Ha colpito i computer di papà.\"",
+     "nb": true,
+     "i": 2.9,
+     "f": 8.08
+    },
+    {
+     "v": "N",
+     "t": "Dall'altra parte del telefono, Kaito, che stava facendo i compiti, sussultò. La parola \"riscatto\" gli fece venire i brividi.",
+     "nb": true,
+     "i": 8.53,
+     "f": 16.16
+    },
+    {
+     "v": "K",
+     "t": "\"Arrivo subito!\"",
+     "nb": true,
+     "i": 16.61,
+     "f": 19.11
+    }
+   ]
+  },
+  {
+   "pagina": 6,
+   "durata": 19.78,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Quando Kaito arrivò, il signor Tanaka era nel panico.",
+     "nb": true,
+     "i": 0.0,
+     "f": 4.46
+    },
+    {
+     "v": "T",
+     "t": "\"Devo pagare! Non posso perdere tutto quel lavoro, l'azienda fallirebbe!\"",
+     "nb": true,
+     "i": 4.91,
+     "f": 10.2
+    },
+    {
+     "v": "N",
+     "t": "Stava già cercando di capire come acquistare criptovaluta.",
+     "nb": true,
+     "i": 10.65,
+     "f": 14.1
+    },
+    {
+     "v": "K",
+     "t": "\"Signor Tanaka, aspetti!\"",
+     "nb": true,
+     "i": 14.55,
+     "f": 16.3
+    },
+    {
+     "v": "N",
+     "t": "esclamò Kaito, ricordando le lezioni apprese.",
+     "nb": true,
+     "i": 16.75,
+     "f": 19.78
+    }
+   ]
+  },
+  {
+   "pagina": 7,
+   "durata": 15.02,
+   "frasi": [
+    {
+     "v": "H",
+     "t": "\"Papà, fermo!\"",
+     "nb": true,
+     "i": 0.0,
+     "f": 2.22
+    },
+    {
+     "v": "N",
+     "t": "intervenne Hikari con voce decisa.",
+     "nb": true,
+     "i": 2.67,
+     "f": 6.31
+    },
+    {
+     "v": "H",
+     "t": "\"Pagare è l'errore peggiore. Non c'è garanzia che ci restituiscano i file. E così finanzieremmo questi criminali per colpire altre persone. È una trappola.\"",
+     "nb": true,
+     "i": 6.76,
+     "f": 15.02
+    }
+   ]
+  },
+  {
+   "pagina": 8,
+   "durata": 19.25,
+   "frasi": [
+    {
+     "v": "K",
+     "t": "\"Ha ragione,\"",
+     "nb": true,
+     "i": 0.0,
+     "f": 1.3
+    },
+    {
+     "v": "N",
+     "t": "aggiunse Kaito.",
+     "nb": true,
+     "i": 1.75,
+     "f": 3.93
+    },
+    {
+     "v": "K",
+     "t": "\"Cedere ai loro ricatti non è mai la soluzione. Dobbiamo pensare lucidamente.\"",
+     "nb": true,
+     "i": 4.38,
+     "f": 8.71
+    },
+    {
+     "v": "N",
+     "t": "Il signor Tanaka li guardò, combattuto tra la disperazione e la logica nelle parole dei due ragazzi.",
+     "nb": true,
+     "i": 9.16,
+     "f": 15.66
+    },
+    {
+     "v": "T",
+     "t": "\"E allora cosa facciamo? È tutto perduto!\"",
+     "nb": true,
+     "i": 16.11,
+     "f": 19.25
+    }
+   ]
+  },
+  {
+   "pagina": 9,
+   "durata": 19.87,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Hikari ebbe un'illuminazione.",
+     "nb": true,
+     "i": 0.0,
+     "f": 2.01
+    },
+    {
+     "v": "H",
+     "t": "\"Il backup! Papà, ti ricordi l'hard disk esterno che ti ho regalato per il tuo compleanno? L'hai usato?\"",
+     "nb": true,
+     "i": 2.46,
+     "f": 9.15
+    },
+    {
+     "v": "N",
+     "t": "Gli occhi del signor Tanaka si spalancarono. Si precipitò verso un cassetto e ne estrasse un piccolo disco argentato.",
+     "nb": true,
+     "i": 9.6,
+     "f": 16.2
+    },
+    {
+     "v": "T",
+     "t": "\"Sì... l'ho collegato la settimana scorsa.\"",
+     "nb": true,
+     "i": 16.65,
+     "f": 19.87
+    }
+   ]
+  },
+  {
+   "pagina": 10,
+   "durata": 29.42,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Ore dopo, i file erano di nuovo al loro posto. Il signor Tanaka, esausto ma sollevato, abbracciò forte sua figlia.",
+     "nb": true,
+     "i": 0.0,
+     "f": 7.1
+    },
+    {
+     "v": "T",
+     "t": "\"Mi avete salvato.\"",
+     "nb": true,
+     "i": 7.55,
+     "f": 9.84
+    },
+    {
+     "v": "N",
+     "t": "Mentre si rilassavano, Kaito notò un dettaglio.",
+     "nb": true,
+     "i": 10.29,
+     "f": 14.88
+    },
+    {
+     "v": "K",
+     "t": "\"Hikari... il teschio rosso sullo schermo del ransomware... non era identico al simbolo che usa l'hacker 'Shadow'?\"",
+     "nb": true,
+     "i": 15.33,
+     "f": 21.58
+    },
+    {
+     "v": "N",
+     "t": "Gli occhi di Hikari si assottigliarono.",
+     "nb": true,
+     "i": 22.03,
+     "f": 25.98
+    },
+    {
+     "v": "H",
+     "t": "\"Hai ragione. Questo non è stato un attacco casuale.\"",
+     "nb": true,
+     "i": 26.43,
+     "f": 29.42
+    }
+   ]
+  }
+ ]
+}

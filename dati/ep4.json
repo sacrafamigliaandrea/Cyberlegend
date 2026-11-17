@@ -1,0 +1,310 @@
+{
+ "episodio": 4,
+ "pagine": [
+  {
+   "pagina": 1,
+   "durata": 4.12,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Cyber Legends. Episodio 4: La Trappola della VPN",
+     "nb": true,
+     "i": 0.0,
+     "f": 4.12
+    }
+   ]
+  },
+  {
+   "pagina": 2,
+   "durata": 23.07,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "La vittoria contro \"Shadow\" aveva reso Hikari e Kaito delle piccole celebrità a scuola. Ma una nuova, silenziosa minaccia si stava diffondendo nei corridoi.",
+     "nb": true,
+     "i": 0.0,
+     "f": 8.55
+    },
+    {
+     "v": "N",
+     "t": "Durante la ricreazione, videro un gruppo di ragazzi, tra cui il loro amico Leo, completamente assorti nei loro iPad, giocando a un videogioco bloccato dalla rete scolastica.",
+     "nb": false,
+     "i": 8.77,
+     "f": 18.95
+    },
+    {
+     "v": "K",
+     "t": "\"Come fate?\"",
+     "nb": true,
+     "i": 19.4,
+     "f": 20.19
+    },
+    {
+     "v": "N",
+     "t": "chiese Kaito, curioso.",
+     "nb": true,
+     "i": 20.64,
+     "f": 23.07
+    }
+   ]
+  },
+  {
+   "pagina": 3,
+   "durata": 22.9,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Leo alzò lo sguardo, un sorriso furbo sul volto.",
+     "nb": true,
+     "i": 0.0,
+     "f": 3.71
+    },
+    {
+     "v": "L",
+     "t": "\"È facile! Usiamo una VPN. È un'app gratuita, la scarichi e via, puoi navigare e giocare a quello che vuoi.\"",
+     "nb": true,
+     "i": 4.16,
+     "f": 11.65
+    },
+    {
+     "v": "N",
+     "t": "Mostrò l'icona di un'app con uno scudo colorato. Hikari, avvicinandosi, sentì una strana sensazione.",
+     "nb": true,
+     "i": 12.1,
+     "f": 18.97
+    },
+    {
+     "v": "H",
+     "t": "\"Gratuita?\"",
+     "nb": true,
+     "i": 19.42,
+     "f": 21.06
+    },
+    {
+     "v": "N",
+     "t": "mormorò, sospettosa.",
+     "nb": true,
+     "i": 21.51,
+     "f": 22.9
+    }
+   ]
+  },
+  {
+   "pagina": 4,
+   "durata": 17.73,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Più tardi, nell'aula di informatica, Hikari condivise i suoi dubbi con Kaito.",
+     "nb": true,
+     "i": 0.0,
+     "f": 5.42
+    },
+    {
+     "v": "H",
+     "t": "\"Niente è davvero gratis su internet. Se non paghi con i soldi, paghi con qualcos'altro. Spesso, con i tuoi dati.\"",
+     "nb": true,
+     "i": 5.87,
+     "f": 12.4
+    },
+    {
+     "v": "N",
+     "t": "Decisero di analizzare l'app VPN sulla rete di prova della scuola.",
+     "nb": true,
+     "i": 12.85,
+     "f": 17.73
+    }
+   ]
+  },
+  {
+   "pagina": 5,
+   "durata": 18.91,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "I risultati furono peggiori di quanto immaginassero.",
+     "nb": true,
+     "i": 0.0,
+     "f": 2.82
+    },
+    {
+     "v": "K",
+     "t": "\"Questa VPN non cripta quasi nulla!\"",
+     "nb": true,
+     "i": 3.27,
+     "f": 5.8
+    },
+    {
+     "v": "N",
+     "t": "esclamò Kaito, indicando righe di codice sullo schermo.",
+     "nb": true,
+     "i": 6.25,
+     "f": 9.88
+    },
+    {
+     "v": "K",
+     "t": "\"È come chiudere la porta di casa ma lasciare la finestra spalancata. Tutto il traffico dati degli studenti passa attraverso i loro server... senza protezione.\"",
+     "nb": true,
+     "i": 10.33,
+     "f": 18.91
+    }
+   ]
+  },
+  {
+   "pagina": 6,
+   "durata": 21.91,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Hikari scoprì qualcosa di ancora più inquietante.",
+     "nb": true,
+     "i": 0.0,
+     "f": 3.82
+    },
+    {
+     "v": "H",
+     "t": "\"Guarda qui,\"",
+     "nb": true,
+     "i": 4.27,
+     "f": 4.95
+    },
+    {
+     "v": "N",
+     "t": "disse, la voce tesa.",
+     "nb": true,
+     "i": 5.4,
+     "f": 8.71
+    },
+    {
+     "v": "H",
+     "t": "\"L'app installa un 'keylogger'. Registra tutto quello che gli utenti digitano: password, messaggi privati, ricerche... È un disastro.\"",
+     "nb": true,
+     "i": 9.16,
+     "f": 16.67
+    },
+    {
+     "v": "N",
+     "t": "Capirono che un hacker avrebbe potuto rubare le identità digitali di mezza scuola.",
+     "nb": true,
+     "i": 17.12,
+     "f": 21.91
+    }
+   ]
+  },
+  {
+   "pagina": 7,
+   "durata": 21.99,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Corsero a informare la Professoressa Rossi. Lei ascoltò il loro rapporto con la fronte aggrottata.",
+     "nb": true,
+     "i": 0.0,
+     "f": 6.04
+    },
+    {
+     "v": "R",
+     "t": "\"Avete fatto bene a indagare,\"",
+     "nb": true,
+     "i": 6.49,
+     "f": 7.94
+    },
+    {
+     "v": "N",
+     "t": "disse.",
+     "nb": true,
+     "i": 8.39,
+     "f": 8.99
+    },
+    {
+     "v": "R",
+     "t": "\"Molte VPN gratuite si finanziano vendendo i dati dei loro utenti o, peggio, sono create da veri e propri criminali.",
+     "nb": true,
+     "i": 9.44,
+     "f": 17.82
+    },
+    {
+     "v": "R",
+     "t": "Dobbiamo avvertire tutti, ma in un modo che capiscano davvero il rischio.\"",
+     "nb": false,
+     "i": 18.04,
+     "f": 21.99
+    }
+   ]
+  },
+  {
+   "pagina": 8,
+   "durata": 24.82,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "L'idea venne a Kaito.",
+     "nb": true,
+     "i": 0.0,
+     "f": 2.62
+    },
+    {
+     "v": "K",
+     "t": "\"Non limitiamoci a dirlo. Mostriamolo.\"",
+     "nb": true,
+     "i": 3.07,
+     "f": 6.74
+    },
+    {
+     "v": "N",
+     "t": "Con l'aiuto della professoressa, prepararono una dimostrazione per l'assemblea d'istituto.",
+     "nb": true,
+     "i": 7.19,
+     "f": 13.36
+    },
+    {
+     "v": "N",
+     "t": "Usando un profilo di prova sulla rete sicura della scuola, mostrarono in tempo reale come i dati inviati tramite la VPN fossero visibili a chiunque sapesse dove guardare.",
+     "nb": false,
+     "i": 13.58,
+     "f": 24.82
+    }
+   ]
+  },
+  {
+   "pagina": 9,
+   "durata": 15.98,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Sullo schermo gigante dell'aula magna apparvero in chiaro le password finte e i messaggi di prova che avevano inviato. Un mormorio di shock si diffuse tra gli studenti.",
+     "nb": true,
+     "i": 0.0,
+     "f": 9.41
+    },
+    {
+     "v": "N",
+     "t": "Leo, seduto in prima fila, guardava lo schermo con la bocca aperta. Aveva capito.",
+     "nb": false,
+     "i": 9.63,
+     "f": 15.98
+    }
+   ]
+  },
+  {
+   "pagina": 10,
+   "durata": 15.09,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Nei giorni seguenti, l'app VPN scomparve da tutti gli iPad della scuola.",
+     "nb": true,
+     "i": 0.0,
+     "f": 5.63
+    },
+    {
+     "v": "N",
+     "t": "Gli studenti avevano imparato una lezione fondamentale: uno scudo digitale non serve a nulla se è pieno di buchi. La vera difesa era la consapevolezza.",
+     "nb": false,
+     "i": 5.85,
+     "f": 15.09
+    }
+   ]
+  }
+ ]
+}

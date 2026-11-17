@@ -1,0 +1,296 @@
+{
+ "episodio": 8,
+ "pagine": [
+  {
+   "pagina": 1,
+   "durata": 4.5,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Cyber Legends. Episodio 8: Lo Scatto Proibito",
+     "nb": true,
+     "i": 0.0,
+     "f": 4.5
+    }
+   ]
+  },
+  {
+   "pagina": 2,
+   "durata": 24.73,
+   "frasi": [
+    {
+     "v": "H",
+     "t": "\"Metti via quel telefono, Dario. Conosci le regole.\"",
+     "nb": true,
+     "i": 0.0,
+     "f": 3.14
+    },
+    {
+     "v": "N",
+     "t": "La voce di Hikari era tagliente come il vetro. Colto in flagrante, Dario ritirò di scatto la mano, borbottando una scusa.",
+     "nb": true,
+     "i": 3.59,
+     "f": 11.26
+    },
+    {
+     "v": "N",
+     "t": "Si allontanò a passo svelto, lanciandole un'occhiataccia piena di rabbia. Hikari lo guardò andare via, sperando che il pericolo fosse scampato.",
+     "nb": false,
+     "i": 11.48,
+     "f": 20.33
+    },
+    {
+     "v": "N",
+     "t": "Non poteva immaginare che la vera minaccia si nascondesse altrove.",
+     "nb": false,
+     "i": 20.55,
+     "f": 24.73
+    }
+   ]
+  },
+  {
+   "pagina": 3,
+   "durata": 21.28,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "L'Open Day si era spostato in palestra per una dimostrazione di educazione fisica.",
+     "nb": true,
+     "i": 0.0,
+     "f": 5.46
+    },
+    {
+     "v": "N",
+     "t": "Leo, nel tentativo di mostrare un palleggio complicato, inciampò goffamente su un pallone da basket, finendo a terra in una caduta tanto buffa quanto innocua.",
+     "nb": false,
+     "i": 5.68,
+     "f": 14.49
+    },
+    {
+     "v": "N",
+     "t": "I visitatori e i compagni risero bonariamente, e Leo si rialzò, rosso in viso ma sorridendo anche lui.",
+     "nb": false,
+     "i": 14.71,
+     "f": 21.28
+    }
+   ]
+  },
+  {
+   "pagina": 4,
+   "durata": 21.0,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Ma non tutti ridevano con innocenza. Nascosto tra la piccola folla, Marco aveva visto la scena come un'occasione d'oro.",
+     "nb": true,
+     "i": 0.0,
+     "f": 6.95
+    },
+    {
+     "v": "N",
+     "t": "Con un movimento fulmineo, estrasse il telefono e scattò. Un clic silenzioso immortalò la caduta di Leo. Un ghigno soddisfatto gli si dipinse sul volto.",
+     "nb": false,
+     "i": 7.17,
+     "f": 17.33
+    },
+    {
+     "v": "M",
+     "t": "\"Questa è troppo bella per non condividerla,\"",
+     "nb": true,
+     "i": 17.78,
+     "f": 20.04
+    },
+    {
+     "v": "N",
+     "t": "pensò.",
+     "nb": true,
+     "i": 20.49,
+     "f": 21.0
+    }
+   ]
+  },
+  {
+   "pagina": 5,
+   "durata": 19.0,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Pochi istanti dopo, una notifica illuminò gli schermi di tutti gli studenti della classe.",
+     "nb": true,
+     "i": 0.0,
+     "f": 4.84
+    },
+    {
+     "v": "N",
+     "t": "Nella chat di gruppo era apparsa la foto di Marco: Leo a terra, goffo e sorpreso. Sotto, una didascalia crudele: \"Il nostro campione di agilità!\".",
+     "nb": false,
+     "i": 5.06,
+     "f": 13.89
+    },
+    {
+     "v": "N",
+     "t": "Immediatamente, la chat si riempì di emoji che ridevano e commenti pungenti.",
+     "nb": false,
+     "i": 14.11,
+     "f": 19.0
+    }
+   ]
+  },
+  {
+   "pagina": 6,
+   "durata": 15.24,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Anche il telefono di Leo vibrò. Aprì la chat e il sangue gli si gelò nelle vene. Vide la foto. Vide i commenti. \"Che frana!\", \"Leo il ballerino\".",
+     "nb": true,
+     "i": 0.0,
+     "f": 8.49
+    },
+    {
+     "v": "N",
+     "t": "Ogni parola era una pugnalata. Si sentì improvvisamente solo e umiliato, il cuore pesante nel petto.",
+     "nb": false,
+     "i": 8.71,
+     "f": 15.24
+    }
+   ]
+  },
+  {
+   "pagina": 7,
+   "durata": 20.92,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Kaito e Hikari lo trovarono poco dopo. Non ebbero bisogno di chiedere.",
+     "nb": true,
+     "i": 0.0,
+     "f": 4.91
+    },
+    {
+     "v": "H",
+     "t": "\"Non è giusto, Leo,\"",
+     "nb": true,
+     "i": 5.36,
+     "f": 7.29
+    },
+    {
+     "v": "N",
+     "t": "disse Hikari, mettendogli una mano sulla spalla. Kaito era livido di rabbia.",
+     "nb": true,
+     "i": 7.74,
+     "f": 13.12
+    },
+    {
+     "v": "K",
+     "t": "\"Questo non è uno scherzo. Si chiama cyberbullismo. E chiunque sia stato ha infranto una regola fondamentale.\"",
+     "nb": true,
+     "i": 13.57,
+     "f": 20.92
+    }
+   ]
+  },
+  {
+   "pagina": 8,
+   "durata": 19.34,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Senza esitazione, i tre amici si diressero nell'ufficio della Professoressa Rossi. Le mostrarono il telefono, la foto, i commenti.",
+     "nb": true,
+     "i": 0.0,
+     "f": 8.17
+    },
+    {
+     "v": "N",
+     "t": "L'espressione della professoressa passò dalla cordialità dell'Open Day a una serietà glaciale.",
+     "nb": false,
+     "i": 8.39,
+     "f": 13.66
+    },
+    {
+     "v": "R",
+     "t": "\"Avete fatto benissimo a dirmelo subito. Ce ne occupiamo immediatamente.\"",
+     "nb": true,
+     "i": 14.11,
+     "f": 19.34
+    }
+   ]
+  },
+  {
+   "pagina": 9,
+   "durata": 25.88,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "La professoressa convocò Marco. Messo di fronte all'evidenza, il ragazzo ammise tutto.",
+     "nb": true,
+     "i": 0.0,
+     "f": 5.79
+    },
+    {
+     "v": "M",
+     "t": "\"Ma era solo per ridere,\"",
+     "nb": true,
+     "i": 6.24,
+     "f": 8.14
+    },
+    {
+     "v": "N",
+     "t": "tentò di giustificarsi, a testa bassa.",
+     "nb": true,
+     "i": 8.59,
+     "f": 12.03
+    },
+    {
+     "v": "R",
+     "t": "\"Le risate degli altri possono fare molto male, Marco,\"",
+     "nb": true,
+     "i": 12.48,
+     "f": 17.59
+    },
+    {
+     "v": "N",
+     "t": "rispose la professoressa con tono grave.",
+     "nb": true,
+     "i": 18.04,
+     "f": 21.2
+    },
+    {
+     "v": "R",
+     "t": "\"Hai violato la privacy di un tuo compagno e le regole di questa scuola.\"",
+     "nb": true,
+     "i": 21.65,
+     "f": 25.88
+    }
+   ]
+  },
+  {
+   "pagina": 10,
+   "durata": 20.77,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Quella sera, Leo ricevette un messaggio privato da Marco. C'era scritta una sola parola: \"Scusa\". Non bastava a cancellare il dolore, ma era un inizio.",
+     "nb": true,
+     "i": 0.0,
+     "f": 8.75
+    },
+    {
+     "v": "N",
+     "t": "Kaito e Hikari gli erano accanto, uniti.",
+     "nb": false,
+     "i": 8.97,
+     "f": 11.55
+    },
+    {
+     "v": "N",
+     "t": "L'Open Day aveva insegnato a tutti una lezione inaspettata: la tecnologia più avanzata non vale nulla senza la cosa più importante di tutte: l'empatia.",
+     "nb": false,
+     "i": 11.77,
+     "f": 20.77
+    }
+   ]
+  }
+ ]
+}

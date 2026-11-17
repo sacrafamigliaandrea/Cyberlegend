@@ -3,102 +3,102 @@
  "pagine": [
   {
    "pagina": 1,
-   "durata": 3.43,
+   "durata": 4.37,
    "frasi": [
     {
      "v": "N",
      "t": "Cyber Legends. Episodio 1: L'ombra del furto",
      "nb": true,
      "i": 0.0,
-     "f": 3.43
+     "f": 4.37
     }
    ]
   },
   {
    "pagina": 2,
-   "durata": 18.3,
+   "durata": 17.84,
    "frasi": [
     {
      "v": "N",
      "t": "Kaito era al settimo cielo. Dopo settimane di missioni, aveva finalmente conquistato la leggendaria Spada Astrale nel suo gioco preferito, \"Cyber Legends\".",
      "nb": true,
      "i": 0.0,
-     "f": 9.67
+     "f": 9.22
     },
     {
      "v": "K",
      "t": "\"SIIÌ! È MIA!\"",
      "nb": true,
-     "i": 10.12,
-     "f": 11.75
+     "i": 9.67,
+     "f": 11.29
     },
     {
      "v": "N",
      "t": "urlò alla sua stanza vuota, mentre il suo avatar, un guerriero cibernetico, sollevava l'arma scintillante.",
      "nb": true,
-     "i": 12.2,
-     "f": 18.3
+     "i": 11.74,
+     "f": 17.84
     }
    ]
   },
   {
    "pagina": 3,
-   "durata": 17.8,
+   "durata": 17.43,
    "frasi": [
     {
      "v": "N",
      "t": "All'improvviso, una finestra di chat privata si aprì. Il mittente era \"Shadow\".",
      "nb": true,
      "i": 0.0,
-     "f": 5.23
+     "f": 4.86
     },
     {
      "v": "S",
      "t": "\"Ehi, complimenti per la spada! Sei un vero campione. Ho un codice segreto per un potenziamento che la rende invincibile. Ti interessa?\"",
      "nb": true,
-     "i": 5.68,
-     "f": 14.53
+     "i": 5.31,
+     "f": 14.17
     },
     {
      "v": "N",
      "t": "Gli occhi di Kaito si spalancarono per la sorpresa.",
      "nb": true,
-     "i": 14.98,
-     "f": 17.8
+     "i": 14.62,
+     "f": 17.43
     }
    ]
   },
   {
    "pagina": 4,
-   "durata": 21.7,
+   "durata": 21.25,
    "frasi": [
     {
      "v": "S",
      "t": "\"Per attivarlo, devo entrare nel tuo profilo. È una procedura speciale per oggetti di livello Leggendario. Dammi solo il tuo username e la tua password.\"",
      "nb": true,
      "i": 0.0,
-     "f": 11.44
+     "f": 10.99
     },
     {
      "v": "N",
      "t": "Kaito esitò.",
      "nb": true,
-     "i": 11.89,
-     "f": 12.89
+     "i": 11.44,
+     "f": 12.44
     },
     {
      "v": "K",
      "t": "\"Non dovresti essere un moderatore per fare una cosa del genere?\"",
      "nb": true,
-     "i": 13.34,
-     "f": 17.29
+     "i": 12.89,
+     "f": 16.84
     },
     {
      "v": "N",
      "t": "pensò, un piccolo dubbio che gli attraversava la mente.",
      "nb": true,
-     "i": 17.74,
-     "f": 21.7
+     "i": 17.29,
+     "f": 21.25
     }
    ]
   },
@@ -131,21 +131,21 @@
   },
   {
    "pagina": 6,
-   "durata": 15.94,
+   "durata": 15.66,
    "frasi": [
     {
      "v": "N",
      "t": "Un istante dopo, lo schermo divenne nero. Una scritta rossa lampeggiò: \"ERRORE DI CONNESSIONE\". Kaito provò a rientrare. \"PASSWORD NON VALIDA\". Riprova.",
      "nb": true,
      "i": 0.0,
-     "f": 10.3
+     "f": 10.9
     },
     {
      "v": "N",
      "t": "\"PASSWORD NON VALIDA\". Un sudore freddo cominciò a scendergli lungo la schiena.",
      "nb": false,
-     "i": 10.52,
-     "f": 15.94
+     "i": 11.12,
+     "f": 15.66
     }
    ]
   },
@@ -185,7 +185,7 @@
   },
   {
    "pagina": 8,
-   "durata": 16.92,
+   "durata": 17.03,
    "frasi": [
     {
      "v": "N",
@@ -199,20 +199,20 @@
      "t": "\"Kaito, sei stato vittima di phishing. È una truffa per rubare i dati. Hanno finto di essere qualcuno di affidabile per ingannarti.",
      "nb": true,
      "i": 2.43,
-     "f": 10.31
+     "f": 10.14
     },
     {
      "v": "H",
      "t": "Ricorda: nessuno dello staff di un gioco, o di qualsiasi altro servizio, ti chiederà MAI la password.\"",
      "nb": false,
-     "i": 10.53,
-     "f": 16.92
+     "i": 10.36,
+     "f": 17.03
     }
    ]
   },
   {
    "pagina": 9,
-   "durata": 21.66,
+   "durata": 22.43,
    "frasi": [
     {
      "v": "H",
@@ -233,55 +233,55 @@
      "t": "\"Se usi la stessa password per la tua email o per i social, ora quell'hacker ha accesso a tutto.",
      "nb": true,
      "i": 5.21,
-     "f": 11.16
+     "f": 11.93
     },
     {
      "v": "H",
      "t": "Non ha rubato solo il tuo personaggio, Kaito... ha rubato la tua identità digitale.\"",
      "nb": false,
-     "i": 11.38,
-     "f": 16.78
+     "i": 12.15,
+     "f": 17.54
     },
     {
      "v": "N",
      "t": "Kaito impallidì, realizzando la grandezza del disastro.",
      "nb": true,
-     "i": 17.23,
-     "f": 21.66
+     "i": 17.99,
+     "f": 22.43
     }
    ]
   },
   {
    "pagina": 10,
-   "durata": 20.74,
+   "durata": 21.51,
    "frasi": [
     {
      "v": "N",
      "t": "Kaito si sentiva ancora uno stupido, ma anche sollevato. Aveva perso il suo account, ma aveva imparato una lezione che non avrebbe mai dimenticato.",
      "nb": true,
      "i": 0.0,
-     "f": 8.04
+     "f": 8.81
     },
     {
      "v": "K",
      "t": "\"Grazie, Hikari.\"",
      "nb": true,
-     "i": 8.49,
-     "f": 11.01
+     "i": 9.26,
+     "f": 11.78
     },
     {
      "v": "N",
      "t": "Lei gli sorrise.",
      "nb": true,
-     "i": 11.46,
-     "f": 14.26
+     "i": 12.23,
+     "f": 15.03
     },
     {
      "v": "H",
      "t": "\"Non è finita. Ora inizia la parte difficile: ci riprendiamo quello che è tuo.\"",
      "nb": true,
-     "i": 14.71,
-     "f": 20.74
+     "i": 15.48,
+     "f": 21.51
     }
    ]
   }

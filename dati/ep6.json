@@ -1,0 +1,359 @@
+{
+ "episodio": 6,
+ "pagine": [
+  {
+   "pagina": 1,
+   "durata": 3.52,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Cyber Legends. Episodio 6: L'Ombra del Corvo",
+     "nb": true,
+     "i": 0.0,
+     "f": 3.52
+    }
+   ]
+  },
+  {
+   "pagina": 2,
+   "durata": 26.04,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Erano passate alcune settimane dalla vicenda di Buzz World e a scuola si respirava un'aria più consapevole.",
+     "nb": true,
+     "i": 0.0,
+     "f": 5.78
+    },
+    {
+     "v": "N",
+     "t": "Ma la quiete fu spezzata da una notifica che fece vibrare quasi tutti i telefoni in contemporanea.",
+     "nb": false,
+     "i": 6.0,
+     "f": 11.53
+    },
+    {
+     "v": "N",
+     "t": "Nella chat di gruppo dell'istituto, apparve uno screenshot che sembrava una comunicazione ufficiale: \"Causa problemi organizzativi, la gita di fine anno è annullata\".",
+     "nb": false,
+     "i": 11.75,
+     "f": 22.7
+    },
+    {
+     "v": "N",
+     "t": "Il panico fu istantaneo.",
+     "nb": false,
+     "i": 22.92,
+     "f": 26.04
+    }
+   ]
+  },
+  {
+   "pagina": 3,
+   "durata": 22.15,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Hikari lesse il messaggio sopra la spalla di Kaito. Mentre tutti intorno a loro si lamentavano, lei rimase in silenzio, analizzando l'immagine.",
+     "nb": true,
+     "i": 0.0,
+     "f": 8.75
+    },
+    {
+     "v": "H",
+     "t": "\"Aspettate,\"",
+     "nb": true,
+     "i": 9.2,
+     "f": 10.06
+    },
+    {
+     "v": "N",
+     "t": "disse con calma.",
+     "nb": true,
+     "i": 10.51,
+     "f": 11.62
+    },
+    {
+     "v": "H",
+     "t": "\"Qualcosa non mi convince. Guardate il carattere del testo, è leggermente diverso da quello che usa la scuola di solito. E poi, perché uno screenshot?",
+     "nb": true,
+     "i": 12.07,
+     "f": 19.94
+    },
+    {
+     "v": "H",
+     "t": "Perché non un link al sito ufficiale?\"",
+     "nb": false,
+     "i": 20.16,
+     "f": 22.15
+    }
+   ]
+  },
+  {
+   "pagina": 4,
+   "durata": 27.3,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Il dubbio si era insinuato. Decisero di andare alla fonte. Trovarono la Professoressa Rossi nel corridoio, intenta ad appendere un avviso in bacheca.",
+     "nb": true,
+     "i": 0.0,
+     "f": 8.68
+    },
+    {
+     "v": "K",
+     "t": "\"Professoressa, è vero della gita?\"",
+     "nb": true,
+     "i": 9.13,
+     "f": 12.53
+    },
+    {
+     "v": "N",
+     "t": "chiese Kaito. Lei si voltò, sorpresa.",
+     "nb": true,
+     "i": 12.98,
+     "f": 15.44
+    },
+    {
+     "v": "R",
+     "t": "\"Annullata? Certo che no! Stavo proprio per appendere il programma definitivo.\"",
+     "nb": true,
+     "i": 15.89,
+     "f": 21.09
+    },
+    {
+     "v": "N",
+     "t": "Mostrò loro il foglio ufficiale, stampato e firmato dal preside. La gita era confermatissima.",
+     "nb": true,
+     "i": 21.54,
+     "f": 27.3
+    }
+   ]
+  },
+  {
+   "pagina": 5,
+   "durata": 23.91,
+   "frasi": [
+    {
+     "v": "K",
+     "t": "\"Allora è una fake news,\"",
+     "nb": true,
+     "i": 0.0,
+     "f": 1.88
+    },
+    {
+     "v": "N",
+     "t": "sussurrò Kaito. Tornati nell'aula di informatica, proiettarono lo screenshot su un monitor per analizzarlo meglio.",
+     "nb": true,
+     "i": 2.33,
+     "f": 9.15
+    },
+    {
+     "v": "K",
+     "t": "\"Hikari aveva ragione,\"",
+     "nb": true,
+     "i": 9.6,
+     "f": 12.48
+    },
+    {
+     "v": "N",
+     "t": "disse Kaito, ingrandendo l'immagine.",
+     "nb": true,
+     "i": 12.93,
+     "f": 15.11
+    },
+    {
+     "v": "K",
+     "t": "\"Guardate qui. I pixel intorno alle parole 'è annullata' sono leggermente sfocati. È un fotomontaggio, fatto anche abbastanza bene.\"",
+     "nb": true,
+     "i": 15.56,
+     "f": 23.91
+    }
+   ]
+  },
+  {
+   "pagina": 6,
+   "durata": 22.87,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Hikari aprì un semplice programma di fotoritocco. Prese una vera comunicazione della scuola e, in meno di un minuto, cancellò una frase e la sostituì con una nuova.",
+     "nb": true,
+     "i": 0.0,
+     "f": 9.81
+    },
+    {
+     "v": "N",
+     "t": "Il risultato era quasi identico allo screenshot che stava circolando.",
+     "nb": false,
+     "i": 10.03,
+     "f": 14.71
+    },
+    {
+     "v": "H",
+     "t": "\"Visto?\"",
+     "nb": true,
+     "i": 15.16,
+     "f": 15.73
+    },
+    {
+     "v": "N",
+     "t": "disse a Kaito.",
+     "nb": true,
+     "i": 16.18,
+     "f": 17.16
+    },
+    {
+     "v": "H",
+     "t": "\"Non serve essere un hacker. Basta un po' di tempo e l'intenzione di creare scompiglio.\"",
+     "nb": true,
+     "i": 17.61,
+     "f": 22.87
+    }
+   ]
+  },
+  {
+   "pagina": 7,
+   "durata": 20.23,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Ma chi era stato? Scorsero la cronologia della chat.",
+     "nb": true,
+     "i": 0.0,
+     "f": 3.91
+    },
+    {
+     "v": "N",
+     "t": "Il messaggio era stato inviato da un utente misterioso, chiamato \"Il Corvo\", che aveva abbandonato il gruppo subito dopo aver postato l'immagine.",
+     "nb": false,
+     "i": 4.13,
+     "f": 11.96
+    },
+    {
+     "v": "K",
+     "t": "\"Impossibile rintracciarlo,\"",
+     "nb": true,
+     "i": 12.41,
+     "f": 14.36
+    },
+    {
+     "v": "N",
+     "t": "disse Kaito, frustrato.",
+     "nb": true,
+     "i": 14.81,
+     "f": 16.19
+    },
+    {
+     "v": "K",
+     "t": "\"Ma non importa chi sia. L'importante è fermare la bugia.\"",
+     "nb": true,
+     "i": 16.64,
+     "f": 20.23
+    }
+   ]
+  },
+  {
+   "pagina": 8,
+   "durata": 18.76,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Andarono di nuovo dalla Professoressa Rossi, spiegandole la loro scoperta.",
+     "nb": true,
+     "i": 0.0,
+     "f": 5.02
+    },
+    {
+     "v": "R",
+     "t": "\"Avete fatto un ottimo lavoro,\"",
+     "nb": true,
+     "i": 5.47,
+     "f": 6.92
+    },
+    {
+     "v": "N",
+     "t": "disse lei, seria.",
+     "nb": true,
+     "i": 7.37,
+     "f": 10.52
+    },
+    {
+     "v": "R",
+     "t": "\"Non basta smentire. Dobbiamo insegnare a tutti come avete fatto a scoprire la verità. Dobbiamo trasformare questo problema in una lezione.\"",
+     "nb": true,
+     "i": 10.97,
+     "f": 18.76
+    }
+   ]
+  },
+  {
+   "pagina": 9,
+   "durata": 19.38,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Insieme, prepararono la controffensiva. Registrarono un breve video.",
+     "nb": true,
+     "i": 0.0,
+     "f": 4.59
+    },
+    {
+     "v": "N",
+     "t": "La Professoressa Rossi apriva il video mostrando il programma ufficiale e confermando la gita con un grande sorriso.",
+     "nb": false,
+     "i": 4.81,
+     "f": 11.23
+    },
+    {
+     "v": "R",
+     "t": "\"E ora,\"",
+     "nb": true,
+     "i": 11.68,
+     "f": 12.72
+    },
+    {
+     "v": "N",
+     "t": "diceva,",
+     "nb": true,
+     "i": 13.17,
+     "f": 13.79
+    },
+    {
+     "v": "R",
+     "t": "\"i nostri Kaito e Hikari vi mostreranno perché non dovete credere a tutto ciò che vedete.\"",
+     "nb": true,
+     "i": 14.24,
+     "f": 19.38
+    }
+   ]
+  },
+  {
+   "pagina": 10,
+   "durata": 23.37,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "La reazione fu esplosiva. Messaggi di sollievo si mescolarono a quelli di rabbia verso chi aveva creato il panico.",
+     "nb": true,
+     "i": 0.0,
+     "f": 7.4
+    },
+    {
+     "v": "N",
+     "t": "In pochi minuti, il video divenne più virale della fake news stessa. Hikari e Kaito si guardarono. L'identità del Corvo non contava più.",
+     "nb": false,
+     "i": 7.62,
+     "f": 16.54
+    },
+    {
+     "v": "N",
+     "t": "Avevano dato ai loro compagni qualcosa di più importante: gli strumenti per difendersi e per riconoscere la verità.",
+     "nb": false,
+     "i": 16.76,
+     "f": 23.37
+    }
+   ]
+  }
+ ]
+}
