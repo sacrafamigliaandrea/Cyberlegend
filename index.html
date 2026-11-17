@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cyber Legends</title>
-<meta name="description" content="Cyber Legends: otto episodi manga su sicurezza informatica e cittadinanza digitale, da leggere e ascoltare.">
+<meta name="description" content="Cyber Legends: otto episodi manga su sicurezza informatica, cyberbullismo e cittadinanza digitale, da leggere e ascoltare, con i casi del Team Antibullismo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bangers&family=Comic+Neue:wght@400;700&family=Dela+Gothic+One&display=swap" rel="stylesheet">
@@ -260,6 +260,51 @@
   #s-aiuto{border:2.5px solid var(--inchiostro);background:#fff;font-weight:700;font-size:15px;padding:6px 12px}
   #s-aiuto:hover{background:var(--giallo-chiaro)}
 
+  /* ---------- Home: riquadro dell'attivita' di fine episodio ---------- */
+  .attivita{margin:0 0 40px;background:#fff;border:4px solid var(--inchiostro);box-shadow:10px 10px 0 var(--inchiostro);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+  .attivita .sx{padding:24px 30px 26px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+  .attivita .etic{font-family:var(--font-titolo);font-size:17px;letter-spacing:1px;background:var(--ciano);border:2.5px solid var(--inchiostro);padding:2px 10px 0;transform:rotate(-2deg);box-shadow:2px 2px 0 var(--inchiostro)}
+  .attivita h2{margin:0;font-family:var(--font-titolo);font-weight:400;font-size:46px;letter-spacing:2px;line-height:1;text-shadow:3px 3px 0 var(--giallo)}
+  .attivita p{margin:0;font-size:17px;max-width:620px}
+  .temi{display:flex;gap:8px;flex-wrap:wrap}
+  .temi span{font-size:13.5px;font-weight:700;border:2px solid var(--inchiostro);padding:2px 9px;background:var(--carta-2)}
+  .attivita .g-tasti{margin-top:2px}
+  .attivita .dx{margin:0;background:var(--inchiostro);color:#fff;padding:24px 28px;list-style:none;display:flex;flex-direction:column;justify-content:center;gap:16px;border-left:4px solid var(--inchiostro)}
+  .attivita .dx li{display:flex;gap:14px;align-items:flex-start;font-size:16px;line-height:1.4}
+  .attivita .dx b{flex:none;display:grid;place-items:center;width:34px;height:34px;background:var(--giallo);color:var(--inchiostro);font-family:var(--font-titolo);font-weight:400;font-size:24px;padding-top:2px}
+  .attivita .dx em{display:block;font-style:normal;font-family:var(--font-titolo);font-size:22px;letter-spacing:1.5px;color:var(--giallo);line-height:1.1}
+  .tit-griglia{margin:0 0 26px;font-family:var(--font-titolo);font-weight:400;font-size:34px;letter-spacing:2px;line-height:1;display:inline-block;background:var(--giallo);border:3px solid var(--inchiostro);padding:4px 14px 1px;box-shadow:4px 4px 0 var(--inchiostro);transform:rotate(-1deg)}
+
+  /* ---------- Info docenti (finestra a schede) ---------- */
+  #info-velo{z-index:10}
+  .g-box.larga{max-width:1020px}
+  .g-box:focus{outline:none}
+  .i-chiudi{position:absolute;top:12px;right:12px;width:40px;height:40px;border:2.5px solid var(--inchiostro);background:#fff;display:grid;place-items:center;padding:0}
+  .i-chiudi:hover{background:var(--giallo-chiaro)}
+  .i-tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:3px solid var(--inchiostro);margin-top:2px}
+  .i-tabs button{border:3px solid var(--inchiostro);border-bottom:0;background:var(--carta-2);font-family:var(--font-titolo);font-size:19px;letter-spacing:1px;padding:6px 14px 3px}
+  .i-tabs button[aria-selected="true"]{background:var(--giallo)}
+  .i-tabs button:hover{background:var(--giallo-chiaro)}
+  .i-pann{display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.5}
+  .i-pann .g-lista{gap:5px}
+  .i-due{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .i-due > div{border:2.5px solid var(--inchiostro);background:var(--carta);padding:10px 13px;font-size:15.5px}
+  .i-due b.t{display:block;font-family:var(--font-titolo);font-weight:400;font-size:19px;letter-spacing:1px;line-height:1.2;margin-bottom:2px}
+  .i-scroll{overflow-x:auto}
+  .i-pann table{width:100%;border-collapse:collapse;font-size:14.5px;line-height:1.4}
+  .i-pann th,.i-pann td{border:2px solid var(--inchiostro);padding:7px 9px;text-align:left;vertical-align:top}
+  .i-pann th{background:var(--inchiostro);color:#fff;font-family:var(--font-titolo);font-weight:400;letter-spacing:1px;font-size:16px}
+  .i-pann td .tema{display:inline-block;margin-top:4px;font-size:12px}
+  .i-pann td small{color:var(--grigio)}
+  .i-ep td:nth-child(4){width:38%} .i-ep td:nth-child(4) div{margin-bottom:3px}
+  @media (max-width:900px){ .i-ep{min-width:640px} }
+  .i-pann td button{margin-top:6px;border:2px solid var(--inchiostro);background:var(--giallo);font-weight:700;font-size:13px;padding:3px 9px}
+  .i-pann td button:hover{background:var(--giallo-chiaro)}
+  .i-pann code{background:var(--carta-2);border:1.5px solid #bbb;padding:0 5px;font-size:14px}
+  .i-ruoli{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px}
+  .i-ruoli div{border-bottom:2px dashed #ccc;padding-bottom:6px;font-size:15px}
+  .i-ruoli b{font-family:"Dela Gothic One",sans-serif;font-weight:400}
+
   @media (max-width:1180px){ .griglia{grid-template-columns:repeat(3,minmax(0,1fr))} .eroe h1{font-size:60px} .s-corpo{grid-template-columns:minmax(0,1fr) minmax(0,1fr)} .s-scheda{grid-column:1 / -1} }
   @media (max-width:900px){
     .griglia{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 22px}
@@ -298,6 +343,13 @@
     .g-passi,.g-glossario{grid-template-columns:1fr}
     .e-tag{min-width:84px}
     #torna-gioco{top:auto;bottom:130px;right:12px}
+    .attivita{grid-template-columns:1fr;box-shadow:6px 6px 0 var(--inchiostro)}
+    .attivita .sx{padding:20px 18px 22px}
+    .attivita h2{font-size:36px}
+    .attivita .dx{padding:18px;border-left:0}
+    .tit-griglia{font-size:28px}
+    .i-due,.i-ruoli{grid-template-columns:1fr}
+    .i-tabs button{font-size:16px;padding:5px 10px 2px}
   }
   @media (max-width:520px){ .griglia{grid-template-columns:1fr} .eroe h1{font-size:44px} .balloon{max-width:96%} }
   @media (prefers-reduced-motion:reduce){ *{transition:none !important;scroll-behavior:auto !important} .card{transform:none} }
@@ -310,6 +362,10 @@
   </button>
   <span class="sotto" id="sotto-titolo"></span>
   <span class="spazio"></span>
+  <button class="btn-bordo" id="info-doc" aria-label="Info docenti" title="Info docenti">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6"/><circle cx="12" cy="7.3" r=".6" fill="currentColor"/></svg>
+    <span class="lbl">Info docenti</span>
+  </button>
   <button class="btn-bordo nascosto" id="vai-gioco" title="Team Antibullismo: i casi dell'episodio">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>
     <span class="lbl">Team Antibullismo</span>
@@ -325,16 +381,35 @@
     <div>
       <h1>CYBER<br>LEGENDS</h1>
       <div class="kana-grande" aria-hidden="true">サイバー・レジェンズ</div>
-      <p>Kaito e Hikari affrontano truffe online, ransomware, app pericolose e fake news. Scegli un episodio e ascolta la storia: la frase letta si evidenzia nel fumetto.</p>
+      <p>Kaito e Hikari affrontano truffe online, ransomware, app pericolose, fake news e cyberbullismo. Scegli un episodio e ascolta la storia: la frase letta si evidenzia nel fumetto. Alla fine, con il Team Antibullismo, aiuti i compagni a risolvere i loro casi.</p>
     </div>
-    <div class="scoppio" aria-hidden="true"><div><span>8</span>EPISODI!</div></div>
+    <div class="scoppio" aria-hidden="true"><div><span id="n-episodi"></span>EPISODI!</div></div>
   </section>
+  <section class="attivita" aria-labelledby="t-attivita">
+    <div class="sx">
+      <span class="etic">DOPO OGNI EPISODIO</span>
+      <h2 id="t-attivita">TEAM ANTIBULLISMO</h2>
+      <p>Finito l'episodio, entri nel Team Antibullismo della scuola come <b>studente tutor</b>. Alcuni compagni chiedono aiuto: chi è caduto in una truffa online, chi ha il computer bloccato, chi si ritrova una foto condivisa senza permesso. Tocca a te capire che cosa sta succedendo e chi coinvolgere.</p>
+      <div class="temi"><span>Cybersicurezza</span><span>Prevenzione del cyberbullismo</span><span>Cittadinanza digitale</span></div>
+      <div class="g-tasti">
+        <button class="btn" id="prova-team">Prova i casi dell'episodio 1</button>
+        <button class="btn sec" id="info-home">Info docenti</button>
+      </div>
+    </div>
+    <ol class="dx">
+      <li><b>1</b><span><em>ASCOLTA</em>La segnalazione di un compagno: fagli le domande giuste.</span></li>
+      <li><b>2</b><span><em>CERCA</em>Nell'archivio: le parole del fumetto e le persone della scuola.</span></li>
+      <li><b>3</b><span><em>COMPILA</em>La scheda del caso: che cosa succede, che cosa serve, chi coinvolgere.</span></li>
+    </ol>
+  </section>
+  <h2 class="tit-griglia">GLI EPISODI</h2>
   <div class="griglia" id="griglia"></div>
 </main>
 <footer id="piede">
   <span>Storia e illustrazioni: Andrea Cerioli, Scuola Sacra Famiglia di Orzinuovi</span>
   <span>Voci sintetiche generate con Chatterbox (Resemble AI, open source): nessuna è la voce di una persona reale.</span>
 </footer>
+<div class="g-velo nascosto" id="info-velo"><div class="g-box larga" id="info-box" role="dialog" aria-modal="true" aria-label="Info docenti" tabindex="-1"></div></div>
 
 <section id="lettore" class="nascosto" aria-label="Lettore episodio">
   <div class="tavola">
@@ -448,6 +523,7 @@ const ICO_ORO = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" str
 
 /* ---------- Home ---------- */
 function disegnaHome() {
+  $("#n-episodi").textContent = EPISODI.length;
   $("#griglia").innerHTML = EPISODI.map(e => {
     const tot = e.pagine.reduce((a, p) => a + (p.durata || 0), 0);
     const pronto = e.pagine.every(p => p.durata);
@@ -471,6 +547,7 @@ function apri(ep, pag, play = false) {
   history.replaceState(null, "", `#ep${ep}/p${pag + 1}`);
   $("#home").classList.add("nascosto"); $("#piede").classList.add("nascosto"); $("#gioco").classList.add("nascosto");
   $("#lettore").classList.remove("nascosto"); $("#torna").classList.remove("nascosto"); $("#vai-gioco").classList.remove("nascosto");
+  $("#info-doc").classList.add("nascosto"); chiudiInfo();
   $("#torna-gioco").classList.toggle("nascosto", !(G && !G.finito));   // si e' arrivati qui da "rivedi la scena"
   mostraPagina(play);
 }
@@ -480,7 +557,7 @@ function home() {
   stato.ep = null; history.replaceState(null, "", location.pathname + location.search);
   $("#lettore").classList.add("nascosto"); $("#torna").classList.add("nascosto");
   ["#gioco", "#vai-gioco", "#torna-gioco", "#g-velo"].forEach(s => $(s).classList.add("nascosto"));
-  $("#home").classList.remove("nascosto"); $("#piede").classList.remove("nascosto");
+  $("#home").classList.remove("nascosto"); $("#piede").classList.remove("nascosto"); $("#info-doc").classList.remove("nascosto");
   $("#sotto-titolo").textContent = "";
   window.scrollTo(0, 0);
 }
@@ -672,7 +749,7 @@ function iniziaCaso() {
 
 function mostraGioco() {
   audio.pause(); stato.ep = null;
-  ["#home", "#piede", "#lettore", "#torna-gioco", "#vai-gioco"].forEach(s => $(s).classList.add("nascosto"));
+  ["#home", "#piede", "#lettore", "#torna-gioco", "#vai-gioco", "#info-doc", "#info-velo"].forEach(s => $(s).classList.add("nascosto"));
   $("#gioco").classList.remove("nascosto"); $("#torna").classList.remove("nascosto");
   $("#sotto-titolo").textContent = `Episodio ${G.ep} · Team Antibullismo`;
   history.replaceState(null, "", `#ep${G.ep}/team`);
@@ -878,6 +955,109 @@ $("#s-aiuto").onclick = intro;
 $("#vai-gioco").onclick = () => apriGioco(stato.ep);
 $("#fine-gioco").onclick = () => apriGioco(stato.ep);
 $("#torna-gioco").onclick = () => { mostraGioco(); disegnaGioco(); };
+
+/* ---------- Info docenti: finestra a schede (Metodologia, Struttura, Episodi e casi) ----------
+   Tutto cio' che si puo' contare (episodi, casi, parole, ruoli, durate) e' ricavato dai dati, mai scritto a mano. */
+const INFO_TAB = [["metodo", "Metodologia"], ["struttura", "Struttura e tecniche"], ["episodi", "Episodi e casi"]];
+const minutiEp = e => Math.round(e.pagine.reduce((a, p) => a + (p.durata || 0), 0) / 60);
+
+function infoPannello(k) {
+  if (k === "metodo") return `
+    <p><b>Cyber Legends</b> è un percorso di ${EPISODI.length} episodi manga per la scuola secondaria di primo grado. Tiene insieme due temi che a scuola viaggiano spesso separati:
+      la <b>cybersicurezza</b> (proteggere account, dispositivi e dati) e la <b>prevenzione del cyberbullismo</b> (riconoscere un comportamento che ferisce e sapere a chi chiedere aiuto).
+      Ogni episodio si legge e si ascolta; alla fine gli studenti affrontano i casi del <b>Team Antibullismo</b>.</p>
+    <h4>Obiettivi</h4>
+    <ul class="g-lista">
+      <li>Riconoscere i principali rischi online: phishing, ransomware, app e VPN che raccolgono dati, contenuti manipolati, fake news, immagini condivise senza consenso.</li>
+      <li>Usare con precisione il lessico specifico, collegando ogni parola a una situazione concreta e non a una definizione da ripetere.</li>
+      <li>Distinguere un problema tecnico da un comportamento che ferisce una persona, e accorgersi di quando le due cose si sommano.</li>
+      <li>Sapere a quali adulti della scuola rivolgersi, secondo il protocollo delle Linee di orientamento MI 2021.</li>
+      <li>Formulare un consiglio concreto e rispettoso a un compagno in difficoltà.</li>
+    </ul>
+    <h4>Cornice pedagogica</h4>
+    <div class="i-due">
+      <div><b class="t">Apprendimento per casi</b>Le parole non si imparano da un elenco: servono a risolvere una situazione realistica, ambientata a scuola. È l'imparare facendo di Dewey.</div>
+      <div><b class="t">Educazione tra pari</b>Lo studente agisce come studente tutor del Team: è il ruolo attivo che le Linee di orientamento 2021 chiedono agli studenti nella prevenzione.</div>
+      <div><b class="t">Feedback formativo</b>Ogni voce della scheda riceve un esito con il suo perché. L'errore indica che cosa rileggere; non ci sono punteggi né classifiche.</div>
+      <div><b class="t">Metacognizione</b>Il debrief finale fa ripercorrere le domande poste, le carte sbagliate e la scelta dell'adulto a cui rivolgersi.</div>
+    </div>
+    <h4>Riferimenti normativi</h4>
+    <ul class="g-lista">
+      <li><b>Legge 71/2017</b> sulla prevenzione e il contrasto del cyberbullismo, aggiornata dalla <b>Legge 70/2024</b>.</li>
+      <li><b>Linee di orientamento per la prevenzione e il contrasto dei fenomeni di bullismo e cyberbullismo</b>, MI 2021 (DM 18 del 13 gennaio 2021): Team Antibullismo, referente, protocollo di intervento. L'attività ne riprende le fasi: raccolta della segnalazione, definizione del fenomeno, scelta degli interventi.</li>
+      <li><b>Educazione civica</b> (Legge 92/2019): nucleo Cittadinanza digitale.</li>
+      <li><b>DigComp 2.2</b>: area 4 Sicurezza (dispositivi, dati personali, benessere) e area 2 Comunicazione (netiquette, identità digitale).</li>
+    </ul>
+    <div class="temi"><span>Cittadinanza digitale</span><span>Cybersicurezza</span><span>Prevenzione del cyberbullismo</span><span>Lessico specifico</span><span>Metacognizione</span></div>`;
+
+  if (k === "struttura") {
+    const durate = EPISODI.filter(e => e.pagine.every(p => p.durata)).map(minutiEp);
+    const dur = durate.length ? `${Math.min(...durate)}–${Math.max(...durate)} min` : "circa 15 min";
+    const nCasi = [...new Set(EPISODI.map(e => GIOCO.casi.filter(c => c.ep === e.n).length))].join(" o ");
+    const TAG = [["ok", "GIUSTA", "la carta è al posto giusto"], ["manca", "MANCAVA", "una carta necessaria che non è stata messa"],
+      ["anche", "CI STA", "accettata: non indispensabile, ma sensata"], ["sposta", "SPOSTALA", "carta giusta nello spazio sbagliato"],
+      ["no", "NON C'ENTRA", "non riguarda il caso: compare la definizione da rileggere"]];
+    return `
+    <h4>Una lezione tipo (50–60 minuti)</h4>
+    <div class="i-scroll"><table>
+      <tr><th>Fase</th><th>Tempo</th><th>Che cosa fanno gli studenti</th></tr>
+      <tr><td><b>1. Lettura e ascolto</b></td><td>${dur}</td><td>Ascoltano l'episodio: la frase letta si evidenzia nel fumetto. Alla LIM con tutta la classe, oppure individualmente con le cuffie.</td></tr>
+      <tr><td><b>2. Casi del Team</b></td><td>20–25 min</td><td>Da soli o a coppie risolvono i casi dell'episodio (${nCasi} per episodio). Le coppie favoriscono la discussione sulla scelta delle carte.</td></tr>
+      <tr><td><b>3. Debrief</b></td><td>10 min</td><td>Tre domande di riflessione, da riprendere in classe: quale domanda ha chiarito il caso, quale carta era fuori posto, a quale adulto ci si rivolgerebbe.</td></tr>
+    </table></div>
+    <h4>La scheda del caso</h4>
+    <div class="i-due">
+      <div><b class="t">1. La segnalazione</b>Un compagno racconta il suo problema. Lo studente sceglie le domande da fargli: le risposte contengono gli indizi.</div>
+      <div><b class="t">2. L'archivio</b>Carte da aprire e leggere: le parole del fumetto (quelle dell'episodio e alcune di ripasso) e ${GIOCO.ruoli.length} persone della scuola. Ci sono anche carte che non c'entrano: bisogna scegliere.</div>
+      <div><b class="t">3. La scheda</b>Tre spazi: <i>Che cosa sta succedendo?</i>, <i>Che cosa serve?</i>, <i>Chi coinvolgere?</i>. Nell'ultimo vanno solo le persone. In fondo, un consiglio scritto al compagno (facoltativo).</div>
+      <div><b class="t">4. L'esito</b>Ogni voce riceve un'etichetta con la spiegazione, poi la sintesi di che cosa avrebbe fatto il Team e il consiglio scritto dallo studente.</div>
+    </div>
+    <h4>Le etichette dell'esito</h4>
+    <ul class="e-voci">${TAG.map(([c, t, d]) => `<li><span class="e-tag ${c}">${t}</span><span>${d}</span></li>`).join("")}</ul>
+    <h4>Accorgimenti</h4>
+    <ul class="g-lista">
+      <li>Ogni caso usa solo parole degli episodi già letti: conviene seguire gli episodi in ordine.</li>
+      <li>Su computer le carte si trascinano nella scheda; su tablet e telefono si aggiungono con i pulsanti della carta aperta.</li>
+      <li>Link diretti per la LIM: <code>#ep3/p5</code> in fondo all'indirizzo apre l'episodio 3 alla pagina 5; <code>#ep3/team</code> apre i casi dell'episodio 3.</li>
+      <li>Accessibilità: carattere ad alta leggibilità, dimensione del testo, velocità di lettura, pagine automatiche.</li>
+      <li>Privacy: nessuna registrazione e nessun dato esce dal dispositivo; gli esiti restano solo nel browser. Gli studenti non usano l'intelligenza artificiale: le voci sono sintetiche, generate in anticipo.</li>
+    </ul>
+    <p class="g-nota"><b>Se emerge un caso reale.</b> Parlare di questi temi può portare uno studente a raccontare qualcosa che sta vivendo. In quel caso si segue il protocollo dell'istituto e si informa il referente per il bullismo e il cyberbullismo.</p>`;
+  }
+
+  return `
+    <p>Per ogni episodio: il tema, le parole chiave che entrano nell'archivio e i casi del Team Antibullismo, tutti ambientati a scuola.</p>
+    <div class="i-scroll"><table class="i-ep">
+      <tr><th>Ep.</th><th>Episodio</th><th>Parole chiave</th><th>Casi del Team</th></tr>
+      ${EPISODI.map(e => `<tr><td><b>${e.n}</b></td>
+        <td><b>${esc(e.titolo)}</b><br><span class="tema">${esc(e.tema)}</span></td>
+        <td>${GIOCO.parole.filter(w => w.ep === e.n).map(w => esc(w.parola)).join(", ")}</td>
+        <td>${GIOCO.casi.filter(c => c.ep === e.n).map(c => `<div>${esc(c.titolo)} <small>(${esc(c.nome)})</small></div>`).join("")}
+          <button data-team="${e.n}">Apri i casi</button></td></tr>`).join("")}
+    </table></div>
+    <h4>Le persone della scuola nell'archivio</h4>
+    <p>Seguono le figure previste dalle Linee di orientamento 2021; i nomi possono variare da istituto a istituto.</p>
+    <div class="i-ruoli">${GIOCO.ruoli.map(r => `<div><b>${esc(r.ruolo)}</b>: ${esc(r.def)}</div>`).join("")}</div>`;
+}
+
+function infoDocenti(k = "metodo") {
+  const b = $("#info-box");
+  b.innerHTML = `<button class="i-chiudi" id="i-chiudi" aria-label="Chiudi Info docenti">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <h3>INFO DOCENTI</h3>
+    <div class="i-tabs" role="tablist">${INFO_TAB.map(([t, l]) => `<button role="tab" data-t="${t}" aria-selected="${t === k}">${l}</button>`).join("")}</div>
+    <div class="i-pann" role="tabpanel">${infoPannello(k)}</div>`;
+  b.querySelectorAll("[data-t]").forEach(x => x.onclick = () => { infoDocenti(x.dataset.t); $(`#info-box [data-t="${x.dataset.t}"]`).focus(); });
+  b.querySelectorAll("[data-team]").forEach(x => x.onclick = () => { chiudiInfo(); apriGioco(+x.dataset.team); });
+  $("#i-chiudi").onclick = chiudiInfo;
+  $("#info-velo").classList.remove("nascosto");
+  b.focus({ preventScroll: true }); $("#info-velo").scrollTop = 0;
+}
+function chiudiInfo() { $("#info-velo").classList.add("nascosto"); }
+$("#info-velo").onclick = ev => { if (ev.target.id === "info-velo") chiudiInfo(); };
+$("#info-velo").onkeydown = ev => { if (ev.key === "Escape") chiudiInfo(); };
+$("#info-doc").onclick = $("#info-home").onclick = () => infoDocenti();
+$("#prova-team").onclick = () => apriGioco(1);
 
 /* ---------- Avvio ---------- */
 iVel = leggi("vel", 1); audio.playbackRate = VELOCITA[iVel]; scriviVel();
