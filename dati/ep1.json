@@ -1,0 +1,289 @@
+{
+ "episodio": 1,
+ "pagine": [
+  {
+   "pagina": 1,
+   "durata": 3.43,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Cyber Legends. Episodio 1: L'ombra del furto",
+     "nb": true,
+     "i": 0.0,
+     "f": 3.43
+    }
+   ]
+  },
+  {
+   "pagina": 2,
+   "durata": 18.3,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Kaito era al settimo cielo. Dopo settimane di missioni, aveva finalmente conquistato la leggendaria Spada Astrale nel suo gioco preferito, \"Cyber Legends\".",
+     "nb": true,
+     "i": 0.0,
+     "f": 9.67
+    },
+    {
+     "v": "K",
+     "t": "\"SIIÌ! È MIA!\"",
+     "nb": true,
+     "i": 10.12,
+     "f": 11.75
+    },
+    {
+     "v": "N",
+     "t": "urlò alla sua stanza vuota, mentre il suo avatar, un guerriero cibernetico, sollevava l'arma scintillante.",
+     "nb": true,
+     "i": 12.2,
+     "f": 18.3
+    }
+   ]
+  },
+  {
+   "pagina": 3,
+   "durata": 17.8,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "All'improvviso, una finestra di chat privata si aprì. Il mittente era \"Shadow\".",
+     "nb": true,
+     "i": 0.0,
+     "f": 5.23
+    },
+    {
+     "v": "S",
+     "t": "\"Ehi, complimenti per la spada! Sei un vero campione. Ho un codice segreto per un potenziamento che la rende invincibile. Ti interessa?\"",
+     "nb": true,
+     "i": 5.68,
+     "f": 14.53
+    },
+    {
+     "v": "N",
+     "t": "Gli occhi di Kaito si spalancarono per la sorpresa.",
+     "nb": true,
+     "i": 14.98,
+     "f": 17.8
+    }
+   ]
+  },
+  {
+   "pagina": 4,
+   "durata": 21.7,
+   "frasi": [
+    {
+     "v": "S",
+     "t": "\"Per attivarlo, devo entrare nel tuo profilo. È una procedura speciale per oggetti di livello Leggendario. Dammi solo il tuo username e la tua password.\"",
+     "nb": true,
+     "i": 0.0,
+     "f": 11.44
+    },
+    {
+     "v": "N",
+     "t": "Kaito esitò.",
+     "nb": true,
+     "i": 11.89,
+     "f": 12.89
+    },
+    {
+     "v": "K",
+     "t": "\"Non dovresti essere un moderatore per fare una cosa del genere?\"",
+     "nb": true,
+     "i": 13.34,
+     "f": 17.29
+    },
+    {
+     "v": "N",
+     "t": "pensò, un piccolo dubbio che gli attraversava la mente.",
+     "nb": true,
+     "i": 17.74,
+     "f": 21.7
+    }
+   ]
+  },
+  {
+   "pagina": 5,
+   "durata": 17.46,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "L'idea di avere l'arma più potente del gioco era troppo allettante. La prudenza svanì in un istante.",
+     "nb": true,
+     "i": 0.0,
+     "f": 6.1
+    },
+    {
+     "v": "K",
+     "t": "\"Certo, nessun problema!\"",
+     "nb": true,
+     "i": 6.55,
+     "f": 9.82
+    },
+    {
+     "v": "N",
+     "t": "scrisse Kaito, digitando in fretta le sue preziose credenziali. Premette Invio senza pensarci due volte.",
+     "nb": true,
+     "i": 10.27,
+     "f": 17.46
+    }
+   ]
+  },
+  {
+   "pagina": 6,
+   "durata": 15.94,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Un istante dopo, lo schermo divenne nero. Una scritta rossa lampeggiò: \"ERRORE DI CONNESSIONE\". Kaito provò a rientrare. \"PASSWORD NON VALIDA\". Riprova.",
+     "nb": true,
+     "i": 0.0,
+     "f": 10.3
+    },
+    {
+     "v": "N",
+     "t": "\"PASSWORD NON VALIDA\". Un sudore freddo cominciò a scendergli lungo la schiena.",
+     "nb": false,
+     "i": 10.52,
+     "f": 15.94
+    }
+   ]
+  },
+  {
+   "pagina": 7,
+   "durata": 14.48,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Il giorno dopo, nel cortile della scuola, Kaito raccontò tutto alla sua migliore amica, Hikari.",
+     "nb": true,
+     "i": 0.0,
+     "f": 5.42
+    },
+    {
+     "v": "K",
+     "t": "\"Ho perso tutto,\"",
+     "nb": true,
+     "i": 5.87,
+     "f": 6.89
+    },
+    {
+     "v": "N",
+     "t": "mormorò, con la testa tra le mani.",
+     "nb": true,
+     "i": 7.34,
+     "f": 10.66
+    },
+    {
+     "v": "K",
+     "t": "\"Il mio personaggio, la Spada Astrale... tutto svanito.\"",
+     "nb": true,
+     "i": 11.11,
+     "f": 14.48
+    }
+   ]
+  },
+  {
+   "pagina": 8,
+   "durata": 16.92,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Hikari sospirò.",
+     "nb": true,
+     "i": 0.0,
+     "f": 1.98
+    },
+    {
+     "v": "H",
+     "t": "\"Kaito, sei stato vittima di phishing. È una truffa per rubare i dati. Hanno finto di essere qualcuno di affidabile per ingannarti.",
+     "nb": true,
+     "i": 2.43,
+     "f": 10.31
+    },
+    {
+     "v": "H",
+     "t": "Ricorda: nessuno dello staff di un gioco, o di qualsiasi altro servizio, ti chiederà MAI la password.\"",
+     "nb": false,
+     "i": 10.53,
+     "f": 16.92
+    }
+   ]
+  },
+  {
+   "pagina": 9,
+   "durata": 21.66,
+   "frasi": [
+    {
+     "v": "H",
+     "t": "\"E c'è di peggio,\"",
+     "nb": true,
+     "i": 0.0,
+     "f": 1.89
+    },
+    {
+     "v": "N",
+     "t": "continuò lei.",
+     "nb": true,
+     "i": 2.34,
+     "f": 4.76
+    },
+    {
+     "v": "H",
+     "t": "\"Se usi la stessa password per la tua email o per i social, ora quell'hacker ha accesso a tutto.",
+     "nb": true,
+     "i": 5.21,
+     "f": 11.16
+    },
+    {
+     "v": "H",
+     "t": "Non ha rubato solo il tuo personaggio, Kaito... ha rubato la tua identità digitale.\"",
+     "nb": false,
+     "i": 11.38,
+     "f": 16.78
+    },
+    {
+     "v": "N",
+     "t": "Kaito impallidì, realizzando la grandezza del disastro.",
+     "nb": true,
+     "i": 17.23,
+     "f": 21.66
+    }
+   ]
+  },
+  {
+   "pagina": 10,
+   "durata": 20.74,
+   "frasi": [
+    {
+     "v": "N",
+     "t": "Kaito si sentiva ancora uno stupido, ma anche sollevato. Aveva perso il suo account, ma aveva imparato una lezione che non avrebbe mai dimenticato.",
+     "nb": true,
+     "i": 0.0,
+     "f": 8.04
+    },
+    {
+     "v": "K",
+     "t": "\"Grazie, Hikari.\"",
+     "nb": true,
+     "i": 8.49,
+     "f": 11.01
+    },
+    {
+     "v": "N",
+     "t": "Lei gli sorrise.",
+     "nb": true,
+     "i": 11.46,
+     "f": 14.26
+    },
+    {
+     "v": "H",
+     "t": "\"Non è finita. Ora inizia la parte difficile: ci riprendiamo quello che è tuo.\"",
+     "nb": true,
+     "i": 14.71,
+     "f": 20.74
+    }
+   ]
+  }
+ ]
+}

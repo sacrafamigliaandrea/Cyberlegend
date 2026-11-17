@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyber Legends</title>
+<meta name="description" content="Cyber Legends: otto episodi manga su sicurezza informatica e cittadinanza digitale, da leggere e ascoltare.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bangers&family=Comic+Neue:wght@400;700&family=Dela+Gothic+One&display=swap" rel="stylesheet">
+<!--
+  Lettore Cyber Legends - grafica manga dedicata (non usa la palette dei portali).
+  File GENERATO da strumenti/costruisci_sito.py a partire da strumenti/lettore_template.html:
+  modificare il template, non questo file.
+  - Audio: Chatterbox Multilingual in locale, un mp3 per pagina in media/epN/pNN.mp3.
+  - Evidenziazione: ogni frase ha inizio/fine (i, f) in secondi; un ciclo requestAnimationFrame
+    legge audio.currentTime (l'evento timeupdate e' troppo lento, ~4 Hz).
+  - Testo: le battute del narratore diventano didascalie, quelle dei personaggi balloon.
+-->
+<style>
+  :root{
+    --inchiostro:#141414; --carta:#FBFAF4; --carta-2:#F1EFE6; --retino:rgba(20,20,20,.13);
+    --giallo:#FFD60A; --giallo-chiaro:#FFF3A8; --ciano:#18C2E8; --grigio:#6A6A66;
+    --font-titolo:"Bangers", "Dela Gothic One", Impact, sans-serif;
+    --font-storia:"Comic Neue", "Comic Sans MS", sans-serif;
+    --font-ui:"Atkinson Hyperlegible", system-ui, sans-serif;
+    --dim-testo:23px;
+    --ombra:6px 6px 0 var(--inchiostro);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;color:var(--inchiostro);font-family:var(--font-ui);font-size:17px;line-height:1.5;
+    background-color:var(--carta);
+    background-image:radial-gradient(var(--retino) 1.1px, transparent 1.5px);
+    background-size:8px 8px}
+  body.leggibile{--font-storia:"Atkinson Hyperlegible", system-ui, sans-serif}
+  button{font:inherit;color:inherit;cursor:pointer}
+  svg{display:block}
+  .nascosto{display:none !important}
+  :focus-visible{outline:3px solid var(--ciano);outline-offset:3px}
+
+  /* ---------- Intestazione ---------- */
+  header{background:var(--inchiostro);color:#fff;height:62px;display:flex;align-items:center;gap:18px;padding:0 24px;position:sticky;top:0;z-index:5;border-bottom:4px solid var(--giallo)}
+  .marchio{display:flex;align-items:baseline;gap:12px;background:none;border:0;padding:0;color:#fff}
+  .logo{font-family:var(--font-titolo);font-size:32px;letter-spacing:2px;color:var(--giallo);text-shadow:3px 3px 0 var(--ciano);line-height:1}
+  .kana{font-family:"Dela Gothic One",sans-serif;font-size:13px;color:#9A9A94;letter-spacing:1px}
+  header .sotto{font-family:var(--font-ui);font-size:15px;color:#D8D8D2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  header .spazio{flex:1}
+  .btn-bordo{background:transparent;border:2px solid #fff;color:#fff;border-radius:6px;padding:6px 13px;display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px}
+  .btn-bordo:hover{background:var(--giallo);color:var(--inchiostro);border-color:var(--giallo)}
+
+  /* ---------- Home ---------- */
+  #home{max-width:1340px;margin:0 auto;padding:0 28px 50px}
+  .eroe{position:relative;margin:26px 0 34px;padding:38px 40px;background:#fff;border:4px solid var(--inchiostro);box-shadow:10px 10px 0 var(--inchiostro);overflow:hidden;display:flex;align-items:center;gap:36px}
+  .eroe::before{content:"";position:absolute;inset:-40%;z-index:0;
+    background:repeating-conic-gradient(from 0deg at 72% 50%, rgba(20,20,20,.10) 0deg 1.4deg, transparent 1.4deg 5deg);
+    -webkit-mask-image:radial-gradient(circle at 72% 50%, transparent 14%, #000 48%);
+            mask-image:radial-gradient(circle at 72% 50%, transparent 14%, #000 48%)}
+  .eroe > *{position:relative;z-index:1}
+  .eroe h1{margin:0;font-family:var(--font-titolo);font-weight:400;font-size:76px;line-height:.95;letter-spacing:3px;color:var(--inchiostro);text-shadow:4px 4px 0 var(--giallo)}
+  .eroe .kana-grande{font-family:"Dela Gothic One",sans-serif;font-size:20px;letter-spacing:4px;color:var(--grigio);margin-top:6px}
+  .eroe p{margin:16px 0 0;max-width:640px;font-size:18px;background:#fff;padding:12px 16px;border:2.5px solid var(--inchiostro)}
+  .scoppio{flex:none;margin-left:auto;width:170px;height:170px;display:grid;place-items:center;text-align:center;
+    background:var(--giallo);color:var(--inchiostro);font-family:var(--font-titolo);font-size:30px;line-height:1;letter-spacing:1px;transform:rotate(8deg);
+    clip-path:polygon(50% 0%,61% 18%,80% 8%,78% 29%,98% 32%,84% 48%,100% 64%,79% 69%,83% 91%,63% 82%,50% 100%,38% 82%,17% 92%,21% 70%,0% 64%,16% 48%,2% 32%,22% 29%,20% 8%,39% 18%)}
+  .scoppio span{display:block;font-size:54px}
+
+  .griglia{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px 30px}
+  .card{position:relative;background:#fff;border:3.5px solid var(--inchiostro);box-shadow:var(--ombra);text-align:left;padding:0;display:flex;flex-direction:column;
+    transform:rotate(var(--rot,0deg));transition:transform .18s, box-shadow .18s}
+  .card:nth-child(odd){--rot:-1.1deg} .card:nth-child(even){--rot:.9deg}
+  .card:hover,.card:focus-visible{transform:rotate(0deg) translate(-3px,-3px);box-shadow:10px 10px 0 var(--inchiostro);outline:none}
+  .card .img{border-bottom:3.5px solid var(--inchiostro);overflow:hidden;background:#222}
+  .card img{width:100%;aspect-ratio:3/3.6;object-fit:cover;object-position:top;display:block;filter:contrast(1.05)}
+  .card .num{position:absolute;z-index:2;top:-16px;left:-14px;background:var(--giallo);border:3px solid var(--inchiostro);font-family:var(--font-titolo);font-size:24px;letter-spacing:1px;padding:2px 10px 0;transform:rotate(-6deg);box-shadow:3px 3px 0 var(--inchiostro)}
+  .card .info{padding:12px 15px 15px;display:flex;flex-direction:column;gap:9px}
+  .card h2{margin:0;font-family:"Dela Gothic One",sans-serif;font-weight:400;font-size:19px;line-height:1.25}
+  .card .meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .tema{font-size:13px;font-weight:700;background:var(--inchiostro);color:#fff;padding:3px 10px;border-radius:3px;letter-spacing:.3px}
+  .durata{font-size:13.5px;font-weight:700;color:var(--grigio);white-space:nowrap;display:flex;align-items:center;gap:5px}
+  .stato{font-size:12.5px;font-weight:700;background:var(--carta-2);border:2px dashed var(--grigio);color:var(--grigio);padding:1px 8px}
+
+  footer{max-width:1340px;margin:0 auto;padding:18px 28px 34px;color:var(--grigio);font-size:13.5px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer span{background:var(--carta);padding:2px 6px}
+
+  /* ---------- Lettore ---------- */
+  #lettore{height:calc(100vh - 62px);display:grid;grid-template-rows:1fr auto}
+  .tavola{display:flex;justify-content:center;align-items:stretch;gap:26px;padding:24px 30px 18px;min-height:0}
+  .illus{flex:0 1 auto;height:100%;aspect-ratio:971/1530;border:4px solid var(--inchiostro);box-shadow:10px 10px 0 var(--inchiostro);background:#222;overflow:hidden;position:relative}
+  .illus img{width:100%;height:100%;object-fit:cover;display:block}
+  .illus .pag{position:absolute;left:0;bottom:0;background:var(--inchiostro);color:#fff;font-family:var(--font-titolo);font-size:20px;letter-spacing:1px;padding:4px 12px 2px}
+  .vignetta{flex:0 1 660px;min-width:0;background:#fff;border:4px solid var(--inchiostro);box-shadow:10px 10px 0 var(--inchiostro);display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .vignetta::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:radial-gradient(rgba(20,20,20,.09) 1px, transparent 1.4px);background-size:6px 6px;
+    -webkit-mask-image:linear-gradient(180deg, transparent 0%, #000 100%);mask-image:linear-gradient(180deg, transparent 0%, #000 100%)}
+  .testo{position:relative;flex:1;overflow-y:auto;padding:30px 30px 34px;display:flex;flex-direction:column;gap:26px;scroll-behavior:smooth;
+    font-family:var(--font-storia);font-size:var(--dim-testo);line-height:1.42}
+  .testo > :first-child{margin-top:auto} .testo > :last-child{margin-bottom:auto}   /* centrato se corto */
+
+  /* didascalia del narratore */
+  .blocco{position:relative;transition:transform .2s, box-shadow .2s}
+  .didascalia{background:var(--carta);border:2.5px solid var(--inchiostro);padding:13px 18px;box-shadow:4px 4px 0 var(--inchiostro);font-weight:400}
+  .didascalia.attivo{box-shadow:6px 6px 0 var(--ciano)}
+  /* balloon dei personaggi */
+  .balloon{--bg:#fff;--fg:var(--inchiostro);background:var(--bg);color:var(--fg);border:3px solid var(--inchiostro);border-radius:30px;padding:16px 22px 15px;font-weight:700;max-width:90%;align-self:flex-start;margin-left:6px}
+  .balloon.dx{align-self:flex-end;margin-left:0;margin-right:6px}
+  .balloon::before,.balloon::after{content:"";position:absolute;width:0;height:0;border-style:solid}
+  .balloon::before{left:38px;bottom:-22px;border-width:22px 6px 0 16px;border-color:var(--inchiostro) transparent transparent transparent}
+  .balloon::after{left:41px;bottom:-15px;border-width:16px 4px 0 11px;border-color:var(--bg) transparent transparent transparent}
+  .balloon.dx::before{left:auto;right:38px;border-width:22px 16px 0 6px}
+  .balloon.dx::after{left:auto;right:41px;border-width:16px 11px 0 4px}
+  .balloon.scuro{--bg:#1B1726;--fg:#fff;border-color:var(--inchiostro);border-radius:6px}   /* messaggi del cattivo / dallo schermo */
+  .balloon.attivo{transform:scale(1.02);box-shadow:5px 5px 0 var(--ciano)}
+  .chi{position:absolute;top:-15px;left:20px;background:var(--c);color:#fff;font-family:var(--font-titolo);font-weight:400;font-size:17px;letter-spacing:1.2px;line-height:1;padding:5px 10px 3px;border:2.5px solid var(--inchiostro);transform:rotate(-2deg)}
+  .balloon.dx .chi{left:auto;right:20px;transform:rotate(2deg)}
+  .fr{cursor:pointer;border-radius:3px;transition:background-size .25s;background-image:linear-gradient(var(--giallo), var(--giallo));background-repeat:no-repeat;background-position:0 88%;background-size:0 45%;
+    -webkit-box-decoration-break:clone;box-decoration-break:clone}
+  .fr:hover{background-image:linear-gradient(var(--giallo-chiaro), var(--giallo-chiaro));background-size:100% 45%}
+  .fr.attiva{background-image:linear-gradient(var(--giallo), var(--giallo));background-size:100% 45%}
+  .balloon.scuro .fr.attiva,.balloon.scuro .fr:hover{background-image:linear-gradient(rgba(24,194,232,.55), rgba(24,194,232,.55))}
+
+  /* copertina dentro il lettore */
+  .frontespizio{display:flex;flex-direction:column;gap:16px}
+  .frontespizio .ep{align-self:flex-start;background:var(--giallo);border:3px solid var(--inchiostro);font-family:var(--font-titolo);font-size:26px;letter-spacing:1.5px;padding:3px 12px 0;transform:rotate(-3deg);box-shadow:3px 3px 0 var(--inchiostro)}
+  .frontespizio h2{margin:0;font-family:"Dela Gothic One",sans-serif;font-weight:400;font-size:1.75em;line-height:1.15}
+  .frontespizio .tema{align-self:flex-start;font-family:var(--font-ui);font-size:15px}
+  .frontespizio .cast-tit{font-family:var(--font-titolo);font-size:22px;letter-spacing:1.5px;margin-top:10px}
+  .cast{display:flex;flex-wrap:wrap;gap:10px 12px}
+  .cast span{font-family:var(--font-titolo);font-size:18px;letter-spacing:1px;color:#fff;background:var(--c);border:2.5px solid var(--inchiostro);padding:4px 11px 2px;box-shadow:3px 3px 0 var(--inchiostro)}
+  .frontespizio .invito{font-family:var(--font-ui);font-size:15px;color:var(--grigio);display:flex;align-items:center;gap:8px;margin-top:6px}
+
+  /* fine episodio */
+  .fine{position:absolute;inset:0;z-index:2;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:30px;overflow:hidden}
+  .fine::before{content:"";position:absolute;inset:-30%;
+    background:repeating-conic-gradient(from 0deg at 50% 50%, rgba(20,20,20,.13) 0deg 1.2deg, transparent 1.2deg 4.5deg);
+    -webkit-mask-image:radial-gradient(circle, transparent 22%, #000 55%);mask-image:radial-gradient(circle, transparent 22%, #000 55%)}
+  .fine > *{position:relative}
+  .fine .kanji{font-family:"Dela Gothic One",sans-serif;font-size:64px;line-height:1}
+  .fine h3{margin:0;font-family:var(--font-titolo);font-weight:400;font-size:62px;letter-spacing:4px;line-height:1;text-shadow:4px 4px 0 var(--giallo)}
+  .fine p{margin:0;max-width:380px;background:#fff;padding:6px 10px;font-weight:700}
+  .btn{background:var(--giallo);color:var(--inchiostro);border:3px solid var(--inchiostro);box-shadow:4px 4px 0 var(--inchiostro);padding:9px 18px;font-weight:700;display:inline-flex;align-items:center;gap:9px;font-size:16px}
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--inchiostro)}
+  .btn.sec{background:#fff}
+
+  /* ---------- Barra comandi ---------- */
+  .comandi{background:var(--inchiostro);color:#fff;border-top:4px solid var(--giallo);padding:12px 28px;display:grid;grid-template-columns:1fr minmax(260px,460px) 1fr;align-items:center;gap:22px}
+  .gruppo{display:flex;align-items:center;gap:12px}
+  .gruppo.dx{justify-content:flex-end}
+  .tondo{width:44px;height:44px;border-radius:50%;border:2.5px solid #fff;background:transparent;color:#fff;display:grid;place-items:center}
+  .tondo:hover:not(:disabled){background:#fff;color:var(--inchiostro)}
+  .tondo:disabled{opacity:.3;cursor:default}
+  .play{width:62px;height:62px;border-radius:50%;border:3px solid #fff;background:var(--giallo);color:var(--inchiostro);display:grid;place-items:center;box-shadow:4px 4px 0 var(--ciano)}
+  .play:hover:not(:disabled){transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ciano)}
+  .play:disabled{background:#4A4A46;color:#8A8A84;box-shadow:none;cursor:default}
+  .avanz{display:flex;flex-direction:column;gap:7px;min-width:0}
+  .barra{height:10px;background:#3A3A37;border:2px solid #fff;position:relative;cursor:pointer}
+  .barra span{position:absolute;left:0;top:0;bottom:0;background:var(--giallo);width:0}
+  .avanz .righe{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#BDBDB6;font-variant-numeric:tabular-nums}
+  .pallini{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
+  .pallini button{width:18px;height:9px;border:1.5px solid #8A8A84;background:transparent;padding:0;transform:skewX(-20deg)}
+  .pallini button.fatto{background:#8A8A84}
+  .pallini button.qui{background:var(--giallo);border-color:var(--giallo)}
+  .opz{border:2px solid #fff;background:transparent;color:#fff;border-radius:5px;padding:6px 11px;font-size:14px;font-weight:700;display:flex;align-items:center;gap:7px}
+  .opz[aria-pressed="true"]{background:var(--giallo);border-color:var(--giallo);color:var(--inchiostro)}
+  .opz:hover{border-color:var(--giallo)}
+  .nota-audio{font-size:13px;font-weight:700;color:var(--giallo)}
+
+  @media (max-width:1180px){ .griglia{grid-template-columns:repeat(3,minmax(0,1fr))} .eroe h1{font-size:60px} }
+  @media (max-width:900px){
+    .griglia{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 22px}
+    .eroe{flex-direction:column;align-items:flex-start;padding:26px 22px;gap:18px;margin:20px 0 30px}
+    .eroe h1{font-size:50px}
+    .scoppio{position:absolute;right:-12px;top:-12px;width:118px;height:118px;font-size:20px}
+    .scoppio span{font-size:36px}
+    #lettore{height:auto;min-height:calc(100vh - 62px)}
+    .tavola{flex-direction:column;align-items:center;padding:16px 14px;gap:16px}
+    .illus{height:auto;width:100%;max-width:560px;aspect-ratio:4/3;box-shadow:6px 6px 0 var(--inchiostro)}
+    .illus img{object-position:center 28%}
+    .vignetta{flex:none;width:100%;max-width:560px;box-shadow:6px 6px 0 var(--inchiostro)}
+    .testo{padding:26px 16px 28px;gap:24px}
+    .comandi{grid-template-columns:auto 1fr;position:sticky;bottom:0;padding:8px 12px 10px;gap:8px 12px}
+    .gruppo{gap:7px}
+    .tondo{width:38px;height:38px}
+    .play{width:50px;height:50px}
+    .gruppo.dx{grid-column:1 / -1;justify-content:center;flex-wrap:nowrap;gap:6px}
+    .opz{padding:5px 9px;font-size:13px}
+    .lbl,.pallini,.kana,header .sotto{display:none}
+    header{padding:0 12px}
+    .logo{font-size:27px}
+    #home{padding:0 16px 40px}
+    footer{padding:16px 16px 28px}
+  }
+  @media (max-width:520px){ .griglia{grid-template-columns:1fr} .eroe h1{font-size:44px} .balloon{max-width:96%} }
+  @media (prefers-reduced-motion:reduce){ *{transition:none !important;scroll-behavior:auto !important} .card{transform:none} }
+</style>
+</head>
+<body>
+<header>
+  <button class="marchio" id="vai-home" aria-label="Cyber Legends, elenco episodi">
+    <span class="logo">CYBER LEGENDS</span><span class="kana" aria-hidden="true">サイバー・レジェンズ</span>
+  </button>
+  <span class="sotto" id="sotto-titolo"></span>
+  <span class="spazio"></span>
+  <button class="btn-bordo nascosto" id="torna">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+    <span class="lbl">Tutti gli episodi</span>
+  </button>
+</header>
+
+<main id="home">
+  <section class="eroe">
+    <div>
+      <h1>CYBER<br>LEGENDS</h1>
+      <div class="kana-grande" aria-hidden="true">サイバー・レジェンズ</div>
+      <p>Kaito e Hikari affrontano truffe online, ransomware, app pericolose e fake news. Scegli un episodio e ascolta la storia: la frase letta si evidenzia nel fumetto.</p>
+    </div>
+    <div class="scoppio" aria-hidden="true"><div><span>8</span>EPISODI!</div></div>
+  </section>
+  <div class="griglia" id="griglia"></div>
+</main>
+<footer id="piede">
+  <span>Storia e illustrazioni: Andrea Cerioli, Scuola Sacra Famiglia di Orzinuovi</span>
+  <span>Voci sintetiche generate con Chatterbox (Resemble AI, open source): nessuna è la voce di una persona reale.</span>
+</footer>
+
+<section id="lettore" class="nascosto" aria-label="Lettore episodio">
+  <div class="tavola">
+    <div class="illus"><img id="illus" alt=""><span class="pag" id="pag-num"></span></div>
+    <div class="vignetta">
+      <div class="testo" id="testo"></div>
+      <div class="fine nascosto" id="fine">
+        <div class="kanji" aria-hidden="true">終</div>
+        <h3>FINE!</h3>
+        <p id="fine-testo"></p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px">
+          <button class="btn sec" id="fine-rileggi">Ricomincia</button>
+          <button class="btn" id="fine-prossimo">Episodio successivo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="comandi">
+    <div class="gruppo">
+      <button class="tondo" id="prec" aria-label="Pagina precedente" title="Pagina precedente (freccia sinistra)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="play" id="play" aria-label="Ascolta" title="Ascolta / pausa (barra spaziatrice)">
+        <svg id="ico-play" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg>
+        <svg id="ico-pausa" class="nascosto" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><rect x="5.5" y="4.5" width="4.8" height="15"/><rect x="13.7" y="4.5" width="4.8" height="15"/></svg>
+      </button>
+      <button class="tondo" id="succ" aria-label="Pagina successiva" title="Pagina successiva (freccia destra)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+    <div class="avanz">
+      <div class="barra" id="barra" title="Vai a un punto della pagina"><span id="barra-pieno"></span></div>
+      <div class="righe"><span id="tempo">0:00</span><div class="pallini" id="pallini"></div><span id="durata">0:00</span></div>
+    </div>
+    <div class="gruppo dx">
+      <span class="nota-audio nascosto" id="nota-audio">Audio in arrivo</span>
+      <button class="opz" id="velocita" title="Velocità di lettura">1×</button>
+      <button class="opz" id="auto" aria-pressed="true" title="Passa da solo alla pagina successiva">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/></svg>
+        <span class="lbl">Pagine automatiche</span></button>
+      <button class="opz" id="leggibile" aria-pressed="false" title="Carattere ad alta leggibilità">Aa<span class="lbl">&nbsp;leggibile</span></button>
+      <button class="opz" id="meno" aria-label="Testo più piccolo" title="Testo più piccolo">A−</button>
+      <button class="opz" id="piu" aria-label="Testo più grande" title="Testo più grande">A+</button>
+    </div>
+  </div>
+</section>
+
+<script>
+const EPISODI = [{"n":1,"titolo":"L'ombra del furto","tema":"Phishing e password","pagine":[{"pagina":1,"durata":3.43,"frasi":[{"v":"N","t":"Cyber Legends. Episodio 1: L'ombra del furto","nb":true,"i":0.0,"f":3.43}]},{"pagina":2,"durata":18.3,"frasi":[{"v":"N","t":"Kaito era al settimo cielo. Dopo settimane di missioni, aveva finalmente conquistato la leggendaria Spada Astrale nel suo gioco preferito, \"Cyber Legends\".","nb":true,"i":0.0,"f":9.67},{"v":"K","t":"\"SIIÌ! È MIA!\"","nb":true,"i":10.12,"f":11.75},{"v":"N","t":"urlò alla sua stanza vuota, mentre il suo avatar, un guerriero cibernetico, sollevava l'arma scintillante.","nb":true,"i":12.2,"f":18.3}]},{"pagina":3,"durata":17.8,"frasi":[{"v":"N","t":"All'improvviso, una finestra di chat privata si aprì. Il mittente era \"Shadow\".","nb":true,"i":0.0,"f":5.23},{"v":"S","t":"\"Ehi, complimenti per la spada! Sei un vero campione. Ho un codice segreto per un potenziamento che la rende invincibile. Ti interessa?\"","nb":true,"i":5.68,"f":14.53},{"v":"N","t":"Gli occhi di Kaito si spalancarono per la sorpresa.","nb":true,"i":14.98,"f":17.8}]},{"pagina":4,"durata":21.7,"frasi":[{"v":"S","t":"\"Per attivarlo, devo entrare nel tuo profilo. È una procedura speciale per oggetti di livello Leggendario. Dammi solo il tuo username e la tua password.\"","nb":true,"i":0.0,"f":11.44},{"v":"N","t":"Kaito esitò.","nb":true,"i":11.89,"f":12.89},{"v":"K","t":"\"Non dovresti essere un moderatore per fare una cosa del genere?\"","nb":true,"i":13.34,"f":17.29},{"v":"N","t":"pensò, un piccolo dubbio che gli attraversava la mente.","nb":true,"i":17.74,"f":21.7}]},{"pagina":5,"durata":17.46,"frasi":[{"v":"N","t":"L'idea di avere l'arma più potente del gioco era troppo allettante. La prudenza svanì in un istante.","nb":true,"i":0.0,"f":6.1},{"v":"K","t":"\"Certo, nessun problema!\"","nb":true,"i":6.55,"f":9.82},{"v":"N","t":"scrisse Kaito, digitando in fretta le sue preziose credenziali. Premette Invio senza pensarci due volte.","nb":true,"i":10.27,"f":17.46}]},{"pagina":6,"durata":15.94,"frasi":[{"v":"N","t":"Un istante dopo, lo schermo divenne nero. Una scritta rossa lampeggiò: \"ERRORE DI CONNESSIONE\". Kaito provò a rientrare. \"PASSWORD NON VALIDA\". Riprova.","nb":true,"i":0.0,"f":10.3},{"v":"N","t":"\"PASSWORD NON VALIDA\". Un sudore freddo cominciò a scendergli lungo la schiena.","nb":false,"i":10.52,"f":15.94}]},{"pagina":7,"durata":14.48,"frasi":[{"v":"N","t":"Il giorno dopo, nel cortile della scuola, Kaito raccontò tutto alla sua migliore amica, Hikari.","nb":true,"i":0.0,"f":5.42},{"v":"K","t":"\"Ho perso tutto,\"","nb":true,"i":5.87,"f":6.89},{"v":"N","t":"mormorò, con la testa tra le mani.","nb":true,"i":7.34,"f":10.66},{"v":"K","t":"\"Il mio personaggio, la Spada Astrale... tutto svanito.\"","nb":true,"i":11.11,"f":14.48}]},{"pagina":8,"durata":16.92,"frasi":[{"v":"N","t":"Hikari sospirò.","nb":true,"i":0.0,"f":1.98},{"v":"H","t":"\"Kaito, sei stato vittima di phishing. È una truffa per rubare i dati. Hanno finto di essere qualcuno di affidabile per ingannarti.","nb":true,"i":2.43,"f":10.31},{"v":"H","t":"Ricorda: nessuno dello staff di un gioco, o di qualsiasi altro servizio, ti chiederà MAI la password.\"","nb":false,"i":10.53,"f":16.92}]},{"pagina":9,"durata":21.66,"frasi":[{"v":"H","t":"\"E c'è di peggio,\"","nb":true,"i":0.0,"f":1.89},{"v":"N","t":"continuò lei.","nb":true,"i":2.34,"f":4.76},{"v":"H","t":"\"Se usi la stessa password per la tua email o per i social, ora quell'hacker ha accesso a tutto.","nb":true,"i":5.21,"f":11.16},{"v":"H","t":"Non ha rubato solo il tuo personaggio, Kaito... ha rubato la tua identità digitale.\"","nb":false,"i":11.38,"f":16.78},{"v":"N","t":"Kaito impallidì, realizzando la grandezza del disastro.","nb":true,"i":17.23,"f":21.66}]},{"pagina":10,"durata":20.74,"frasi":[{"v":"N","t":"Kaito si sentiva ancora uno stupido, ma anche sollevato. Aveva perso il suo account, ma aveva imparato una lezione che non avrebbe mai dimenticato.","nb":true,"i":0.0,"f":8.04},{"v":"K","t":"\"Grazie, Hikari.\"","nb":true,"i":8.49,"f":11.01},{"v":"N","t":"Lei gli sorrise.","nb":true,"i":11.46,"f":14.26},{"v":"H","t":"\"Non è finita. Ora inizia la parte difficile: ci riprendiamo quello che è tuo.\"","nb":true,"i":14.71,"f":20.74}]}]},{"n":2,"titolo":"Il Riscatto Digitale","tema":"Ransomware e backup","pagine":[{"pagina":1,"durata":null,"frasi":[{"v":"N","t":"Cyber Legends. Episodio 2: Il Riscatto Digitale","nb":true,"i":null,"f":null}]},{"pagina":2,"durata":null,"frasi":[{"v":"N","t":"A casa di Hikari, suo padre, il signor Tanaka, lavorava senza sosta al computer.","nb":true,"i":null,"f":null},{"v":"N","t":"Era il capo progettista di una piccola azienda di videogiochi e la scadenza per un nuovo grande progetto si avvicinava.","nb":false,"i":null,"f":null},{"v":"H","t":"\"Papà, una pausa,\"","nb":true,"i":null,"f":null},{"v":"N","t":"disse Hikari, entrando nel suo studio con un vassoio di mochi.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Sei lì da ore!\"","nb":true,"i":null,"f":null}]},{"pagina":3,"durata":null,"frasi":[{"v":"N","t":"Proprio mentre il signor Tanaka stava per prendere un dolce, gli schermi del suo computer iniziarono a lampeggiare in modo anomalo.","nb":true,"i":null,"f":null},{"v":"N","t":"Righe di codice verde scorrevano a una velocità folle, poi, di colpo, tutto divenne nero. Un istante dopo, un teschio rosso apparve su tutti i monitor.","nb":false,"i":null,"f":null}]},{"pagina":4,"durata":null,"frasi":[{"v":"N","t":"Sotto il teschio, apparve un messaggio:","nb":true,"i":null,"f":null},{"v":"S","t":"\"I TUOI FILE SONO STATI CRIPTATI. HAI 24 ORE PER PAGARE UN RISCATTO IN CRIPTOVALUTA O VERRANNO CANCELLATI PER SEMPRE.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Il signor Tanaka impallidì.","nb":true,"i":null,"f":null},{"v":"T","t":"\"No... no, no! Anni di lavoro... tutto il progetto!\"","nb":true,"i":null,"f":null},{"v":"N","t":"balbettò, con le mani tra i capelli.","nb":true,"i":null,"f":null}]},{"pagina":5,"durata":null,"frasi":[{"v":"N","t":"Hikari prese subito il suo smartphone.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Kaito, abbiamo un'emergenza. Un ransomware. Ha colpito i computer di papà.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Dall'altra parte del telefono, Kaito, che stava facendo i compiti, sussultò. La parola \"riscatto\" gli fece venire i brividi.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Arrivo subito!\"","nb":true,"i":null,"f":null}]},{"pagina":6,"durata":null,"frasi":[{"v":"N","t":"Quando Kaito arrivò, il signor Tanaka era nel panico.","nb":true,"i":null,"f":null},{"v":"T","t":"\"Devo pagare! Non posso perdere tutto quel lavoro, l'azienda fallirebbe!\"","nb":true,"i":null,"f":null},{"v":"N","t":"Stava già cercando di capire come acquistare criptovaluta.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Signor Tanaka, aspetti!\"","nb":true,"i":null,"f":null},{"v":"N","t":"esclamò Kaito, ricordando le lezioni apprese.","nb":true,"i":null,"f":null}]},{"pagina":7,"durata":null,"frasi":[{"v":"H","t":"\"Papà, fermo!\"","nb":true,"i":null,"f":null},{"v":"N","t":"intervenne Hikari con voce decisa.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Pagare è l'errore peggiore. Non c'è garanzia che ci restituiscano i file. E così finanzieremmo questi criminali per colpire altre persone. È una trappola.\"","nb":true,"i":null,"f":null}]},{"pagina":8,"durata":null,"frasi":[{"v":"K","t":"\"Ha ragione,\"","nb":true,"i":null,"f":null},{"v":"N","t":"aggiunse Kaito.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Cedere ai loro ricatti non è mai la soluzione. Dobbiamo pensare lucidamente.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Il signor Tanaka li guardò, combattuto tra la disperazione e la logica nelle parole dei due ragazzi.","nb":true,"i":null,"f":null},{"v":"T","t":"\"E allora cosa facciamo? È tutto perduto!\"","nb":true,"i":null,"f":null}]},{"pagina":9,"durata":null,"frasi":[{"v":"N","t":"Hikari ebbe un'illuminazione.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Il backup! Papà, ti ricordi l'hard disk esterno che ti ho regalato per il tuo compleanno? L'hai usato?\"","nb":true,"i":null,"f":null},{"v":"N","t":"Gli occhi del signor Tanaka si spalancarono. Si precipitò verso un cassetto e ne estrasse un piccolo disco argentato.","nb":true,"i":null,"f":null},{"v":"T","t":"\"Sì... l'ho collegato la settimana scorsa.\"","nb":true,"i":null,"f":null}]},{"pagina":10,"durata":null,"frasi":[{"v":"N","t":"Ore dopo, i file erano di nuovo al loro posto. Il signor Tanaka, esausto ma sollevato, abbracciò forte sua figlia.","nb":true,"i":null,"f":null},{"v":"T","t":"\"Mi avete salvato.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Mentre si rilassavano, Kaito notò un dettaglio.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Hikari... il teschio rosso sullo schermo del ransomware... non era identico al simbolo che usa l'hacker 'Shadow'?\"","nb":true,"i":null,"f":null},{"v":"N","t":"Gli occhi di Hikari si assottigliarono.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Hai ragione. Questo non è stato un attacco casuale.\"","nb":true,"i":null,"f":null}]}]},{"n":3,"titolo":"Lezioni di Cittadinanza Digitale","tema":"Etica hacker","pagine":[{"pagina":1,"durata":null,"frasi":[{"v":"N","t":"Cyber Legends. Episodio 3: Lezioni di Cittadinanza Digitale","nb":true,"i":null,"f":null}]},{"pagina":2,"durata":null,"frasi":[{"v":"N","t":"A scuola, il giorno dopo, Hikari e Kaito erano ancora scossi. Il pensiero che l'attacco di \"Shadow\" fosse stato mirato li preoccupava.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Non è un hacker qualunque,\"","nb":true,"i":null,"f":null},{"v":"N","t":"disse Kaito a bassa voce nel corridoio affollato.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Sapeva chi colpire. E questo mi spaventa.\"","nb":true,"i":null,"f":null}]},{"pagina":3,"durata":null,"frasi":[{"v":"N","t":"Entrarono nell'aula di informatica per la lezione di Cittadinanza Digitale. La loro insegnante, la Professoressa Rossi, iniziò a parlare con energia.","nb":true,"i":null,"f":null},{"v":"R","t":"\"Oggi parliamo di etica digitale. Qual è la differenza tra un 'black hat', un criminale informatico, e un 'white hat', un esperto di sicurezza?\"","nb":true,"i":null,"f":null}]},{"pagina":4,"durata":null,"frasi":[{"v":"N","t":"La professoressa continuò:","nb":true,"i":null,"f":null},{"v":"R","t":"\"Un 'white hat' usa le stesse abilità di un hacker, ma per un fine nobile: trovare le falle di un sistema per proteggerlo, non per danneggiarlo.","nb":true,"i":null,"f":null},{"v":"R","t":"La conoscenza è la nostra migliore difesa. Conoscere le minacce significa saperle prevenire.\"","nb":false,"i":null,"f":null}]},{"pagina":5,"durata":null,"frasi":[{"v":"N","t":"Durante la lezione, la Professoressa Rossi annunciò una sfida: un'esercitazione di sicurezza informatica sulla rete di prova della scuola.","nb":true,"i":null,"f":null},{"v":"R","t":"\"Chiunque troverà una vulnerabilità e la segnalerà correttamente, riceverà il massimo dei voti.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Hikari e Kaito si scambiarono un'occhiata d'intesa. Era la loro occasione.","nb":true,"i":null,"f":null}]},{"pagina":6,"durata":null,"frasi":[{"v":"N","t":"Quel pomeriggio, invece di tornare a casa, si chiusero nella biblioteca della scuola.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Se Shadow ha colpito mio padre, forse conosce bene la nostra città... o la nostra scuola,\"","nb":true,"i":null,"f":null},{"v":"N","t":"ragionò Hikari.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Usiamo questa esercitazione per cercare le stesse porte che userebbe lui.\"","nb":true,"i":null,"f":null}]},{"pagina":7,"durata":null,"frasi":[{"v":"N","t":"Dopo ore di lavoro, trovarono qualcosa. Una vulnerabilità nascosta nel sistema di gestione della biblioteca. Non era un errore comune, ma una \"backdoor\" creata ad arte.","nb":true,"i":null,"f":null},{"v":"K","t":"\"È troppo sofisticata per essere un caso,\"","nb":true,"i":null,"f":null},{"v":"N","t":"sussurrò Kaito.","nb":true,"i":null,"f":null},{"v":"K","t":"\"È la sua firma. Shadow è stato qui.\"","nb":true,"i":null,"f":null}]},{"pagina":8,"durata":null,"frasi":[{"v":"N","t":"La tentazione di usare quella backdoor per rintracciare Shadow era forte.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Potremmo scoprire chi è,\"","nb":true,"i":null,"f":null},{"v":"N","t":"disse Kaito. Ma Hikari scosse la testa, ricordando le parole della Professoressa Rossi.","nb":true,"i":null,"f":null},{"v":"H","t":"\"No. Faremo la cosa giusta. Saremo dei 'white hat'.\"","nb":true,"i":null,"f":null}]},{"pagina":9,"durata":null,"frasi":[{"v":"N","t":"Andarono subito dalla Professoressa Rossi e le mostrarono la loro scoperta. L'insegnante li ascoltò con attenzione, il suo volto serio.","nb":true,"i":null,"f":null},{"v":"R","t":"\"Avete fatto un lavoro eccezionale. E, cosa più importante, avete fatto la scelta etica. Ora, usiamo questa conoscenza per proteggere la scuola.\"","nb":true,"i":null,"f":null}]},{"pagina":10,"durata":null,"frasi":[{"v":"N","t":"Il giorno dopo, durante l'ora di pranzo, scattò l'allarme sul telefono di Hikari. Qualcuno era entrato nella trappola. La traccia portava a un computer dell'aula di arte.","nb":true,"i":null,"f":null},{"v":"N","t":"Corsero lì con la professoressa e trovarono uno studente dell'ultimo anno, che li guardò con occhi sbarrati. Shadow era stato smascherato.","nb":false,"i":null,"f":null},{"v":"N","t":"Hikari e Kaito capirono che la più grande vittoria non era stata catturare un hacker, ma aver protetto la loro scuola.","nb":false,"i":null,"f":null}]}]},{"n":4,"titolo":"La Trappola della VPN","tema":"VPN gratuite e privacy","pagine":[{"pagina":1,"durata":null,"frasi":[{"v":"N","t":"Cyber Legends. Episodio 4: La Trappola della VPN","nb":true,"i":null,"f":null}]},{"pagina":2,"durata":null,"frasi":[{"v":"N","t":"La vittoria contro \"Shadow\" aveva reso Hikari e Kaito delle piccole celebrità a scuola. Ma una nuova, silenziosa minaccia si stava diffondendo nei corridoi.","nb":true,"i":null,"f":null},{"v":"N","t":"Durante la ricreazione, videro un gruppo di ragazzi, tra cui il loro amico Leo, completamente assorti nei loro iPad, giocando a un videogioco bloccato dalla rete scolastica.","nb":false,"i":null,"f":null},{"v":"K","t":"\"Come fate?\"","nb":true,"i":null,"f":null},{"v":"N","t":"chiese Kaito, curioso.","nb":true,"i":null,"f":null}]},{"pagina":3,"durata":null,"frasi":[{"v":"N","t":"Leo alzò lo sguardo, un sorriso furbo sul volto.","nb":true,"i":null,"f":null},{"v":"L","t":"\"È facile! Usiamo una VPN. È un'app gratuita, la scarichi e via, puoi navigare e giocare a quello che vuoi.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Mostrò l'icona di un'app con uno scudo colorato. Hikari, avvicinandosi, sentì una strana sensazione.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Gratuita?\"","nb":true,"i":null,"f":null},{"v":"N","t":"mormorò, sospettosa.","nb":true,"i":null,"f":null}]},{"pagina":4,"durata":null,"frasi":[{"v":"N","t":"Più tardi, nell'aula di informatica, Hikari condivise i suoi dubbi con Kaito.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Niente è davvero gratis su internet. Se non paghi con i soldi, paghi con qualcos'altro. Spesso, con i tuoi dati.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Decisero di analizzare l'app VPN sulla rete di prova della scuola.","nb":true,"i":null,"f":null}]},{"pagina":5,"durata":null,"frasi":[{"v":"N","t":"I risultati furono peggiori di quanto immaginassero.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Questa VPN non cripta quasi nulla!\"","nb":true,"i":null,"f":null},{"v":"N","t":"esclamò Kaito, indicando righe di codice sullo schermo.","nb":true,"i":null,"f":null},{"v":"K","t":"\"È come chiudere la porta di casa ma lasciare la finestra spalancata. Tutto il traffico dati degli studenti passa attraverso i loro server... senza protezione.\"","nb":true,"i":null,"f":null}]},{"pagina":6,"durata":null,"frasi":[{"v":"N","t":"Hikari scoprì qualcosa di ancora più inquietante.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Guarda qui,\"","nb":true,"i":null,"f":null},{"v":"N","t":"disse, la voce tesa.","nb":true,"i":null,"f":null},{"v":"H","t":"\"L'app installa un 'keylogger'. Registra tutto quello che gli utenti digitano: password, messaggi privati, ricerche... È un disastro.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Capirono che un hacker avrebbe potuto rubare le identità digitali di mezza scuola.","nb":true,"i":null,"f":null}]},{"pagina":7,"durata":null,"frasi":[{"v":"N","t":"Corsero a informare la Professoressa Rossi. Lei ascoltò il loro rapporto con la fronte aggrottata.","nb":true,"i":null,"f":null},{"v":"R","t":"\"Avete fatto bene a indagare,\"","nb":true,"i":null,"f":null},{"v":"N","t":"disse.","nb":true,"i":null,"f":null},{"v":"R","t":"\"Molte VPN gratuite si finanziano vendendo i dati dei loro utenti o, peggio, sono create da veri e propri criminali.","nb":true,"i":null,"f":null},{"v":"R","t":"Dobbiamo avvertire tutti, ma in un modo che capiscano davvero il rischio.\"","nb":false,"i":null,"f":null}]},{"pagina":8,"durata":null,"frasi":[{"v":"N","t":"L'idea venne a Kaito.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Non limitiamoci a dirlo. Mostriamolo.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Con l'aiuto della professoressa, prepararono una dimostrazione per l'assemblea d'istituto.","nb":true,"i":null,"f":null},{"v":"N","t":"Usando un profilo di prova sulla rete sicura della scuola, mostrarono in tempo reale come i dati inviati tramite la VPN fossero visibili a chiunque sapesse dove guardare.","nb":false,"i":null,"f":null}]},{"pagina":9,"durata":null,"frasi":[{"v":"N","t":"Sullo schermo gigante dell'aula magna apparvero in chiaro le password finte e i messaggi di prova che avevano inviato. Un mormorio di shock si diffuse tra gli studenti.","nb":true,"i":null,"f":null},{"v":"N","t":"Leo, seduto in prima fila, guardava lo schermo con la bocca aperta. Aveva capito.","nb":false,"i":null,"f":null}]},{"pagina":10,"durata":null,"frasi":[{"v":"N","t":"Nei giorni seguenti, l'app VPN scomparve da tutti gli iPad della scuola.","nb":true,"i":null,"f":null},{"v":"N","t":"Gli studenti avevano imparato una lezione fondamentale: uno scudo digitale non serve a nulla se è pieno di buchi. La vera difesa era la consapevolezza.","nb":false,"i":null,"f":null}]}]},{"n":5,"titolo":"La Fabbrica di Click","tema":"Algoritmi e clickbait","pagine":[{"pagina":1,"durata":null,"frasi":[{"v":"N","t":"Cyber Legends. Episodio 5: La Fabbrica di Click","nb":true,"i":null,"f":null}]},{"pagina":2,"durata":null,"frasi":[{"v":"N","t":"Dopo la vicenda della VPN, a scuola era tornata la calma. Ma una nuova, febbrile ossessione si stava diffondendo: \"Buzz World\", un'app di notizie e video virali.","nb":true,"i":null,"f":null},{"v":"N","t":"Kaito trovò il suo amico Leo e altri ragazzi in cortile, tutti incollati ai telefoni, che reagivano con stupore e rabbia a ciò che vedevano.","nb":false,"i":null,"f":null},{"v":"L","t":"\"Ragazzi, è pazzesco!\"","nb":true,"i":null,"f":null},{"v":"N","t":"esclamò Leo.","nb":true,"i":null,"f":null},{"v":"L","t":"\"Hanno scoperto un dinosauro vivo in Antartide! C'è il video!\"","nb":true,"i":null,"f":null}]},{"pagina":3,"durata":null,"frasi":[{"v":"N","t":"Hikari si avvicinò, scettica. Diede un'occhiata al video: era sgranato, la creatura indistinta.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Leo, guarda il titolo,\"","nb":true,"i":null,"f":null},{"v":"N","t":"disse con calma.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Usa parole come 'Incredibile', 'Shock', 'Nascosto'. È una tecnica per farti cliccare, non per informarti.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Kaito iniziò a dubitare, notando che tutte le notizie sull'app sembravano troppo esagerate per essere vere.","nb":true,"i":null,"f":null}]},{"pagina":4,"durata":null,"frasi":[{"v":"N","t":"Nell'aula di informatica, decisero di vederci chiaro. Non cercarono falle di sicurezza, ma il \"motore\" di Buzz World.","nb":true,"i":null,"f":null},{"v":"K","t":"\"È incredibile la velocità con cui pubblica nuovi contenuti,\"","nb":true,"i":null,"f":null},{"v":"N","t":"osservò Kaito, scorrendo il feed su un computer. Hikari, analizzando la struttura dei titoli, ebbe un'illuminazione.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Non è un caso. È uno schema. Usano una formula per creare titoli che provocano una reazione emotiva forte.\"","nb":true,"i":null,"f":null}]},{"pagina":5,"durata":null,"frasi":[{"v":"N","t":"Kaito si immerse nel codice sorgente della pagina.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Ho trovato!\"","nb":true,"i":null,"f":null},{"v":"N","t":"esclamò poco dopo.","nb":true,"i":null,"f":null},{"v":"K","t":"\"L'algoritmo non è programmato per verificare la verità. È programmato per massimizzare l'interazione. Misura quanti clic, commenti e condivisioni riceve un articolo.","nb":true,"i":null,"f":null},{"v":"K","t":"Più la notizia è scioccante, più l'algoritmo la mostra a tutti.\"","nb":false,"i":null,"f":null}]},{"pagina":6,"durata":null,"frasi":[{"v":"N","t":"Hikari scoprì un dettaglio ancora più subdolo.","nb":true,"i":null,"f":null},{"v":"H","t":"\"C'è di peggio,\"","nb":true,"i":null,"f":null},{"v":"N","t":"disse, mostrando a Kaito un'altra sezione del codice.","nb":true,"i":null,"f":null},{"v":"H","t":"\"L'algoritmo impara cosa ti fa arrabbiare, cosa ti incuriosisce o ti spaventa. E poi ti mostra solo contenuti simili, per tenerti incollato allo schermo.","nb":true,"i":null,"f":null},{"v":"H","t":"Ti chiude in una 'bolla' di informazioni su misura per te, vere o false che siano.\"","nb":false,"i":null,"f":null}]},{"pagina":7,"durata":null,"frasi":[{"v":"N","t":"Il giorno dopo, videro gli effetti di quella \"bolla\". Leo stava litigando furiosamente con un'altra compagna, Sara.","nb":true,"i":null,"f":null},{"v":"L","t":"\"I gatti sono più intelligenti dei cani! L'ha detto uno studio scientifico su Buzz World!\"","nb":true,"i":null,"f":null},{"v":"N","t":"gridava Leo.","nb":true,"i":null,"f":null},{"v":"A","t":"\"Non è vero! Il mio cane è un genio!\"","nb":true,"i":null,"f":null},{"v":"N","t":"ribatteva Sara, quasi in lacrime. Stavano litigando per una notizia palesemente falsa, creata solo per generare conflitto.","nb":true,"i":null,"f":null}]},{"pagina":8,"durata":null,"frasi":[{"v":"K","t":"\"Dobbiamo fare qualcosa,\"","nb":true,"i":null,"f":null},{"v":"N","t":"disse Kaito a Hikari, vedendo la scena.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Non possiamo hackerare l'app, ma possiamo mostrare a tutti come funziona il trucco.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Andarono dalla Professoressa Rossi, spiegandole come l'algoritmo di Buzz World stesse mettendo i ragazzi gli uni contro gli altri.","nb":true,"i":null,"f":null}]},{"pagina":9,"durata":null,"frasi":[{"v":"N","t":"Con il permesso della professoressa, Kaito preparò una dimostrazione per l'assemblea d'istituto.","nb":true,"i":null,"f":null},{"v":"N","t":"Creò una finta notizia con un titolo irresistibile: \"ULTIM'ORA: IL PRESIDE INSTALLA UN DISTRIBUTORE DI PIZZA GRATUITA IN OGNI CLASSE!\"","nb":false,"i":null,"f":null},{"v":"N","t":"La notizia, ovviamente falsa, fu caricata su una pagina web che imitava Buzz World.","nb":false,"i":null,"f":null}]},{"pagina":10,"durata":null,"frasi":[{"v":"N","t":"L'impatto fu enorme. Gli studenti iniziarono a guardare i loro feed con occhi diversi, più critici. Videro Leo avvicinarsi a Sara per chiederle scusa.","nb":true,"i":null,"f":null},{"v":"N","t":"Hikari e Kaito si scambiarono un'occhiata soddisfatta. Avevano insegnato ai loro amici l'arma più potente contro la disinformazione: il dubbio.","nb":false,"i":null,"f":null}]}]},{"n":6,"titolo":"L'Ombra del Corvo","tema":"Fotomontaggi e fake news","pagine":[{"pagina":1,"durata":null,"frasi":[{"v":"N","t":"Cyber Legends. Episodio 6: L'Ombra del Corvo","nb":true,"i":null,"f":null}]},{"pagina":2,"durata":null,"frasi":[{"v":"N","t":"Erano passate alcune settimane dalla vicenda di Buzz World e a scuola si respirava un'aria più consapevole.","nb":true,"i":null,"f":null},{"v":"N","t":"Ma la quiete fu spezzata da una notifica che fece vibrare quasi tutti i telefoni in contemporanea.","nb":false,"i":null,"f":null},{"v":"N","t":"Nella chat di gruppo dell'istituto, apparve uno screenshot che sembrava una comunicazione ufficiale: \"Causa problemi organizzativi, la gita di fine anno è annullata\".","nb":false,"i":null,"f":null},{"v":"N","t":"Il panico fu istantaneo.","nb":false,"i":null,"f":null}]},{"pagina":3,"durata":null,"frasi":[{"v":"N","t":"Hikari lesse il messaggio sopra la spalla di Kaito. Mentre tutti intorno a loro si lamentavano, lei rimase in silenzio, analizzando l'immagine.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Aspettate,\"","nb":true,"i":null,"f":null},{"v":"N","t":"disse con calma.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Qualcosa non mi convince. Guardate il carattere del testo, è leggermente diverso da quello che usa la scuola di solito. E poi, perché uno screenshot?","nb":true,"i":null,"f":null},{"v":"H","t":"Perché non un link al sito ufficiale?\"","nb":false,"i":null,"f":null}]},{"pagina":4,"durata":null,"frasi":[{"v":"N","t":"Il dubbio si era insinuato. Decisero di andare alla fonte. Trovarono la Professoressa Rossi nel corridoio, intenta ad appendere un avviso in bacheca.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Professoressa, è vero della gita?\"","nb":true,"i":null,"f":null},{"v":"N","t":"chiese Kaito. Lei si voltò, sorpresa.","nb":true,"i":null,"f":null},{"v":"R","t":"\"Annullata? Certo che no! Stavo proprio per appendere il programma definitivo.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Mostrò loro il foglio ufficiale, stampato e firmato dal preside. La gita era confermatissima.","nb":true,"i":null,"f":null}]},{"pagina":5,"durata":null,"frasi":[{"v":"K","t":"\"Allora è una fake news,\"","nb":true,"i":null,"f":null},{"v":"N","t":"sussurrò Kaito. Tornati nell'aula di informatica, proiettarono lo screenshot su un monitor per analizzarlo meglio.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Hikari aveva ragione,\"","nb":true,"i":null,"f":null},{"v":"N","t":"disse Kaito, ingrandendo l'immagine.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Guardate qui. I pixel intorno alle parole 'è annullata' sono leggermente sfocati. È un fotomontaggio, fatto anche abbastanza bene.\"","nb":true,"i":null,"f":null}]},{"pagina":6,"durata":null,"frasi":[{"v":"N","t":"Hikari aprì un semplice programma di fotoritocco. Prese una vera comunicazione della scuola e, in meno di un minuto, cancellò una frase e la sostituì con una nuova.","nb":true,"i":null,"f":null},{"v":"N","t":"Il risultato era quasi identico allo screenshot che stava circolando.","nb":false,"i":null,"f":null},{"v":"H","t":"\"Visto?\"","nb":true,"i":null,"f":null},{"v":"N","t":"disse a Kaito.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Non serve essere un hacker. Basta un po' di tempo e l'intenzione di creare scompiglio.\"","nb":true,"i":null,"f":null}]},{"pagina":7,"durata":null,"frasi":[{"v":"N","t":"Ma chi era stato? Scorsero la cronologia della chat.","nb":true,"i":null,"f":null},{"v":"N","t":"Il messaggio era stato inviato da un utente misterioso, chiamato \"Il Corvo\", che aveva abbandonato il gruppo subito dopo aver postato l'immagine.","nb":false,"i":null,"f":null},{"v":"K","t":"\"Impossibile rintracciarlo,\"","nb":true,"i":null,"f":null},{"v":"N","t":"disse Kaito, frustrato.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Ma non importa chi sia. L'importante è fermare la bugia.\"","nb":true,"i":null,"f":null}]},{"pagina":8,"durata":null,"frasi":[{"v":"N","t":"Andarono di nuovo dalla Professoressa Rossi, spiegandole la loro scoperta.","nb":true,"i":null,"f":null},{"v":"R","t":"\"Avete fatto un ottimo lavoro,\"","nb":true,"i":null,"f":null},{"v":"N","t":"disse lei, seria.","nb":true,"i":null,"f":null},{"v":"R","t":"\"Non basta smentire. Dobbiamo insegnare a tutti come avete fatto a scoprire la verità. Dobbiamo trasformare questo problema in una lezione.\"","nb":true,"i":null,"f":null}]},{"pagina":9,"durata":null,"frasi":[{"v":"N","t":"Insieme, prepararono la controffensiva. Registrarono un breve video.","nb":true,"i":null,"f":null},{"v":"N","t":"La Professoressa Rossi apriva il video mostrando il programma ufficiale e confermando la gita con un grande sorriso.","nb":false,"i":null,"f":null},{"v":"R","t":"\"E ora,\"","nb":true,"i":null,"f":null},{"v":"N","t":"diceva,","nb":true,"i":null,"f":null},{"v":"R","t":"\"i nostri Kaito e Hikari vi mostreranno perché non dovete credere a tutto ciò che vedete.\"","nb":true,"i":null,"f":null}]},{"pagina":10,"durata":null,"frasi":[{"v":"N","t":"La reazione fu esplosiva. Messaggi di sollievo si mescolarono a quelli di rabbia verso chi aveva creato il panico.","nb":true,"i":null,"f":null},{"v":"N","t":"In pochi minuti, il video divenne più virale della fake news stessa. Hikari e Kaito si guardarono. L'identità del Corvo non contava più.","nb":false,"i":null,"f":null},{"v":"N","t":"Avevano dato ai loro compagni qualcosa di più importante: gli strumenti per difendersi e per riconoscere la verità.","nb":false,"i":null,"f":null}]}]},{"n":7,"titolo":"L'Open Day","tema":"Tecnologia a scuola","pagine":[{"pagina":1,"durata":null,"frasi":[{"v":"N","t":"Cyber Legends. Episodio 7: L'Open Day","nb":true,"i":null,"f":null}]},{"pagina":2,"durata":null,"frasi":[{"v":"N","t":"La scuola era in fermento. Era il giorno dell'Open Day e i corridoi brulicavano di genitori e futuri studenti. La Professoressa Rossi radunò Kaito, Hikari e Leo.","nb":true,"i":null,"f":null},{"v":"R","t":"\"Ragazzi, conto su di voi. Siete i nostri ambasciatori digitali. Mostrate a tutti come la tecnologia ci aiuta a imparare.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Poi aggiunse, con tono serio:","nb":true,"i":null,"f":null},{"v":"R","t":"\"Per oggi, avete il permesso di tenere i cellulari con voi per coordinarvi. Ma la regola è tassativa: nessuna foto.\"","nb":true,"i":null,"f":null}]},{"pagina":3,"durata":null,"frasi":[{"v":"N","t":"L'atrio era stato trasformato in un'area espositiva. Leo, con il suo solito entusiasmo, fermò una famiglia.","nb":true,"i":null,"f":null},{"v":"L","t":"\"Buongiorno! Vi faccio vedere come prendiamo appunti!\"","nb":true,"i":null,"f":null},{"v":"N","t":"Mostrò loro il suo iPad, aprendo l'app \"Notebook LM\". Con pochi tocchi, fece vedere come potevano inserire testo, immagini e persino registrazioni audio delle lezioni.","nb":true,"i":null,"f":null},{"v":"L","t":"\"È come avere un quaderno infinito!\"","nb":true,"i":null,"f":null},{"v":"N","t":"esclamò.","nb":true,"i":null,"f":null}]},{"pagina":4,"durata":null,"frasi":[{"v":"N","t":"Poco più in là, Hikari aveva catturato l'attenzione di un altro gruppo.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Non usiamo solo i libri,\"","nb":true,"i":null,"f":null},{"v":"N","t":"spiegava con calma.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Per scienze, ad esempio, usiamo app che ci mostrano il corpo umano in 3D o ci permettono di fare esperimenti virtuali.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Sul suo tablet, ruotò la molecola di una proteina, ingrandendola per mostrarne i dettagli. I genitori erano affascinati.","nb":true,"i":null,"f":null}]},{"pagina":5,"durata":null,"frasi":[{"v":"N","t":"In un angolo, lontano dalla folla, Dario osservava la scena con un'espressione annoiata.","nb":true,"i":null,"f":null},{"v":"N","t":"Vedeva Kaito, Leo e Hikari al centro dell'attenzione, elogiati dai professori e ammirati dai visitatori. Sbuffò, tirando fuori dalla tasca il suo smartphone.","nb":false,"i":null,"f":null},{"v":"N","t":"Per lui, tutta quella tecnologia era solo un modo per mettersi in mostra.","nb":false,"i":null,"f":null}]},{"pagina":6,"durata":null,"frasi":[{"v":"N","t":"La tappa successiva era il laboratorio di informatica, il regno di Kaito.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Qui non impariamo solo a usare i programmi,\"","nb":true,"i":null,"f":null},{"v":"N","t":"disse al suo gruppo,","nb":true,"i":null,"f":null},{"v":"K","t":"\"ma anche a crearli. Facciamo lezioni di coding per sviluppare il pensiero logico.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Fece vedere loro alcune semplici righe di codice che animavano un personaggio sullo schermo.","nb":true,"i":null,"f":null}]},{"pagina":7,"durata":null,"frasi":[{"v":"N","t":"Ma il pezzo forte del laboratorio era la stampante 3D. In quel momento, stava lentamente materializzando una miniatura perfetta della torre di Pisa.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Progettiamo gli oggetti in classe con un software di modellazione,\"","nb":true,"i":null,"f":null},{"v":"N","t":"spiegò Kaito,","nb":true,"i":null,"f":null},{"v":"K","t":"\"e poi la stampante li trasforma in realtà, strato dopo strato.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Un \"oooh\" di meraviglia si levò dal gruppo.","nb":true,"i":null,"f":null}]},{"pagina":8,"durata":null,"frasi":[{"v":"N","t":"Un padre, entusiasta, chiese a Leo:","nb":true,"i":null,"f":null},{"v":"P","t":"\"Posso fare una foto al modellino? È incredibile!\"","nb":true,"i":null,"f":null},{"v":"N","t":"Leo sorrise, ma scosse la testa.","nb":true,"i":null,"f":null},{"v":"L","t":"\"Mi dispiace, ma la professoressa ci ha chiesto di non fare foto per una questione di privacy.\"","nb":true,"i":null,"f":null},{"v":"N","t":"Hikari, che aveva sentito, gli rivolse un cenno di approvazione. La regola era importante.","nb":true,"i":null,"f":null}]},{"pagina":9,"durata":null,"frasi":[{"v":"N","t":"Dario aveva assistito alla scena da lontano e un ghigno gli attraversò il volto.","nb":true,"i":null,"f":null},{"v":"D","t":"\"Che regola stupida,\"","nb":true,"i":null,"f":null},{"v":"N","t":"pensò. Per lui, un'occasione del genere andava immortalata. Un video della stampante 3D in azione gli avrebbe fruttato un sacco di visualizzazioni.","nb":true,"i":null,"f":null},{"v":"N","t":"Decise che avrebbe trovato il modo.","nb":false,"i":null,"f":null}]},{"pagina":10,"durata":null,"frasi":[{"v":"N","t":"Si avvicinò alla stampante. Il modellino della torre di Pisa era lì, perfetto. Tirò fuori il cellulare, aprì l'app della fotocamera e inquadrò l'oggetto.","nb":true,"i":null,"f":null},{"v":"N","t":"Il suo pollice si mosse lentamente verso il pulsante di scatto, un sorriso di trionfo sul volto. Proprio mentre stava per premere, una voce calma ma decisa lo bloccò:","nb":false,"i":null,"f":null},{"v":"H","t":"\"Che cosa credi di fare, Dario?\"","nb":true,"i":null,"f":null}]}]},{"n":8,"titolo":"Lo Scatto Proibito","tema":"Cyberbullismo e privacy","pagine":[{"pagina":1,"durata":null,"frasi":[{"v":"N","t":"Cyber Legends. Episodio 8: Lo Scatto Proibito","nb":true,"i":null,"f":null}]},{"pagina":2,"durata":null,"frasi":[{"v":"H","t":"\"Metti via quel telefono, Dario. Conosci le regole.\"","nb":true,"i":null,"f":null},{"v":"N","t":"La voce di Hikari era tagliente come il vetro. Colto in flagrante, Dario ritirò di scatto la mano, borbottando una scusa.","nb":true,"i":null,"f":null},{"v":"N","t":"Si allontanò a passo svelto, lanciandole un'occhiataccia piena di rabbia. Hikari lo guardò andare via, sperando che il pericolo fosse scampato.","nb":false,"i":null,"f":null},{"v":"N","t":"Non poteva immaginare che la vera minaccia si nascondesse altrove.","nb":false,"i":null,"f":null}]},{"pagina":3,"durata":null,"frasi":[{"v":"N","t":"L'Open Day si era spostato in palestra per una dimostrazione di educazione fisica.","nb":true,"i":null,"f":null},{"v":"N","t":"Leo, nel tentativo di mostrare un palleggio complicato, inciampò goffamente su un pallone da basket, finendo a terra in una caduta tanto buffa quanto innocua.","nb":false,"i":null,"f":null},{"v":"N","t":"I visitatori e i compagni risero bonariamente, e Leo si rialzò, rosso in viso ma sorridendo anche lui.","nb":false,"i":null,"f":null}]},{"pagina":4,"durata":null,"frasi":[{"v":"N","t":"Ma non tutti ridevano con innocenza. Nascosto tra la piccola folla, Marco aveva visto la scena come un'occasione d'oro.","nb":true,"i":null,"f":null},{"v":"N","t":"Con un movimento fulmineo, estrasse il telefono e scattò. Un clic silenzioso immortalò la caduta di Leo. Un ghigno soddisfatto gli si dipinse sul volto.","nb":false,"i":null,"f":null},{"v":"M","t":"\"Questa è troppo bella per non condividerla,\"","nb":true,"i":null,"f":null},{"v":"N","t":"pensò.","nb":true,"i":null,"f":null}]},{"pagina":5,"durata":null,"frasi":[{"v":"N","t":"Pochi istanti dopo, una notifica illuminò gli schermi di tutti gli studenti della classe.","nb":true,"i":null,"f":null},{"v":"N","t":"Nella chat di gruppo era apparsa la foto di Marco: Leo a terra, goffo e sorpreso. Sotto, una didascalia crudele: \"Il nostro campione di agilità!\".","nb":false,"i":null,"f":null},{"v":"N","t":"Immediatamente, la chat si riempì di emoji che ridevano e commenti pungenti.","nb":false,"i":null,"f":null}]},{"pagina":6,"durata":null,"frasi":[{"v":"N","t":"Anche il telefono di Leo vibrò. Aprì la chat e il sangue gli si gelò nelle vene. Vide la foto. Vide i commenti. \"Che frana!\", \"Leo il ballerino\".","nb":true,"i":null,"f":null},{"v":"N","t":"Ogni parola era una pugnalata. Si sentì improvvisamente solo e umiliato, il cuore pesante nel petto.","nb":false,"i":null,"f":null}]},{"pagina":7,"durata":null,"frasi":[{"v":"N","t":"Kaito e Hikari lo trovarono poco dopo. Non ebbero bisogno di chiedere.","nb":true,"i":null,"f":null},{"v":"H","t":"\"Non è giusto, Leo,\"","nb":true,"i":null,"f":null},{"v":"N","t":"disse Hikari, mettendogli una mano sulla spalla. Kaito era livido di rabbia.","nb":true,"i":null,"f":null},{"v":"K","t":"\"Questo non è uno scherzo. Si chiama cyberbullismo. E chiunque sia stato ha infranto una regola fondamentale.\"","nb":true,"i":null,"f":null}]},{"pagina":8,"durata":null,"frasi":[{"v":"N","t":"Senza esitazione, i tre amici si diressero nell'ufficio della Professoressa Rossi. Le mostrarono il telefono, la foto, i commenti.","nb":true,"i":null,"f":null},{"v":"N","t":"L'espressione della professoressa passò dalla cordialità dell'Open Day a una serietà glaciale.","nb":false,"i":null,"f":null},{"v":"R","t":"\"Avete fatto benissimo a dirmelo subito. Ce ne occupiamo immediatamente.\"","nb":true,"i":null,"f":null}]},{"pagina":9,"durata":null,"frasi":[{"v":"N","t":"La professoressa convocò Marco. Messo di fronte all'evidenza, il ragazzo ammise tutto.","nb":true,"i":null,"f":null},{"v":"M","t":"\"Ma era solo per ridere,\"","nb":true,"i":null,"f":null},{"v":"N","t":"tentò di giustificarsi, a testa bassa.","nb":true,"i":null,"f":null},{"v":"R","t":"\"Le risate degli altri possono fare molto male, Marco,\"","nb":true,"i":null,"f":null},{"v":"N","t":"rispose la professoressa con tono grave.","nb":true,"i":null,"f":null},{"v":"R","t":"\"Hai violato la privacy di un tuo compagno e le regole di questa scuola.\"","nb":true,"i":null,"f":null}]},{"pagina":10,"durata":null,"frasi":[{"v":"N","t":"Quella sera, Leo ricevette un messaggio privato da Marco. C'era scritta una sola parola: \"Scusa\". Non bastava a cancellare il dolore, ma era un inizio.","nb":true,"i":null,"f":null},{"v":"N","t":"Kaito e Hikari gli erano accanto, uniti.","nb":false,"i":null,"f":null},{"v":"N","t":"L'Open Day aveva insegnato a tutti una lezione inaspettata: la tecnologia più avanzata non vale nulla senza la cosa più importante di tutte: l'empatia.","nb":false,"i":null,"f":null}]}]}];
+const VOCI = {"N":{"nome":"Narratore","colore":"#1E2420"},"K":{"nome":"Kaito","colore":"#0B6FB8"},"H":{"nome":"Hikari","colore":"#C2306E"},"S":{"nome":"Shadow","colore":"#4B2A7B"},"T":{"nome":"Signor Tanaka","colore":"#9A6410"},"R":{"nome":"Prof.ssa Rossi","colore":"#1D7A5C"},"L":{"nome":"Leo","colore":"#1F7F8F"},"A":{"nome":"Sara","colore":"#8E3FA0"},"D":{"nome":"Dario","colore":"#5E6420"},"M":{"nome":"Marco","colore":"#3E6A8C"},"P":{"nome":"Un padre","colore":"#4A5A6A"}};
+const SCURI = new Set(["S"]);          // balloon "da schermo": messaggi del cattivo
+
+const $ = s => document.querySelector(s);
+const audio = new Audio();
+audio.preload = "auto";
+const stato = { ep: null, pag: 0 };
+const VELOCITA = [0.85, 1, 1.15];
+let iVel = 1, rafId = null, idxAttiva = -1;
+
+const fmt = s => { s = Math.max(0, Math.round(s || 0)); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); };
+const media = (ep, p, ext) => `media/ep${ep}/p${String(p).padStart(2, "0")}.${ext}`;
+const leggi = (k, d) => { try { const v = localStorage.getItem("cl_" + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } };
+const salva = (k, v) => { try { localStorage.setItem("cl_" + k, JSON.stringify(v)); } catch (e) {} };
+const ICO_ORO = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>`;
+
+/* ---------- Home ---------- */
+function disegnaHome() {
+  $("#griglia").innerHTML = EPISODI.map(e => {
+    const tot = e.pagine.reduce((a, p) => a + (p.durata || 0), 0);
+    const pronto = e.pagine.every(p => p.durata);
+    return `<button class="card" data-ep="${e.n}" aria-label="Episodio ${e.n}: ${e.titolo}">
+      <span class="num">EP.${String(e.n).padStart(2, "0")}</span>
+      <div class="img"><img src="${media(e.n, 1, "webp")}" alt="" loading="lazy"></div>
+      <div class="info">
+        <h2>${e.titolo}</h2>
+        <div class="meta"><span class="tema">${e.tema}</span>
+          ${pronto ? `<span class="durata">${ICO_ORO}${fmt(tot)}</span>` : `<span class="stato">audio in arrivo</span>`}</div>
+      </div></button>`;
+  }).join("");
+  $("#griglia").querySelectorAll(".card").forEach(c => c.onclick = () => apri(+c.dataset.ep, 0));
+}
+
+/* ---------- Lettore ---------- */
+const episodio = () => EPISODI.find(e => e.n === stato.ep);
+
+function apri(ep, pag, play = false) {
+  stato.ep = ep; stato.pag = pag;
+  history.replaceState(null, "", `#ep${ep}/p${pag + 1}`);
+  $("#home").classList.add("nascosto"); $("#piede").classList.add("nascosto");
+  $("#lettore").classList.remove("nascosto"); $("#torna").classList.remove("nascosto");
+  mostraPagina(play);
+}
+
+function home() {
+  audio.pause(); audio.removeAttribute("src");
+  stato.ep = null; history.replaceState(null, "", location.pathname + location.search);
+  $("#lettore").classList.add("nascosto"); $("#torna").classList.add("nascosto");
+  $("#home").classList.remove("nascosto"); $("#piede").classList.remove("nascosto");
+  $("#sotto-titolo").textContent = "";
+  window.scrollTo(0, 0);
+}
+
+function span(f, k) { return `<span class="fr" data-i="${k}">${f.t}</span>`; }
+// nel libro "scrisse Kaito, ..." segue la battuta; in una didascalia a se' va la maiuscola
+const maiuscola = t => t.replace(/^([«"'“]?)(\p{Ll})/u, (_, q, c) => q + c.toUpperCase());
+
+function mostraPagina(play) {
+  const e = episodio(), p = e.pagine[stato.pag];
+  idxAttiva = -1;
+  $("#fine").classList.add("nascosto");
+  $("#illus").src = media(e.n, p.pagina, "webp");
+  $("#illus").alt = stato.pag === 0 ? `Copertina: ${e.titolo}` : `Illustrazione della pagina ${stato.pag}`;
+  $("#pag-num").textContent = stato.pag === 0 ? `EP.${String(e.n).padStart(2, "0")}` : `${stato.pag} / ${e.pagine.length - 1}`;
+  $("#sotto-titolo").textContent = `Episodio ${e.n} · ${e.titolo}`;
+
+  const T = $("#testo");
+  if (stato.pag === 0) {
+    const cast = [...new Set(e.pagine.flatMap(q => q.frasi.map(f => f.v)))].filter(v => v !== "N");
+    T.innerHTML = `<div class="frontespizio">
+      <span class="ep">EPISODIO ${e.n}</span>
+      <h2>${span({ t: e.titolo }, 0)}</h2>
+      <span class="tema">${e.tema}</span>
+      <div class="cast-tit">PERSONAGGI</div>
+      <div class="cast">${cast.map(v => `<span style="--c:${VOCI[v].colore}">${VOCI[v].nome.toUpperCase()}</span>`).join("")}</div>
+      <div class="invito"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg>Premi play o la barra spaziatrice per ascoltare</div>
+    </div>`;
+  } else {
+    // battute -> blocchi: didascalia (narratore) o balloon (personaggio); ogni frase resta uno <span>
+    const blocchi = [];
+    p.frasi.forEach((f, k) => {
+      if (f.nb || !blocchi.length) blocchi.push({ v: f.v, frasi: [] });
+      const b = blocchi[blocchi.length - 1];
+      b.frasi.push(span(b.frasi.length ? f : { t: maiuscola(f.t) }, k));
+    });
+    const lato = {}; let n = 0;   // primo personaggio della pagina a sinistra, secondo a destra...
+    T.innerHTML = blocchi.map(b => {
+      if (b.v === "N") return `<div class="blocco didascalia">${b.frasi.join(" ")}</div>`;
+      if (!(b.v in lato)) lato[b.v] = n++ % 2 ? "dx" : "";
+      const voce = VOCI[b.v];
+      return `<div class="blocco balloon ${lato[b.v]} ${SCURI.has(b.v) ? "scuro" : ""}">
+        <span class="chi" style="--c:${voce.colore}">${voce.nome.toUpperCase()}</span>${b.frasi.join(" ")}</div>`;
+    }).join("");
+  }
+  T.scrollTop = 0;
+  T.querySelectorAll(".fr").forEach(s => s.onclick = () => vaiAFrase(+s.dataset.i));
+
+  $("#pallini").innerHTML = e.pagine.map((_, k) =>
+    `<button class="${k === stato.pag ? "qui" : k < stato.pag ? "fatto" : ""}" aria-label="Vai alla pagina ${k}" data-k="${k}"></button>`).join("");
+  $("#pallini").querySelectorAll("button").forEach(b => b.onclick = () => apri(stato.ep, +b.dataset.k, !audio.paused));
+  $("#prec").disabled = stato.pag === 0;
+  $("#succ").disabled = stato.pag === e.pagine.length - 1;
+
+  const haAudio = !!p.durata;
+  $("#play").disabled = !haAudio;
+  $("#nota-audio").classList.toggle("nascosto", haAudio);
+  $("#durata").textContent = fmt(p.durata); $("#tempo").textContent = "0:00"; $("#barra-pieno").style.width = "0";
+  if (haAudio) {
+    audio.src = media(e.n, p.pagina, "mp3");
+    audio.playbackRate = VELOCITA[iVel];
+    if (play) audio.play().catch(() => {});
+  } else { audio.pause(); audio.removeAttribute("src"); }
+  aggiornaIcona();
+  const q = e.pagine[stato.pag + 1];
+  if (q) new Image().src = media(e.n, q.pagina, "webp");
+}
+
+function vaiAFrase(k) {
+  const f = episodio().pagine[stato.pag].frasi[k];
+  if (!f || f.i == null || !audio.getAttribute("src")) return;
+  audio.currentTime = f.i;
+  audio.play().catch(() => {});
+}
+
+function evidenzia() {
+  const p = episodio().pagine[stato.pag], t = audio.currentTime;
+  let k = -1;
+  for (let j = 0; j < p.frasi.length; j++) if (p.frasi[j].i != null && t >= p.frasi[j].i - 0.05) k = j;
+  if (k !== idxAttiva) {
+    idxAttiva = k;
+    const T = $("#testo");
+    T.querySelectorAll(".fr.attiva").forEach(s => s.classList.remove("attiva"));
+    T.querySelectorAll(".blocco.attivo").forEach(s => s.classList.remove("attivo"));
+    const s = T.querySelector(`.fr[data-i="${k}"]`);
+    if (s) {
+      s.classList.add("attiva");
+      const b = s.closest(".blocco"); if (b) b.classList.add("attivo");
+      const r = s.getBoundingClientRect(), rt = T.getBoundingClientRect();
+      if (r.bottom > rt.bottom - 24 || r.top < rt.top + 10) T.scrollTop += r.top - rt.top - rt.height * 0.3;
+    }
+  }
+  $("#tempo").textContent = fmt(t);
+  $("#barra-pieno").style.width = (100 * t / (audio.duration || p.durata || 1)) + "%";
+}
+
+function ciclo() { evidenzia(); rafId = requestAnimationFrame(ciclo); }
+function aggiornaIcona() {
+  const suona = !audio.paused;
+  $("#ico-play").classList.toggle("nascosto", suona);
+  $("#ico-pausa").classList.toggle("nascosto", !suona);
+  $("#play").setAttribute("aria-label", suona ? "Pausa" : "Ascolta");
+}
+
+audio.addEventListener("play", () => { aggiornaIcona(); cancelAnimationFrame(rafId); ciclo(); });
+audio.addEventListener("pause", () => { aggiornaIcona(); cancelAnimationFrame(rafId); if (stato.ep) evidenzia(); });
+audio.addEventListener("ended", () => {
+  const e = episodio();
+  if (stato.pag < e.pagine.length - 1) {
+    if (leggi("auto", true)) setTimeout(() => { if (stato.ep === e.n && audio.ended) apri(e.n, stato.pag + 1, true); }, 900);
+  } else {
+    const succ = EPISODI.find(x => x.n === e.n + 1);
+    $("#fine-testo").textContent = succ ? `Prossimo episodio: "${succ.titolo}"` : "Hai completato tutti gli episodi di Cyber Legends!";
+    $("#fine-prossimo").classList.toggle("nascosto", !succ);
+    $("#fine").classList.remove("nascosto");
+  }
+});
+
+$("#play").onclick = () => { if (audio.paused) audio.play().catch(() => {}); else audio.pause(); };
+$("#prec").onclick = () => apri(stato.ep, stato.pag - 1, !audio.paused);
+$("#succ").onclick = () => apri(stato.ep, stato.pag + 1, !audio.paused);
+$("#barra").onclick = ev => {
+  if (!audio.duration) return;
+  const r = ev.currentTarget.getBoundingClientRect();
+  audio.currentTime = audio.duration * (ev.clientX - r.left) / r.width; evidenzia();
+};
+$("#vai-home").onclick = home; $("#torna").onclick = home;
+$("#fine-rileggi").onclick = () => apri(stato.ep, 0);
+$("#fine-prossimo").onclick = () => apri(stato.ep + 1, 0, true);
+
+const scriviVel = () => $("#velocita").textContent = String(VELOCITA[iVel]).replace(".", ",") + "×";
+$("#velocita").onclick = () => { iVel = (iVel + 1) % VELOCITA.length; audio.playbackRate = VELOCITA[iVel]; scriviVel(); salva("vel", iVel); };
+const btnAuto = $("#auto");
+btnAuto.onclick = () => { const v = !leggi("auto", true); salva("auto", v); btnAuto.setAttribute("aria-pressed", v); };
+$("#leggibile").onclick = () => {
+  const v = !document.body.classList.contains("leggibile");
+  document.body.classList.toggle("leggibile", v); $("#leggibile").setAttribute("aria-pressed", v); salva("leggibile", v);
+};
+let dim = leggi("dim", 23);
+const applicaDim = () => { document.documentElement.style.setProperty("--dim-testo", dim + "px"); salva("dim", dim); };
+$("#meno").onclick = () => { dim = Math.max(17, dim - 2); applicaDim(); };
+$("#piu").onclick = () => { dim = Math.min(35, dim + 2); applicaDim(); };
+
+document.addEventListener("keydown", ev => {
+  if (stato.ep === null || ev.target.closest("input,textarea")) return;
+  if (ev.code === "Space") { ev.preventDefault(); if (!$("#play").disabled) $("#play").click(); }
+  else if (ev.key === "ArrowRight" && !$("#succ").disabled) $("#succ").click();
+  else if (ev.key === "ArrowLeft" && !$("#prec").disabled) $("#prec").click();
+  else if (ev.key === "Escape") home();
+});
+
+/* ---------- Avvio ---------- */
+iVel = leggi("vel", 1); audio.playbackRate = VELOCITA[iVel]; scriviVel();
+btnAuto.setAttribute("aria-pressed", leggi("auto", true));
+if (leggi("leggibile", false)) { document.body.classList.add("leggibile"); $("#leggibile").setAttribute("aria-pressed", "true"); }
+applicaDim();
+disegnaHome();
+// link diretto a una pagina: index.html#ep3/p5
+function daHash() {
+  const m = location.hash.match(/^#ep(\d+)\/p(\d+)$/);
+  const e = m && EPISODI.find(x => x.n === +m[1]);
+  if (e) apri(e.n, Math.min(e.pagine.length - 1, Math.max(0, +m[2] - 1)));
+}
+window.addEventListener("hashchange", daHash);
+daHash();
+</script>
+</body>
+</html>
