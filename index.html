@@ -294,6 +294,110 @@
   .attivita .dx em{display:block;font-style:normal;font-family:var(--font-titolo);font-size:22px;letter-spacing:1.5px;color:var(--giallo);line-height:1.1}
   .tit-griglia{margin:0 0 26px;font-family:var(--font-titolo);font-weight:400;font-size:34px;letter-spacing:2px;line-height:1;display:inline-block;background:var(--giallo);border:3px solid var(--inchiostro);padding:4px 14px 1px;box-shadow:4px 4px 0 var(--inchiostro);transform:rotate(-1deg)}
 
+  /* ---------- Laboratorio di scrittura: episodio 9 ---------- */
+  #lab{min-height:calc(100vh - 62px);padding:20px 26px 40px;max-width:1500px;margin:0 auto}
+  .l-salvato{font-size:13.5px;color:var(--grigio);font-weight:700}
+  .l-passi{list-style:none;margin:0 0 18px;padding:0;display:flex;gap:8px;flex-wrap:wrap}
+  .l-passi button{display:flex;align-items:center;gap:8px;border:3px solid var(--inchiostro);background:#fff;font-family:var(--font-titolo);font-size:19px;letter-spacing:1px;padding:5px 14px 2px}
+  .l-passi button:hover{background:var(--giallo-chiaro)}
+  .l-passi button b{display:grid;place-items:center;width:24px;height:24px;background:var(--inchiostro);color:var(--giallo);font-weight:400;font-size:17px;padding-top:2px}
+  .l-passi button[aria-current="step"]{background:var(--giallo);box-shadow:4px 4px 0 var(--inchiostro)}
+  .l-passi button.fatto b{background:var(--ciano);color:var(--inchiostro)}
+  .l-pannello{background:#fff;border:4px solid var(--inchiostro);box-shadow:7px 7px 0 var(--inchiostro);padding:20px 24px;display:flex;flex-direction:column;gap:14px;min-width:0}
+  .l-pannello h3{margin:0;font-family:var(--font-titolo);font-weight:400;font-size:30px;letter-spacing:1.5px;line-height:1}
+  .l-pannello h4{margin:4px 0 0;font-family:var(--font-titolo);font-weight:400;font-size:21px;letter-spacing:1px}
+  .l-guida{margin:0;font-size:16.5px;max-width:900px}
+  .l-griglia{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+  .l-scelta{text-align:left;background:#fff;border:3px solid var(--inchiostro);padding:11px 13px;display:flex;flex-direction:column;gap:6px;font-size:14.5px;line-height:1.4}
+  .l-scelta:hover{background:var(--giallo-chiaro)}
+  .l-scelta[aria-pressed="true"]{background:var(--giallo);box-shadow:4px 4px 0 var(--inchiostro)}
+  .l-scelta b{font-family:"Dela Gothic One",sans-serif;font-weight:400;font-size:16px;line-height:1.2}
+  .l-scelta .riga{display:flex;align-items:center;gap:10px}
+  .l-et{align-self:flex-start;font-size:11.5px;font-weight:700;border:2px solid var(--inchiostro);background:var(--carta-2);padding:0 6px}
+  .l-et.nuova{background:#DDEBFF}
+  .l-campo{display:flex;flex-direction:column;gap:5px;font-weight:700;font-size:15px}
+  .l-campo small{font-weight:400;color:var(--grigio)}
+  .l-campo input,.l-campo textarea,.l-campo select,.l-battuta select,.l-battuta textarea{border:2.5px solid var(--inchiostro);font:inherit;font-weight:400;font-size:15.5px;padding:8px 10px;background:#fff;color:var(--inchiostro);width:100%}
+  .l-campo textarea{min-height:70px;resize:vertical}
+  .l-chips{display:inline-flex;gap:6px;flex-wrap:wrap;vertical-align:middle}
+  .l-chips span{font-size:13.5px;font-weight:700;border:2px solid var(--inchiostro);padding:2px 9px;background:var(--carta-2)}
+  .l-chips span.si{background:var(--ciano)}
+  .l-nuovi{display:flex;flex-direction:column;gap:12px}
+  .l-nuovo{border:3px dashed var(--inchiostro);background:var(--carta);padding:12px;display:grid;grid-template-columns:1fr 1fr 1.4fr auto;gap:10px;align-items:end}
+  .l-nav{display:flex;justify-content:space-between;gap:12px;margin-top:20px}
+  .l-nav .btn{font-size:17px}
+  .l-mini{border:2.5px solid var(--inchiostro);background:#fff;font-weight:700;font-size:14.5px;padding:6px 12px;display:inline-flex;align-items:center;gap:6px;align-self:flex-start}
+  .l-mini:hover{background:var(--giallo-chiaro)}
+  .l-x{width:34px;height:34px;border:2.5px solid var(--inchiostro);background:#fff;display:grid;place-items:center;padding:0;flex:none}
+  .l-x:hover{background:var(--giallo-chiaro)}
+  /* tavole: editor a sinistra, anteprima a destra */
+  .l-tav-corpo{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:24px;align-items:start}
+  .l-tabs{display:flex;gap:6px;flex-wrap:wrap}
+  .l-tabs button{border:3px solid var(--inchiostro);background:#fff;font-family:var(--font-titolo);font-size:18px;letter-spacing:1px;padding:4px 12px 1px;display:flex;align-items:center;gap:7px}
+  .l-tabs button:hover{background:var(--giallo-chiaro)}
+  .l-tabs button[aria-selected="true"]{background:var(--giallo)}
+  .l-tabs .pal{width:11px;height:11px;border-radius:50%;border:2px solid var(--inchiostro);background:#fff}
+  .l-tabs .pal.ok{background:var(--ciano)}
+  .l-guida-box{border-left:5px solid var(--ciano);background:#EAF6FA;padding:9px 13px;font-size:15.5px}
+  .l-guida-box b{font-family:var(--font-titolo);font-weight:400;font-size:20px;letter-spacing:1px}
+  .l-img{display:flex;gap:14px;align-items:center}
+  .l-img img,.l-img .vuota{width:76px;height:112px;object-fit:cover;border:2.5px solid var(--inchiostro);flex:none}
+  .l-img .vuota{border-style:dashed;border-color:var(--grigio);display:grid;place-items:center;font-size:12px;color:var(--grigio);text-align:center;padding:4px}
+  .l-battute{display:flex;flex-direction:column;gap:8px}
+  .l-battuta{display:grid;grid-template-columns:170px 1fr 34px;gap:8px;align-items:start}
+  .l-battuta textarea{min-height:46px;resize:vertical}
+  .l-anteprima{position:sticky;top:80px;display:flex;flex-direction:column;gap:8px}
+  .l-anteprima > b{font-family:var(--font-titolo);font-weight:400;font-size:19px;letter-spacing:1px}
+  .l-tavola{background:#fff;border:4px solid var(--inchiostro);box-shadow:7px 7px 0 var(--inchiostro);overflow:hidden}
+  .l-tavola .l-pic{position:relative;background:#222;border-bottom:4px solid var(--inchiostro);min-height:30px}
+  .l-tavola .l-pic img{width:100%;max-height:340px;object-fit:cover;object-position:center 25%;display:block}
+  .l-tavola .l-pic span{position:absolute;left:0;bottom:0;background:var(--inchiostro);color:#fff;font-family:var(--font-titolo);font-size:18px;letter-spacing:1px;padding:4px 10px 1px}
+  .l-tavola .l-testo{padding:26px 18px 24px;display:flex;flex-direction:column;gap:26px;font-family:var(--font-storia);font-size:18px;line-height:1.4}
+  .l-vuoto{color:var(--grigio);font-style:italic;font-family:var(--font-ui);font-size:14.5px;margin:0}
+  /* controlla */
+  .l-check{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+  .l-check li{display:flex;gap:10px;align-items:center;font-size:15.5px;flex-wrap:wrap}
+  .l-check .ico{flex:none;width:26px;height:26px;display:grid;place-items:center;border:2.5px solid var(--inchiostro)}
+  .l-check .ico.ok{background:var(--ciano)} .l-check .ico.no{background:#FFB23C}
+  .l-auto{display:flex;flex-direction:column;gap:2px}
+  .l-auto label{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;cursor:pointer;padding:5px 0}
+  .l-auto input{width:20px;height:20px;accent-color:var(--inchiostro);flex:none;margin-top:2px}
+  /* leggi e invia */
+  .l-libro{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+  .l-copertina{grid-column:1/-1;text-align:center;background:var(--giallo);border:4px solid var(--inchiostro);box-shadow:7px 7px 0 var(--inchiostro);padding:22px;display:flex;flex-direction:column;gap:8px;align-items:center}
+  .l-copertina .ep{background:var(--inchiostro);color:#fff;font-family:var(--font-titolo);font-size:20px;letter-spacing:1px;padding:4px 12px 2px}
+  .l-copertina h3{margin:0;font-family:var(--font-titolo);font-weight:400;font-size:46px;letter-spacing:2px;line-height:1;text-shadow:3px 3px 0 #fff}
+  .l-invio{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end}
+  .l-esito{font-weight:700;padding:9px 13px;border-left:5px solid;margin:0}
+  .l-esito.ok{border-color:var(--ciano);background:#EAF6FA} .l-esito.att{border-color:#FFB23C;background:#FFF6E2}
+  /* scelta dell'illustrazione */
+  .l-filtri{display:flex;gap:6px;flex-wrap:wrap}
+  .l-filtri button{border:2.5px solid var(--inchiostro);background:#fff;font-weight:700;font-size:13.5px;padding:3px 10px}
+  .l-filtri button[aria-pressed="true"]{background:var(--giallo)}
+  .l-galleria{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:12px}
+  .l-galleria button{padding:0;border:3px solid var(--inchiostro);background:#222;aspect-ratio:971/1530;overflow:hidden}
+  .l-galleria button[aria-pressed="true"]{outline:5px solid var(--giallo);outline-offset:1px}
+  .l-galleria img{width:100%;height:100%;object-fit:cover;display:block}
+  /* card EP.09 in home */
+  .card.scrivi{background:var(--giallo)}
+  .card.scrivi .img{background:var(--carta);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;aspect-ratio:3/3.6;
+    background-image:radial-gradient(var(--retino) 1.1px, transparent 1.5px);background-size:8px 8px}
+  .card.scrivi .img span{font-family:var(--font-titolo);font-size:44px;line-height:.95;letter-spacing:2px;text-align:center;text-shadow:3px 3px 0 var(--giallo)}
+  @media (max-width:900px){
+    #lab{padding:14px 12px 30px}
+    .l-tav-corpo,.l-libro{grid-template-columns:1fr}
+    .l-anteprima{position:static}
+    .l-invio,.l-nuovo{grid-template-columns:1fr}
+    .l-battuta{grid-template-columns:1fr 34px} .l-battuta select{grid-column:1 / -1}
+    .l-passi button{font-size:16px;padding:4px 10px 1px}
+    .l-pannello{padding:16px 14px}
+  }
+  @media print{
+    header,.l-passi,.l-nav,.l-invio-box,#lab .s-testa,#torna-gioco{display:none !important}
+    body{background:#fff}
+    .l-libro{grid-template-columns:1fr} .l-tavola{break-inside:avoid;box-shadow:none}
+  }
+
   /* ---------- Info docenti (finestra a schede) ---------- */
   #info-velo{z-index:10}
   .g-box.larga{max-width:1020px}
@@ -400,7 +504,7 @@
     <div>
       <h1>CYBER<br>LEGENDS</h1>
       <div class="kana-grande" aria-hidden="true">サイバー・レジェンズ</div>
-      <p>Kaito e Hikari affrontano truffe online, ransomware, app pericolose, fake news e cyberbullismo. Scegli un episodio e ascolta la storia: la frase letta si evidenzia nel fumetto. Alla fine, con il Team cybersicurezza e cyberbullismo, aiuti i compagni a risolvere i loro casi.</p>
+      <p>Kaito e Hikari affrontano truffe online, ransomware, app pericolose, fake news e cyberbullismo. Scegli un episodio e ascolta la storia: la frase letta si evidenzia nel fumetto. Alla fine, con il Team cybersicurezza e cyberbullismo, aiuti i compagni a risolvere i loro casi. E l'episodio 9? Lo scrivi tu.</p>
     </div>
     <div class="scoppio" aria-hidden="true"><div><span id="n-episodi"></span>EPISODI!</div></div>
   </section>
@@ -439,6 +543,9 @@
         <div class="kanji" aria-hidden="true">終</div>
         <h3>FINE!</h3>
         <p id="fine-testo"></p>
+        <button class="btn nascosto" id="fine-ep9" style="font-size:19px;padding:12px 24px;margin-top:6px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><path d="M4 20l1-5L16 4l4 4L9 19z"/><path d="M13.5 6.5l4 4"/></svg>
+          Scrivi tu l'episodio 9</button>
         <button class="btn" id="fine-gioco" style="font-size:19px;padding:12px 24px;margin-top:6px">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>
           I casi del Team cybersicurezza e cyberbullismo</button>
@@ -518,6 +625,20 @@
   </div>
   <div class="g-velo nascosto" id="g-velo"><div class="g-box" id="g-box" role="dialog" aria-modal="true" tabindex="-1"></div></div>
 </section>
+<section id="lab" class="nascosto" aria-label="Laboratorio di scrittura: episodio 9">
+  <div class="s-testa">
+    <span class="ep">EP.09</span>
+    <h2>SCRIVILO TU!</h2>
+    <span class="g-caso">LABORATORIO DI SCRITTURA</span>
+    <span class="spazio"></span>
+    <span class="l-salvato" id="l-salvato" aria-live="polite"></span>
+    <button id="l-aiuto" class="l-mini">Come si fa</button>
+  </div>
+  <ol class="l-passi" id="l-passi" aria-label="Passi del laboratorio"></ol>
+  <div id="l-corpo"></div>
+  <div class="l-nav"><button class="btn sec" id="l-indietro"></button><span></span><button class="btn" id="l-avanti"></button></div>
+  <div class="g-velo nascosto" id="l-velo"><div class="g-box larga" id="l-box" role="dialog" aria-modal="true" tabindex="-1"></div></div>
+</section>
 <button class="btn nascosto" id="torna-gioco">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M15 5l-7 7 7 7"/></svg>
   Torna alla scheda</button>
@@ -555,8 +676,12 @@ function disegnaHome() {
         <div class="meta"><span class="tema">${e.tema}</span>
           ${pronto ? `<span class="durata">${ICO_ORO}${fmt(tot)}</span>` : `<span class="stato">audio in arrivo</span>`}</div>
       </div></button>`;
-  }).join("");
-  $("#griglia").querySelectorAll(".card").forEach(c => c.onclick = () => apri(+c.dataset.ep, 0));
+  }).join("") + `<button class="card scrivi" id="card-ep9" aria-label="Episodio 9: scrivilo tu. Laboratorio di scrittura">
+      <span class="num">EP.09</span>
+      <div class="img"><svg width="92" height="92" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 20l1-5L16 4l4 4L9 19z"/><path d="M13.5 6.5l4 4M5 15l4 4"/></svg><span>SCRIVILO<br>TU!</span></div>
+      <div class="info"><h2>L'episodio 9 lo scrivi tu</h2><div class="meta"><span class="tema">Laboratorio di scrittura</span></div></div></button>`;
+  $("#griglia").querySelectorAll(".card[data-ep]").forEach(c => c.onclick = () => apri(+c.dataset.ep, 0));
+  $("#card-ep9").onclick = mostraLab;
 }
 
 /* ---------- Lettore ---------- */
@@ -567,7 +692,7 @@ function apri(ep, pag, play = false) {
   history.replaceState(null, "", `#ep${ep}/p${pag + 1}`);
   $("#home").classList.add("nascosto"); $("#piede").classList.add("nascosto"); $("#gioco").classList.add("nascosto");
   $("#lettore").classList.remove("nascosto"); $("#torna").classList.remove("nascosto"); $("#vai-gioco").classList.remove("nascosto");
-  $("#info-doc").classList.add("nascosto"); chiudiInfo();
+  $("#info-doc").classList.add("nascosto"); chiudiInfo(); $("#lab").classList.add("nascosto");
   $("#torna-gioco").classList.toggle("nascosto", !(G && !G.finito));   // si e' arrivati qui da "rivedi la scena"
   mostraPagina(play);
 }
@@ -576,7 +701,7 @@ function home() {
   audio.pause(); audio.removeAttribute("src");
   stato.ep = null; history.replaceState(null, "", location.pathname + location.search);
   $("#lettore").classList.add("nascosto"); $("#torna").classList.add("nascosto");
-  ["#gioco", "#vai-gioco", "#torna-gioco", "#g-velo"].forEach(s => $(s).classList.add("nascosto"));
+  ["#gioco", "#vai-gioco", "#torna-gioco", "#g-velo", "#lab", "#l-velo"].forEach(s => $(s).classList.add("nascosto"));
   $("#home").classList.remove("nascosto"); $("#piede").classList.remove("nascosto"); $("#info-doc").classList.remove("nascosto");
   $("#sotto-titolo").textContent = "";
   window.scrollTo(0, 0);
@@ -690,8 +815,9 @@ audio.addEventListener("ended", () => {
     if (leggi("auto", true)) setTimeout(() => { if (stato.ep === e.n && audio.ended) apri(e.n, stato.pag + 1, true); }, 900);
   } else {
     const succ = EPISODI.find(x => x.n === e.n + 1);
-    $("#fine-testo").textContent = succ ? `Prossimo episodio: "${succ.titolo}"` : "Hai completato tutti gli episodi di Cyber Legends!";
+    $("#fine-testo").textContent = succ ? `Prossimo episodio: "${succ.titolo}"` : "Hai completato tutti gli episodi di Cyber Legends! Adesso tocca a te: scrivi l'episodio 9.";
     $("#fine-prossimo").classList.toggle("nascosto", !succ);
+    $("#fine-ep9").classList.toggle("nascosto", !!succ);
     $("#fine").classList.remove("nascosto");
   }
 });
@@ -816,7 +942,7 @@ function iniziaCaso() {
 
 function mostraGioco() {
   audio.pause(); stato.ep = null;
-  ["#home", "#piede", "#lettore", "#torna-gioco", "#vai-gioco", "#info-doc", "#info-velo"].forEach(s => $(s).classList.add("nascosto"));
+  ["#home", "#piede", "#lettore", "#torna-gioco", "#vai-gioco", "#info-doc", "#info-velo", "#lab"].forEach(s => $(s).classList.add("nascosto"));
   $("#gioco").classList.remove("nascosto"); $("#torna").classList.remove("nascosto");
   $("#sotto-titolo").textContent = `Episodio ${G.ep} · Team cybersicurezza e cyberbullismo`;
   history.replaceState(null, "", `#ep${G.ep}/team`);
@@ -1056,12 +1182,395 @@ $("#vai-gioco").onclick = () => apriGioco(stato.ep);
 $("#fine-gioco").onclick = () => apriGioco(stato.ep);
 $("#torna-gioco").onclick = () => { mostraGioco(); disegnaGioco(); };
 
+/* ---------- Laboratorio di scrittura «Episodio 9: scrivilo tu!» ----------
+   Lo studente sceglie minaccia, titolo e personaggi, poi scrive 6 tavole guidate da una scaletta
+   (didascalia del narratore + battute), sceglie per ognuna un'illustrazione degli episodi e vede
+   l'anteprima nello stile del lettore. Poi controllo (automatico + autovalutazione) e invio a un
+   Foglio Google del docente: fetch POST text/plain verso l'Apps Script (strumenti/apps_script_episodio9.gs),
+   che risponde in JSON. Scrive solo lo studente: nessuna IA.
+   Bozza salvata in localStorage (cl_ep9) a ogni modifica; v = versione del formato. */
+const LAB = {"_nota":"Laboratorio di scrittura «Episodio 9: scrivilo tu!». Minacce tra cui scegliere (le prime 8 riprendono gli episodi, le altre sono nuove), descrizioni dei personaggi, guida delle 6 tavole, autovalutazione. 'parole' deve contenere voci del glossario: lo controlla costruisci_sito.py. 'url_raccolta' è l'URL /exec dell'Apps Script (apps_script_episodio9.gs): vuoto = invio non ancora attivo.","url_raccolta":"https://script.google.com/macros/s/AKfycbzbRHvdYeTxjAUHKPdtvsZXEp4y9zWPC0g7FlB9yJ7CzFg_qcDyPyvzC883vOarm4IiEw/exec","minacce":[{"id":"phishing","titolo":"Il messaggio trappola","ep":1,"descr":"Un messaggio promette un premio o minaccia di chiudere un profilo, ma vuole solo la password.","parole":["Phishing","Password","Account","Identità digitale"]},{"id":"ransomware","titolo":"I file in ostaggio","ep":2,"descr":"Un programma blocca tutti i file e chiede soldi per restituirli.","parole":["Ransomware","Riscatto","Backup","Hard disk esterno"]},{"id":"hacker","titolo":"La porta aperta","ep":3,"descr":"Qualcuno scopre un punto debole in un sito o in un computer: lo userà per aiutare o per fare danni?","parole":["Vulnerabilità","White hat","Black hat","Backdoor"]},{"id":"app","titolo":"L'app gratis che spia","ep":4,"descr":"Un'app gratuita chiede tutti i permessi e intanto raccoglie dati e password.","parole":["App gratuita","VPN","Keylogger","Traffico dati"]},{"id":"algoritmo","titolo":"La bolla dei video","ep":5,"descr":"Un algoritmo propone solo video arrabbiati o esagerati, e nessuno riesce a smettere di guardarli.","parole":["Algoritmo","Clickbait","Bolla","Feed"]},{"id":"fake","titolo":"La notizia falsa","ep":6,"descr":"Gira una notizia o una foto falsa, e tutti ci credono.","parole":["Fake news","Fotomontaggio","Fonte ufficiale","Screenshot"]},{"id":"privacy","titolo":"La foto pubblicata senza permesso","ep":7,"descr":"Una foto o un video di qualcuno finisce online senza che abbia dato il permesso.","parole":["Privacy","Consenso","Condivisione","Segnalare"]},{"id":"cyberbullismo","titolo":"La presa in giro in chat","ep":8,"descr":"Nella chat di classe qualcuno viene preso in giro, e gli altri ridono o stanno zitti.","parole":["Cyberbullismo","Chat di gruppo","Empatia","Segnalare"]},{"id":"challenge","titolo":"La sfida pericolosa","ep":null,"descr":"Sui social gira una «sfida» che spinge i ragazzi a fare una cosa rischiosa per un video.","parole":["Virale","Algoritmo","Empatia","Segnalare"]},{"id":"posizione","titolo":"La posizione sempre accesa","ep":null,"descr":"Un'app mostra a tutti, anche a sconosciuti, dove ti trovi in ogni momento.","parole":["App gratuita","Privacy","Consenso","Account"]},{"id":"video","titolo":"Il video che non è vero","ep":null,"descr":"Qualcuno crea un video in cui una persona sembra dire o fare cose che non ha mai detto o fatto.","parole":["Fake news","Fotomontaggio","Fonte ufficiale","Segnalare"]},{"id":"notifiche","titolo":"Le notifiche che non finiscono mai","ep":null,"descr":"Un gioco manda notifiche giorno e notte: chi smette di giocare perde i premi.","parole":["Algoritmo","Interazione","Feed","Account"]}],"personaggi":{"K":"Studente curioso e appassionato di videogiochi. A volte agisce prima di pensare.","H":"Compagna di Kaito: attenta, ragiona sugli indizi e non si fa prendere dalla fretta.","S":"Hacker misterioso che si nasconde dietro lo schermo: il cattivo della serie.","T":"Imprenditore che ha visto bloccare i computer della sua azienda.","R":"Insegnante della classe: ascolta e sa a chi rivolgersi.","L":"Compagno di classe, entusiasta di ogni novità digitale.","A":"Compagna di classe, simpatica e chiacchierona.","D":"Compagno di classe che trova le regole inutili.","M":"Compagno di classe che a volte esagera con gli scherzi."},"ruoli_nuovi":["Compagno o compagna di classe","Insegnante","Genitore","Esperto o esperta di tecnologia","Il cattivo o la cattiva"],"tavole":[{"t":"Tutto normale","d":"Dove siamo e che cosa stanno facendo i personaggi? Presenta i protagonisti."},{"t":"Arriva la minaccia","d":"Che cosa succede di strano? Chi se ne accorge per primo?"},{"t":"L'indagine","d":"Quali indizi trovano? Usa le parole del fumetto per spiegare che cosa sta succedendo."},{"t":"Il momento più difficile","d":"Che cosa va storto? Qualcuno sta per fare un errore?"},{"t":"La soluzione","d":"Che cosa fanno di giusto? Quale adulto della scuola coinvolgono?"},{"t":"Che cosa abbiamo imparato","d":"Come finisce la storia? Quale consiglio lascia a chi la legge?"}],"autovalutazione":["Chi legge capisce qual è la minaccia.","La soluzione è quella che un ragazzo potrebbe davvero mettere in pratica.","Nella storia c'è un adulto a cui chiedere aiuto.","Non ho usato nomi di compagni o insegnanti veri.","Le battute sono rispettose: niente insulti né parolacce, nemmeno dal cattivo."]};
+const L_PASSI = ["Minaccia", "Personaggi", "Tavole", "Controlla", "Leggi e invia"];
+const COLORI_NUOVI = ["#B5541C", "#2F6F3E"];
+const MAX_CAST = 5, MAX_BATTUTE = 6;
+const ICO_AVANTI = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M5 12h13M13 6l6 6-6 6"/></svg>`;
+const ICO_INDIETRO = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M19 12H6M11 6l-6 6 6 6"/></svg>`;
+const ICO_OK = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`;
+const ICO_ATT = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square"><path d="M12 6v8M12 18v.5"/></svg>`;
+
+const labVuoto = () => ({ v: 1, passo: 0, minaccia: null, libera: "", titolo: "", cast: [], nuovi: [],
+  tavole: LAB.tavole.map(() => ({ img: null, did: "", bat: [] })), tav: 0, auto: [], nome: "", classe: "", id: null, inviato: null });
+let L = (() => { const s = leggi("ep9", null); return s && s.v === 1 && Array.isArray(s.tavole) && s.tavole.length === LAB.tavole.length ? s : labVuoto(); })();
+let filtroImg = 1;
+function salvaLab() { salva("ep9", L); const el = $("#l-salvato"); if (el) el.textContent = "Salvato su questo dispositivo"; }
+
+const minacciaScelta = () => LAB.minacce.find(m => m.id === L.minaccia);
+const nomeMinaccia = () => L.minaccia === "libera" ? L.libera.trim() : (minacciaScelta() || {}).titolo || "";
+// chi parla: i personaggi della serie scelti e quelli inventati (chiavi X0, X1)
+const parlanti = () => [...L.cast.map(k => ({ k, nome: VOCI[k].nome, colore: VOCI[k].colore })),
+  ...L.nuovi.map((n, i) => ({ k: "X" + i, nome: n.nome.trim() || `Personaggio nuovo ${i + 1}`, colore: COLORI_NUOVI[i] }))];
+const parlante = k => parlanti().find(p => p.k === k);
+const tavolaPiena = t => !!(t.did.trim() || t.bat.some(b => b.t.trim()));
+const senzaVirgolette = t => t.trim().replace(/^[«"“”']+|[»"“”']+$/g, "").trim();
+
+// parole del fumetto usate: radice tollerante (segnalare -> "segnal" trova anche "segnalato")
+const radice = p => { const s = p.toLowerCase(); return s.includes(" ") || s.length < 7 ? s : s.slice(0, s.length >= 9 ? -3 : -1); };
+function paroleUsate() {
+  const testo = [L.titolo, ...L.tavole.flatMap(t => [t.did, ...t.bat.map(b => b.t)])].join(" ").toLowerCase();
+  return PAROLE.filter(w => testo.includes(radice(w.parola))).map(w => w.parola);
+}
+function controlli() {
+  const parlano = new Set(L.tavole.flatMap(t => t.bat.filter(b => b.t.trim() && parlante(b.chi)).map(b => b.chi)));
+  const usate = paroleUsate(), piene = L.tavole.filter(tavolaPiena).length;
+  return [
+    { ok: !!nomeMinaccia(), t: nomeMinaccia() ? `Minaccia: ${nomeMinaccia()}` : "Manca la minaccia", passo: 0 },
+    { ok: !!L.titolo.trim(), t: L.titolo.trim() ? `Titolo: «${L.titolo.trim()}»` : "Manca il titolo", passo: 0 },
+    { ok: parlanti().length >= 2, t: `Personaggi scelti: ${parlanti().length} (almeno 2)`, passo: 1 },
+    { ok: piene === L.tavole.length, t: `Tavole scritte: ${piene} su ${L.tavole.length}`, passo: 2 },
+    { ok: parlano.size >= 2, t: `Personaggi che parlano: ${parlano.size} (almeno 2)`, passo: 2 },
+    { ok: usate.length >= 3, t: `Parole del fumetto usate: ${usate.length} (almeno 3)`, passo: 2 },
+    { ok: L.auto.length === LAB.autovalutazione.length, t: `Autovalutazione: ${L.auto.length} punti su ${LAB.autovalutazione.length}`, passo: 3 }];
+}
+const passoFatto = i => [
+  () => !!nomeMinaccia() && !!L.titolo.trim(), () => parlanti().length >= 2, () => L.tavole.every(tavolaPiena),
+  () => controlli().every(c => c.ok), () => !!L.inviato][i]();
+
+function mostraLab() {
+  audio.pause(); stato.ep = null; chiudiInfo();
+  ["#home", "#piede", "#lettore", "#gioco", "#torna-gioco", "#vai-gioco", "#info-doc"].forEach(s => $(s).classList.add("nascosto"));
+  $("#lab").classList.remove("nascosto"); $("#torna").classList.remove("nascosto");
+  $("#sotto-titolo").textContent = "Episodio 9 · Laboratorio di scrittura";
+  history.replaceState(null, "", "#ep9");
+  $("#l-salvato").textContent = leggi("ep9", null) ? "Bozza ripresa da questo dispositivo" : "";
+  disegnaLab(); window.scrollTo(0, 0);
+  if (!leggi("ep9_intro", false)) { salva("ep9_intro", true); labIntro(); }
+}
+
+function disegnaPassi() {
+  $("#l-passi").innerHTML = L_PASSI.map((t, i) => `<li><button data-p="${i}"${i === L.passo ? ' aria-current="step"' : ""} class="${passoFatto(i) ? "fatto" : ""}"><b>${i + 1}</b>${t}</button></li>`).join("");
+  $("#l-passi").querySelectorAll("button").forEach(b => b.onclick = () => vaiPasso(+b.dataset.p));
+}
+function disegnaLab() {
+  disegnaPassi();
+  [labMinaccia, labPersonaggi, labTavole, labControlla, labInvia][L.passo]();
+  $("#l-indietro").classList.toggle("nascosto", L.passo === 0);
+  $("#l-indietro").innerHTML = `${ICO_INDIETRO} ${L_PASSI[L.passo - 1] || ""}`;
+  $("#l-avanti").classList.toggle("nascosto", L.passo === L_PASSI.length - 1);
+  $("#l-avanti").innerHTML = `Avanti: ${L_PASSI[L.passo + 1] || ""} ${ICO_AVANTI}`;
+}
+function vaiPasso(p) { L.passo = Math.max(0, Math.min(L_PASSI.length - 1, p)); salvaLab(); suono("pagina"); disegnaLab(); window.scrollTo(0, 0); }
+// collega un campo di testo allo stato senza ridisegnare (il cursore resta dov'e')
+function campo(sel, leggiV, scriviV, dopo) {
+  const el = $(sel); if (!el) return;
+  el.value = leggiV();
+  el.oninput = () => { scriviV(el.value); salvaLab(); disegnaPassi(); if (dopo) dopo(); };
+}
+
+/* 1. la minaccia e il titolo */
+function labMinaccia() {
+  const m = minacciaScelta();
+  $("#l-corpo").innerHTML = `<div class="l-pannello">
+    <h3>1 · LA MINACCIA</h3>
+    <p class="l-guida">Ogni episodio di Cyber Legends ha una minaccia da sconfiggere. Scegli quella del tuo episodio 9: un tema degli episodi che hai letto, uno nuovo, oppure inventala tu.</p>
+    <div class="l-griglia">${LAB.minacce.map(x => `<button class="l-scelta" data-m="${x.id}" aria-pressed="${L.minaccia === x.id}">
+        <span class="l-et${x.ep ? "" : " nuova"}">${x.ep ? `COME NELL'EP.${pad(x.ep)}` : "NUOVA"}</span><b>${esc(x.titolo)}</b>${esc(x.descr)}</button>`).join("")}
+      <button class="l-scelta" data-m="libera" aria-pressed="${L.minaccia === "libera"}"><span class="l-et nuova">LIBERA</span><b>Inventala tu</b>Una minaccia che non c'è in questo elenco.</button></div>
+    ${L.minaccia === "libera" ? `<label class="l-campo">Descrivi la tua minaccia in una frase
+      <input id="l-libera" maxlength="160" placeholder="Per esempio: un falso concorso che chiede l'indirizzo di casa"></label>` : ""}
+    ${m ? `<div><b>Parole del fumetto che puoi usare:</b> <span class="l-chips">${m.parole.map(p => `<span title="${esc(DEF[p].def)}">${esc(p)}</span>`).join("")}</span></div>` : ""}
+    <label class="l-campo">Il titolo del tuo episodio 9 <small>Come gli altri: «La Trappola della VPN», «Lo Scatto Proibito»</small>
+      <input id="l-titolo" maxlength="70" placeholder="Scrivi il titolo"></label>
+  </div>`;
+  $("#l-corpo").querySelectorAll("[data-m]").forEach(b => b.onclick = () => { L.minaccia = b.dataset.m; salvaLab(); suono("metti"); labMinaccia(); disegnaPassi(); });
+  campo("#l-libera", () => L.libera, v => L.libera = v);
+  campo("#l-titolo", () => L.titolo, v => L.titolo = v);
+}
+
+/* 2. i personaggi */
+function labPersonaggi() {
+  const n = parlanti().length;
+  $("#l-corpo").innerHTML = `<div class="l-pannello">
+    <h3>2 · I PERSONAGGI</h3>
+    <p class="l-guida">Scegli chi recita nel tuo episodio: almeno 2 personaggi, al massimo ${MAX_CAST}. Puoi anche inventarne di nuovi. Il narratore c'è sempre: scrive le didascalie.</p>
+    <p class="g-nota">Inventa nomi di fantasia: non usare i nomi di compagni o insegnanti veri.</p>
+    <div class="l-griglia">${Object.entries(LAB.personaggi).map(([k, d]) => `<button class="l-scelta" data-c="${k}" aria-pressed="${L.cast.includes(k)}">
+        <span class="riga"><span class="s-faccia" style="--c:${VOCI[k].colore}">${esc(VOCI[k].nome.charAt(0))}</span><b>${esc(VOCI[k].nome)}</b></span>${esc(d)}</button>`).join("")}</div>
+    <h4>PERSONAGGI NUOVI</h4>
+    <div class="l-nuovi">${L.nuovi.map((x, i) => `<div class="l-nuovo">
+        <label class="l-campo">Nome<input data-nn="${i}" maxlength="30" placeholder="Un nome di fantasia"></label>
+        <label class="l-campo">Chi è<select data-nr="${i}">${LAB.ruoli_nuovi.map(r => `<option${x.ruolo === r ? " selected" : ""}>${esc(r)}</option>`).join("")}</select></label>
+        <label class="l-campo">Com'è? <small>una caratteristica</small><input data-nt="${i}" maxlength="80" placeholder="Per esempio: timido, ma bravissimo con i computer"></label>
+        <button class="l-x" data-ntogli="${i}" aria-label="Togli il personaggio nuovo ${i + 1}">${ICO_X}</button></div>`).join("")}</div>
+    ${L.nuovi.length < COLORI_NUOVI.length ? `<button class="l-mini" id="l-piunuovo">${ICO_PIU} Inventa un personaggio</button>` : ""}
+    <p class="s-avviso" id="l-conta">Personaggi scelti: ${n}${n < 2 ? " (ne servono almeno 2)" : ""}.</p>
+  </div>`;
+  $("#l-corpo").querySelectorAll("[data-c]").forEach(b => b.onclick = () => {
+    const k = b.dataset.c;
+    if (L.cast.includes(k)) { L.cast = L.cast.filter(x => x !== k); L.tavole.forEach(t => t.bat.forEach(x => { if (x.chi === k) x.chi = ""; })); suono("togli"); }
+    else if (parlanti().length >= MAX_CAST) { suono("no"); avvisa(`Al massimo ${MAX_CAST} personaggi: togline uno prima di sceglierne un altro.`); return; }
+    else { L.cast.push(k); suono("metti"); }
+    salvaLab(); labPersonaggi(); disegnaPassi();
+  });
+  L.nuovi.forEach((x, i) => {
+    campo(`[data-nn="${i}"]`, () => x.nome, v => x.nome = v);
+    campo(`[data-nt="${i}"]`, () => x.tratto, v => x.tratto = v);
+    $(`[data-nr="${i}"]`).onchange = e => { x.ruolo = e.target.value; salvaLab(); };
+  });
+  $("#l-corpo").querySelectorAll("[data-ntogli]").forEach(b => b.onclick = () => {
+    const i = +b.dataset.ntogli;
+    L.nuovi.splice(i, 1);
+    // le battute del personaggio tolto restano senza chi parla; quelle dei successivi scalano di posto
+    L.tavole.forEach(t => t.bat.forEach(x => { const m = /^X(\d)$/.exec(x.chi); if (m) x.chi = +m[1] === i ? "" : +m[1] > i ? "X" + (m[1] - 1) : x.chi; }));
+    suono("togli"); salvaLab(); labPersonaggi(); disegnaPassi();
+  });
+  const piu = $("#l-piunuovo");
+  if (piu) piu.onclick = () => {
+    if (parlanti().length >= MAX_CAST) { suono("no"); avvisa(`Al massimo ${MAX_CAST} personaggi in tutto.`); return; }
+    L.nuovi.push({ nome: "", ruolo: LAB.ruoli_nuovi[0], tratto: "" }); suono("metti"); salvaLab(); labPersonaggi();
+  };
+}
+
+/* 3. le tavole */
+function tavolaHTML(t, k) {
+  const lato = {}; let n = 0;
+  const bal = t.bat.filter(b => b.t.trim()).map(b => {
+    const p = parlante(b.chi) || { nome: "?", colore: "#6A6A66" };
+    if (!(b.chi in lato)) lato[b.chi] = n++ % 2 ? "dx" : "";
+    return `<div class="blocco balloon ${lato[b.chi]}${b.chi === "S" ? " scuro" : ""}"><span class="chi" style="--c:${p.colore}">${esc(p.nome.toUpperCase())}</span>«${esc(senzaVirgolette(b.t))}»</div>`;
+  });
+  return `<div class="l-tavola">
+    <div class="l-pic">${t.img ? `<img src="${media(t.img.ep, t.img.p, "webp")}" alt="">` : ""}<span>TAVOLA ${k + 1}</span></div>
+    <div class="l-testo">${t.did.trim() ? `<div class="blocco didascalia">${esc(t.did.trim())}</div>` : ""}${bal.join("")}
+      ${!t.did.trim() && !bal.length ? `<p class="l-vuoto">Qui comparirà la tua tavola, mentre scrivi.</p>` : ""}</div></div>`;
+}
+function labTavole() {
+  const k = L.tav, t = L.tavole[k], g = LAB.tavole[k], chi = parlanti();
+  if (!t.bat.length) t.bat.push({ chi: "", t: "" });
+  $("#l-corpo").innerHTML = `<div class="l-tav-corpo">
+    <div class="l-pannello">
+      <h3>3 · LE TAVOLE</h3>
+      <div class="l-tabs" role="tablist">${L.tavole.map((x, i) => `<button role="tab" data-t="${i}" aria-selected="${i === k}"><span class="pal${tavolaPiena(x) ? " ok" : ""}"></span>TAVOLA ${i + 1}</button>`).join("")}</div>
+      <div class="l-guida-box"><b>TAVOLA ${k + 1} · ${esc(g.t.toUpperCase())}</b><br>${esc(g.d)}</div>
+      ${chi.length < 2 ? `<p class="g-nota">Prima scegli almeno 2 personaggi nel passo 2: serviranno per le battute.</p>` : ""}
+      <div class="l-img">${t.img ? `<img src="${media(t.img.ep, t.img.p, "webp")}" alt="Illustrazione scelta">` : `<div class="vuota">nessuna illustrazione</div>`}
+        <div style="display:flex;flex-direction:column;gap:6px"><b>Illustrazione</b><button class="l-mini" id="l-sceglimg">Scegli una scena degli episodi</button></div></div>
+      <label class="l-campo">Didascalia del narratore <small>dove siamo, che cosa succede</small><textarea id="l-did" maxlength="400" placeholder="Per esempio: Il giorno dopo, in aula informatica, Hikari nota qualcosa di strano."></textarea></label>
+      <div class="l-campo">Battute <small>chi parla e che cosa dice</small></div>
+      <div class="l-battute">${t.bat.map((b, i) => `<div class="l-battuta">
+          <select data-bc="${i}" aria-label="Chi parla nella battuta ${i + 1}"><option value="">Chi parla?</option>${chi.map(p => `<option value="${p.k}"${p.k === b.chi ? " selected" : ""}>${esc(p.nome)}</option>`).join("")}</select>
+          <textarea data-bt="${i}" maxlength="240" aria-label="Testo della battuta ${i + 1}" placeholder="Che cosa dice?"></textarea>
+          <button class="l-x" data-btogli="${i}" aria-label="Togli la battuta ${i + 1}">${ICO_X}</button></div>`).join("")}</div>
+      ${t.bat.length < MAX_BATTUTE ? `<button class="l-mini" id="l-piubat">${ICO_PIU} Aggiungi una battuta</button>` : ""}
+      <div class="g-tasti">${k > 0 ? `<button class="btn sec" data-vai="${k - 1}">${ICO_INDIETRO} Tavola ${k}</button>` : ""}
+        ${k < L.tavole.length - 1 ? `<button class="btn" data-vai="${k + 1}">Tavola ${k + 2} ${ICO_AVANTI}</button>` : ""}</div>
+    </div>
+    <div class="l-anteprima"><b>ANTEPRIMA</b><div id="l-prev"></div></div>
+  </div>`;
+  const aggiorna = () => {
+    $("#l-prev").innerHTML = tavolaHTML(t, k);
+    const tab = $(`#l-corpo [data-t="${k}"] .pal`); if (tab) tab.classList.toggle("ok", tavolaPiena(t));
+  };
+  aggiorna();
+  campo("#l-did", () => t.did, v => t.did = v, aggiorna);
+  t.bat.forEach((b, i) => {
+    campo(`[data-bt="${i}"]`, () => b.t, v => b.t = v, aggiorna);
+    $(`[data-bc="${i}"]`).onchange = e => { b.chi = e.target.value; salvaLab(); aggiorna(); };
+  });
+  $("#l-corpo").querySelectorAll("[data-t],[data-vai]").forEach(b => b.onclick = () => { L.tav = +(b.dataset.t ?? b.dataset.vai); salvaLab(); suono("pagina"); labTavole(); });
+  $("#l-corpo").querySelectorAll("[data-btogli]").forEach(b => b.onclick = () => { t.bat.splice(+b.dataset.btogli, 1); suono("togli"); salvaLab(); labTavole(); disegnaPassi(); });
+  const piu = $("#l-piubat");
+  if (piu) piu.onclick = () => {
+    // chi parla nella nuova battuta: di solito risponde il personaggio diverso dall'ultimo
+    const ultimo = t.bat.length ? t.bat[t.bat.length - 1].chi : "", altro = (chi.find(p => p.k !== ultimo) || {}).k || "";
+    t.bat.push({ chi: altro, t: "" }); suono("metti"); salvaLab(); labTavole();
+    const ultimi = $("#l-corpo").querySelectorAll("[data-bt]"); ultimi[ultimi.length - 1].focus();
+  };
+  $("#l-sceglimg").onclick = scegliImmagine;
+}
+
+function scegliImmagine() {
+  const t = L.tavole[L.tav];
+  if (t.img) filtroImg = t.img.ep;
+  const disegna = () => {
+    const e = EPISODI.find(x => x.n === filtroImg);
+    $("#l-box").innerHTML = `<button class="i-chiudi" id="l-chiudi" aria-label="Chiudi">${ICO_X}</button>
+      <h3>SCEGLI LA SCENA</h3>
+      <p>Per la tavola ${L.tav + 1}: scegli l'illustrazione di un episodio che si adatta alla tua storia.</p>
+      <div class="l-filtri">${EPISODI.map(x => `<button data-f="${x.n}" aria-pressed="${x.n === filtroImg}">EP.${pad(x.n)}</button>`).join("")}</div>
+      <div class="l-galleria">${e.pagine.map(p => `<button data-p="${p.pagina}" aria-pressed="${!!(t.img && t.img.ep === e.n && t.img.p === p.pagina)}" aria-label="Episodio ${e.n}, pagina ${p.pagina}">
+        <img src="${media(e.n, p.pagina, "webp")}" alt="" loading="lazy"></button>`).join("")}</div>
+      <div class="g-tasti"><button class="btn sec" id="l-noimg">Nessuna illustrazione</button></div>`;
+    $("#l-box").querySelectorAll("[data-f]").forEach(b => b.onclick = () => { filtroImg = +b.dataset.f; suono("carta"); disegna(); });
+    $("#l-box").querySelectorAll("[data-p]").forEach(b => b.onclick = () => { t.img = { ep: e.n, p: +b.dataset.p }; scelta(); });
+    $("#l-noimg").onclick = () => { t.img = null; scelta(); };
+    $("#l-chiudi").onclick = chiudiLabVelo;
+  };
+  const scelta = () => { salvaLab(); suono("metti"); chiudiLabVelo(); labTavole(); };
+  disegna(); labVelo();
+}
+function labVelo(html) {
+  if (html !== undefined) $("#l-box").innerHTML = html;
+  $("#l-velo").classList.remove("nascosto"); $("#l-box").focus({ preventScroll: true }); $("#l-velo").scrollTop = 0;
+}
+function chiudiLabVelo() { $("#l-velo").classList.add("nascosto"); }
+$("#l-velo").onclick = ev => { if (ev.target.id === "l-velo") chiudiLabVelo(); };
+$("#l-velo").onkeydown = ev => { if (ev.key === "Escape") chiudiLabVelo(); };
+
+/* 4. controlla */
+function labControlla() {
+  const c = controlli(), usate = paroleUsate(), sugg = (minacciaScelta() || { parole: [] }).parole.filter(p => !usate.includes(p));
+  $("#l-corpo").innerHTML = `<div class="l-pannello">
+    <h3>4 · CONTROLLA</h3>
+    <p class="l-guida">Prima di consegnare, rileggi il tuo episodio come farebbe un lettore. Qui sotto trovi che cosa è già a posto e che cosa manca.</p>
+    <ul class="l-check">${c.slice(0, -1).map(x => `<li><span class="ico ${x.ok ? "ok" : "no"}">${x.ok ? ICO_OK : ICO_ATT}</span>${esc(x.t)}
+      ${x.ok ? "" : `<button class="l-mini" data-vai="${x.passo}">Vai al passo ${x.passo + 1}</button>`}</li>`).join("")}</ul>
+    <div><b>Parole del fumetto che hai usato:</b> ${usate.length ? `<span class="l-chips">${usate.map(p => `<span class="si" title="${esc(DEF[p].def)}">${esc(p)}</span>`).join("")}</span>` : "nessuna, per ora."}</div>
+    ${sugg.length ? `<div><b>Potresti usare anche:</b> <span class="l-chips">${sugg.map(p => `<span title="${esc(DEF[p].def)}">${esc(p)}</span>`).join("")}</span></div>` : ""}
+    <h4>AUTOVALUTAZIONE</h4>
+    <p class="l-guida">Spunta solo quello che è vero. Se un punto non va, torna alle tavole e sistemalo.</p>
+    <div class="l-auto">${LAB.autovalutazione.map((a, i) => `<label><input type="checkbox" data-a="${i}"${L.auto.includes(i) ? " checked" : ""}>${esc(a)}</label>`).join("")}</div>
+  </div>`;
+  $("#l-corpo").querySelectorAll("[data-vai]").forEach(b => b.onclick = () => vaiPasso(+b.dataset.vai));
+  $("#l-corpo").querySelectorAll("[data-a]").forEach(b => b.onchange = () => {
+    const i = +b.dataset.a; L.auto = b.checked ? [...new Set([...L.auto, i])] : L.auto.filter(x => x !== i);
+    suono(b.checked ? "metti" : "togli"); salvaLab(); disegnaPassi();
+  });
+}
+
+/* 5. leggi e invia */
+function labInvia() {
+  const mancano = controlli().filter(x => !x.ok), quando = L.inviato ? new Date(L.inviato).toLocaleString("it-IT", { dateStyle: "short", timeStyle: "short" }) : "";
+  $("#l-corpo").innerHTML = `<div class="l-pannello">
+    <h3>5 · LEGGI E INVIA</h3>
+    <div class="l-libro">
+      <div class="l-copertina"><span class="ep">CYBER LEGENDS · EPISODIO 9</span><h3>${esc(L.titolo.trim() || "SENZA TITOLO")}</h3>
+        <div>${esc(nomeMinaccia())}</div><div><b>Personaggi:</b> ${esc(parlanti().map(p => p.nome).join(", "))}</div>
+        ${L.nome.trim() ? `<div>Scritto da <b>${esc(L.nome.trim())}</b>${L.classe.trim() ? `, ${esc(L.classe.trim())}` : ""}</div>` : ""}</div>
+      ${L.tavole.map(tavolaHTML).join("")}
+    </div>
+    <div class="l-invio-box" style="display:flex;flex-direction:column;gap:12px">
+      <h4>CONSEGNA AL DOCENTE</h4>
+      ${mancano.length ? `<p class="l-esito att">Prima di inviare manca ancora: ${mancano.map(x => esc(x.t)).join("; ")}.
+        <button class="l-mini" data-vai="${mancano[0].passo}">Vai al passo ${mancano[0].passo + 1}</button></p>` : ""}
+      <div class="l-invio">
+        <label class="l-campo">Nome e iniziale del cognome<input id="l-nome" maxlength="40" placeholder="Per esempio: Giulia R." autocomplete="off"></label>
+        <label class="l-campo">Classe<input id="l-classe" maxlength="12" placeholder="Per esempio: 2ª B" autocomplete="off"></label>
+        <button class="btn" id="l-manda"${mancano.length ? " disabled" : ""}>${L.inviato ? "Invia di nuovo" : "Invia al docente"}</button>
+      </div>
+      <p class="l-esito ${L.inviato ? "ok" : "att nascosto"}" id="l-esito">${L.inviato ? `Inviato il ${quando}. Se lo modifichi, puoi inviarlo di nuovo: il docente vedrà l'ultima versione.` : ""}</p>
+      <div class="g-tasti"><button class="btn sec" id="l-stampa">Stampa</button><button class="btn sec" id="l-nuovo">Ricomincia da capo</button></div>
+    </div>
+  </div>`;
+  campo("#l-nome", () => L.nome, v => L.nome = v);
+  campo("#l-classe", () => L.classe, v => L.classe = v);
+  $("#l-corpo").querySelectorAll("[data-vai]").forEach(b => b.onclick = () => vaiPasso(+b.dataset.vai));
+  $("#l-manda").onclick = inviaLab;
+  $("#l-stampa").onclick = () => window.print();
+  $("#l-nuovo").onclick = () => {
+    if (!confirm("Vuoi cancellare questo episodio e ricominciare da capo? Se non l'hai inviato, andrà perso.")) return;
+    L = labVuoto(); salvaLab(); disegnaLab(); window.scrollTo(0, 0);
+  };
+}
+
+function testoEpisodio() {
+  const righe = [`CYBER LEGENDS · EPISODIO 9: ${L.titolo.trim()}`, `Minaccia: ${nomeMinaccia()}`,
+    `Personaggi: ${parlanti().map(p => p.nome).join(", ")}`];
+  L.nuovi.forEach((n, i) => righe.push(`  ${parlante("X" + i).nome}: ${n.ruolo}${n.tratto.trim() ? `, ${n.tratto.trim()}` : ""}`));
+  L.tavole.forEach((t, k) => {
+    righe.push("", `TAVOLA ${k + 1} · ${LAB.tavole[k].t.toUpperCase()}${t.img ? ` [scena: EP.${pad(t.img.ep)} p.${t.img.p}]` : ""}`);
+    if (t.did.trim()) righe.push(`NARRATORE: ${t.did.trim()}`);
+    t.bat.filter(b => b.t.trim()).forEach(b => righe.push(`${((parlante(b.chi) || {}).nome || "?").toUpperCase()}: «${senzaVirgolette(b.t)}»`));
+  });
+  return righe.join("\n");
+}
+function esitoLab(tipo, t) { const el = $("#l-esito"); el.className = `l-esito ${tipo}`; el.textContent = t; }
+async function inviaLab() {
+  if (!LAB.url_raccolta) { esitoLab("att", "L'invio al docente non è ancora attivo: chiedi all'insegnante. Intanto il tuo lavoro resta salvato su questo dispositivo."); return; }
+  if (!L.nome.trim() || !L.classe.trim()) { suono("no"); esitoLab("att", "Scrivi il tuo nome e la classe, così il docente sa di chi è l'episodio."); return; }
+  L.id = L.id || Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+  const btn = $("#l-manda"); btn.disabled = true; btn.textContent = "Invio in corso…";
+  const dati = { id: L.id, nome: L.nome.trim(), classe: L.classe.trim(), titolo: L.titolo.trim(), minaccia: nomeMinaccia(),
+    personaggi: parlanti().map(p => p.nome).join(", "), parole: paroleUsate().join(", "),
+    autovalutazione: `${L.auto.length}/${LAB.autovalutazione.length}`, testo: testoEpisodio() };
+  try {
+    // text/plain = richiesta "semplice": niente preflight CORS; l'Apps Script risponde in JSON
+    const r = await fetch(LAB.url_raccolta, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(dati) });
+    const j = await r.json();
+    if (!j.ok) throw new Error(j.errore || "risposta non valida");
+    L.inviato = new Date().toISOString(); salvaLab(); suono("perfetto");
+    labInvia(); disegnaPassi(); labDebrief();
+  } catch (e) {
+    btn.disabled = false; btn.textContent = L.inviato ? "Invia di nuovo" : "Invia al docente";
+    esitoLab("att", "Invio non riuscito. Controlla la connessione e riprova: il tuo lavoro resta salvato su questo dispositivo.");
+  }
+}
+
+function labIntro() {
+  labVelo(`<h3>SCRIVILO TU!</h3>
+    <p>Hai letto gli otto episodi di Cyber Legends. Adesso l'autore sei tu: scrivi <b>l'episodio 9</b>, con una minaccia da sconfiggere e dei personaggi che imparano qualcosa.</p>
+    <p><b>L'obiettivo:</b> un episodio che faccia capire a chi lo legge come riconoscere un pericolo online e che cosa fare.</p>
+    <div class="g-passi">
+      <div><b>1. SCEGLI</b>La minaccia, il titolo e i personaggi. Puoi inventarne di nuovi.</div>
+      <div><b>2. SCRIVI</b>Sei tavole, una per ogni tappa della storia. Per ognuna: una scena degli episodi, la didascalia del narratore, le battute dei personaggi.</div>
+      <div><b>3. CONSEGNA</b>Controlla con l'autovalutazione, rileggi tutto l'episodio e invialo al docente.</div>
+    </div>
+    <p class="g-nota">Il lavoro si salva da solo su questo dispositivo: puoi chiudere e riprendere quando vuoi. Usa nomi di fantasia, mai quelli di compagni o insegnanti veri.</p>
+    <div class="g-tasti"><button class="btn" id="l-via">Comincia</button></div>`);
+  $("#l-via").onclick = chiudiLabVelo;
+}
+function labDebrief() {
+  labVelo(`<h3>EPISODIO CONSEGNATO!</h3>
+    <p>Il tuo episodio 9, <b>«${esc(L.titolo.trim())}»</b>, è arrivato al docente.</p>
+    <div class="g-nota"><b>Pensaci, poi parlane in classe:</b>
+      <ol class="g-lista">
+        <li>Quale scelta dei tuoi personaggi insegna di più a chi legge? Perché?</li>
+        <li>Quale parola del fumetto ti è servita di più per raccontare la minaccia?</li>
+        <li>Se la tua storia succedesse davvero a te, che cosa faresti per primo? E a chi lo diresti?</li>
+      </ol></div>
+    <div class="g-tasti"><button class="btn" id="l-ok">Torna al mio episodio</button><button class="btn sec" id="l-home">Tutti gli episodi</button></div>`);
+  $("#l-ok").onclick = chiudiLabVelo;
+  $("#l-home").onclick = () => { chiudiLabVelo(); home(); };
+}
+
+$("#l-avanti").onclick = () => vaiPasso(L.passo + 1);
+$("#l-indietro").onclick = () => vaiPasso(L.passo - 1);
+$("#l-aiuto").onclick = labIntro;
+$("#fine-ep9").onclick = mostraLab;
+
 /* ---------- Info docenti: finestra a schede (Metodologia, Struttura, Episodi e casi) ----------
    Tutto cio' che si puo' contare (episodi, casi, parole, ruoli, durate) e' ricavato dai dati, mai scritto a mano. */
-const INFO_TAB = [["metodo", "Metodologia"], ["struttura", "Struttura e tecniche"], ["episodi", "Episodi e casi"]];
+const INFO_TAB = [["metodo", "Metodologia"], ["struttura", "Struttura e tecniche"], ["episodi", "Episodi e casi"], ["lab", "Laboratorio di scrittura"]];
 const minutiEp = e => Math.round(e.pagine.reduce((a, p) => a + (p.durata || 0), 0) / 60);
 
 function infoPannello(k) {
+  if (k === "lab") {
+    const RUB = [
+      ["Trama e struttura", "Le tavole sono slegate; la minaccia non si capisce.", "La minaccia c'è, ma alcune tappe mancano o sono confuse.", "Le sei tappe si seguono con ordine e la minaccia è chiara.", "Trama coerente e originale, con indizi e una svolta."],
+      ["Lessico specifico", "Nessuna parola del fumetto, o usata in modo scorretto.", "Una o due parole, usate correttamente.", "Almeno tre parole, usate al momento giusto.", "Le parole spiegano la minaccia e la soluzione a chi legge."],
+      ["Comportamenti proposti", "Soluzione assente o sbagliata (pagare, vendicarsi, stare zitti).", "Soluzione accettabile, ma vaga.", "Azioni corrette e un adulto coinvolto.", "Azioni corrette, realistiche e motivate, con l'adulto giusto."],
+      ["Personaggi e dialoghi", "Personaggi indistinti; battute poco chiare.", "Battute comprensibili, ma tutti parlano allo stesso modo.", "Ogni personaggio ha un suo modo di parlare.", "Dialoghi vivaci che fanno andare avanti la storia."],
+      ["Forma", "Molti errori che ostacolano la lettura.", "Alcuni errori, che non ostacolano la lettura.", "Pochi errori; punteggiatura corretta.", "Testo corretto e curato, didascalie e battute ben distinte."]];
+    return `
+    <p>L'ultima attività del percorso: dopo gli otto episodi, ogni studente <b>scrive l'episodio 9</b>. Si apre dalla nona copertina della home, dalla fine dell'episodio 8 o con <code>#ep9</code> in fondo all'indirizzo.
+      Scrive solo lo studente: nessuno strumento di intelligenza artificiale.</p>
+    <h4>I cinque passi</h4>
+    <ol class="g-lista">
+      <li><b>Minaccia e titolo.</b> Si sceglie tra ${LAB.minacce.length} minacce (${LAB.minacce.filter(m => m.ep).length} riprendono gli episodi, ${LAB.minacce.filter(m => !m.ep).length} sono nuove) oppure se ne inventa una. Per ogni minaccia sono suggerite alcune parole del fumetto.</li>
+      <li><b>Personaggi.</b> Da 2 a ${MAX_CAST}, tra quelli della serie, più fino a ${COLORI_NUOVI.length} personaggi inventati (nome, ruolo, una caratteristica).</li>
+      <li><b>Tavole.</b> ${LAB.tavole.length} tavole guidate da una scaletta: ${LAB.tavole.map(t => t.t.toLowerCase()).join(", ")}. Per ognuna una scena scelta dalle illustrazioni degli episodi, la didascalia del narratore e fino a ${MAX_BATTUTE} battute. L'anteprima mostra la tavola nello stile del lettore mentre si scrive.</li>
+      <li><b>Controlla.</b> Controlli automatici (tavole complete, almeno due personaggi che parlano, almeno tre parole del fumetto) e autovalutazione in ${LAB.autovalutazione.length} punti, tra cui il rispetto e l'uso di nomi di fantasia.</li>
+      <li><b>Leggi e invia.</b> L'episodio completo si rilegge come un fumetto e si invia al docente; si può anche stampare. Dopo l'invio, tre domande di riflessione.</li>
+    </ol>
+    <h4>Dove arrivano i lavori</h4>
+    <p>In un Foglio Google del docente, una riga per episodio: data, nome e iniziale del cognome, classe, titolo, minaccia, personaggi, parole del fumetto usate, autovalutazione e testo completo. Se lo studente corregge e reinvia, la riga si aggiorna. Mentre scrive, la bozza resta salvata solo sul suo dispositivo.
+      ${LAB.url_raccolta ? "" : `<br><b>L'invio non è ancora attivo:</b> va collegato il Foglio Google (istruzioni nel file <code>strumenti/apps_script_episodio9.gs</code>).`}</p>
+    <p class="g-nota">Tempi indicativi: due lezioni da 50–60 minuti, la prima per minaccia, personaggi e prime tavole, la seconda per finire, controllare e inviare. Si può lavorare anche a coppie, su un solo dispositivo.</p>
+    <h4>Rubrica per il docente</h4>
+    <div class="i-scroll"><table>
+      <tr><th>Criterio</th><th>In via di acquisizione</th><th>Base</th><th>Intermedio</th><th>Avanzato</th></tr>
+      ${RUB.map(r => `<tr><td><b>${r[0]}</b></td>${r.slice(1).map(c => `<td>${c}</td>`).join("")}</tr>`).join("")}
+    </table></div>`;
+  }
   if (k === "metodo") return `
     <p><b>Cyber Legends</b> è un percorso di ${EPISODI.length} episodi manga per la scuola secondaria di primo grado. Tiene insieme due temi che a scuola viaggiano spesso separati:
       la <b>cybersicurezza</b> (proteggere account, dispositivi e dati) e la <b>prevenzione del cyberbullismo</b> (riconoscere un comportamento che ferisce e sapere a chi chiedere aiuto).
@@ -1169,6 +1678,7 @@ applicaDim();
 disegnaHome();
 // link diretto a una pagina: index.html#ep3/p5
 function daHash() {
+  if (location.hash === "#ep9") { if ($("#lab").classList.contains("nascosto")) mostraLab(); return; }
   const m = location.hash.match(/^#ep(\d+)\/(?:p(\d+)|team|identikit)$/);
   const e = m && EPISODI.find(x => x.n === +m[1]);
   if (!e) return;
